@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/atom.xml" rel="self"></link><id>/</id><updated>2013-07-27T08:25:00+04:00</updated><entry><title>Свой блог на GitHub</title><link href="/posts/my-first-post" rel="alternate"></link><updated>2013-07-27T08:25:00+04:00</updated><author><name>admin</name></author><id>tag:,2013-07-27:posts/my-first-post</id><summary type="html"></summary><category term="python"></category></entry></feed>
