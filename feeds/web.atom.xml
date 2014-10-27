@@ -1,2 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/web.atom.xml" rel="self"></link><id>/</id><updated>2013-07-27T08:25:00+04:00</updated><entry><title>Свой блог на GitHub</title><link href="/posts/my-first-post" rel="alternate"></link><updated>2013-07-27T08:25:00+04:00</updated><author><name>admin</name></author><id>tag:,2013-07-27:posts/my-first-post</id><summary type="html"></summary><category term="python"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/web.atom.xml" rel="self"></link><id>/</id><updated>2014-10-27T11:59:00+03:00</updated><entry><title>Установка блога на Pelican</title><link href="/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;установка&lt;/h3&gt;
+&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#должен быть установлен pip и git&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; 
+&lt;span class="cp"&gt;# после установки необходимо настроить git &lt;/span&gt;
+&lt;span class="cp"&gt;#устанавливаем Pelican и Markdown&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt; 
+&lt;span class="cp"&gt;#обновляем pelican до dev версии с github&amp;#39;a&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/getpelican/pelican#egg=pelican --upgrade&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;базовая настройка pelican&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;span class="cp"&gt;#Ответы на вопросы&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;установка новой темы&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# переходим в папку с темами&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;python2&lt;/span&gt;&lt;span class="mf"&gt;.7&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dist&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="cp"&gt;# копируем одну из тем из  &lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/DandyDev/pelican-bootstrap3.git&lt;/span&gt;
+&lt;span class="cp"&gt;# смотрим путь до нашей темы &lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; 
+&lt;span class="cp"&gt;# устанавливаем тему&lt;/span&gt;
+&lt;span class="cp"&gt;# добавляем переменную THEME=/path/to/my_theme&lt;/span&gt;
+&lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="n"&gt;pelicanconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;создание первого поста&lt;/h3&gt;
+&lt;p&gt;После настройки проекта создадим первый пост в папке content. Для этого необходимо создать новый файл с расширением *.md (Markdown) следующего содержания:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;Title:&lt;/span&gt; &lt;span class="err"&gt;Установка&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt; &lt;span class="err"&gt;на&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
+&lt;span class="nl"&gt;Date:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;27&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;59&lt;/span&gt;
+&lt;span class="nl"&gt;Category:&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt;
+&lt;span class="nl"&gt;Tags:&lt;/span&gt; &lt;span class="err"&gt;теги&lt;/span&gt;
+&lt;span class="nl"&gt;Slug:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="nl"&gt;Author:&lt;/span&gt; &lt;span class="n"&gt;admin&lt;/span&gt;
+&lt;span class="nl"&gt;Summary:&lt;/span&gt; &lt;span class="err"&gt;Пошаговая&lt;/span&gt; &lt;span class="err"&gt;инструкция&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;установки&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt; &lt;span class="err"&gt;на&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
+
+&lt;span class="err"&gt;Мой&lt;/span&gt; &lt;span class="err"&gt;первый&lt;/span&gt; &lt;span class="err"&gt;пост&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;редактирование статьи&lt;/h3&gt;
+&lt;p&gt;Запустим devserver для редактирования статьи и автоматического обновления сайта в реальном времени:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;devserver&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;остановка&lt;/span&gt; 
+&lt;span class="cp"&gt;# после запуска локального сервера смотреть его тут&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//localhost:8000/](http://localhost:8000/)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;перенос блога на сервер github&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Подготовка&lt;ul&gt;
+&lt;li&gt;Необходимо ответить "Yes"  при создании блога quickstart&lt;/li&gt;
+&lt;li&gt;Нужно иметь аккаунт на github&lt;/li&gt;
+&lt;li&gt;должен быть настроен git &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Создаем репозиторий на github:  username.github.io&lt;/li&gt;
+&lt;li&gt;копируем проект с гитхаба на свой компьютер в папку output своего блога
+    &lt;code&gt;git clone git@github.com:username/username.github.io output&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;работа с git
+    &lt;code&gt;git init # инициализируем гит
+    git add -A # добавляем все файлы в локальный проект
+    git status # узнаем какие файлы добавлены в проект и в какой ветке (master/slave) работаем
+    git commit -a -m “Commit description” # добавляем коммит
+    git push origin # добавляем измененные файлы на сервер&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;базовые настройки закончены. далее расширенные&lt;/p&gt;</summary><category term="python"></category></entry></feed>
