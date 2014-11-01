@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/atom.xml" rel="self"></link><id>/</id><updated>2014-10-27T11:59:00+03:00</updated><entry><title>Pelican. Установка блога.</title><link href="/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/atom.xml" rel="self"></link><id>/</id><updated>2014-10-27T11:59:00+03:00</updated><entry><title>Pelican. Установка и настройка блога.</title><link href="/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#должен быть установлен pip и git&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; 
 &lt;span class="cp"&gt;# после установки необходимо настроить git &lt;/span&gt;
@@ -30,21 +30,21 @@
 
 &lt;h3&gt;создание первого поста&lt;/h3&gt;
 &lt;p&gt;После настройки проекта создадим первый пост в папке content. Для этого необходимо создать новый файл с расширением *.md (Markdown) следующего содержания:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;Title:&lt;/span&gt; &lt;span class="err"&gt;Установка&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt; &lt;span class="err"&gt;на&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
-&lt;span class="nl"&gt;Date:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;27&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;59&lt;/span&gt;
-&lt;span class="nl"&gt;Category:&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt;
-&lt;span class="nl"&gt;Tags:&lt;/span&gt; &lt;span class="err"&gt;теги&lt;/span&gt;
-&lt;span class="nl"&gt;Slug:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;span class="nl"&gt;Author:&lt;/span&gt; &lt;span class="n"&gt;admin&lt;/span&gt;
-&lt;span class="nl"&gt;Summary:&lt;/span&gt; &lt;span class="err"&gt;Пошаговая&lt;/span&gt; &lt;span class="err"&gt;инструкция&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;установки&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt; &lt;span class="err"&gt;на&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="err"&gt;Установка&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;настройка&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;27&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;59&lt;/span&gt;
+&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt;
+&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;теги&lt;/span&gt;
+&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="n"&gt;Author&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;admin&lt;/span&gt;
+&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;Пошаговая&lt;/span&gt; &lt;span class="err"&gt;инструкция&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;установки&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt; &lt;span class="err"&gt;на&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
 
-&lt;span class="err"&gt;Мой&lt;/span&gt; &lt;span class="err"&gt;первый&lt;/span&gt; &lt;span class="err"&gt;пост&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;Мой&lt;/span&gt; &lt;span class="err"&gt;первый&lt;/span&gt; &lt;span class="err"&gt;пост&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;редактирование статьи&lt;/h3&gt;
 &lt;p&gt;Запустим devserver для редактирования статьи и автоматического обновления сайта в реальном времени:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;devserver&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;devserver&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;запуск&lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;остановка&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -60,12 +60,14 @@
 &lt;/ul&gt;
 &lt;h5&gt;2. Создаем репозиторий на github:  username.github.io&lt;/h5&gt;
 &lt;h5&gt;3. Копируем проект с гитхаба на свой компьютер в папку output своего блога&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;myblog_folder&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;4. работа с git&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# инициализируем гит&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#переходим в папку, где находяться сгенерированные файлы&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;myblog_folder&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
+&lt;span class="cp"&gt;# инициализируем гит&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; 
 &lt;span class="cp"&gt;# добавляем все файлы в локальный проект&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; 
@@ -78,4 +80,4 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Базовые настройки закончены. далее расширенные&lt;/p&gt;</summary><category term="python"></category></entry></feed>
+&lt;p&gt;Базовые настройки закончены. Далее расширенные настройки.&lt;/p&gt;</summary><category term="python"></category></entry></feed>

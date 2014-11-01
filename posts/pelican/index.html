@@ -2,7 +2,7 @@
 <html lang="ru"
 >
 <head>
-    <title>Pelican. Установка блога. - WebQuant</title>
+    <title>Pelican. Установка и настройка блога. - WebQuant</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
     <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="/theme/css/pygments/zenburn.css" rel="stylesheet">
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
 
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -67,8 +67,8 @@ WebQuant            </a>
                 <h1>
                     <a href="/posts/pelican"
                        rel="bookmark"
-                       title="Permalink to Pelican. Установка блога.">
-                        Pelican. Установка блога.
+                       title="Permalink to Pelican. Установка и настройка блога.">
+                        Pelican. Установка и настройка блога.
                     </a>
                 </h1>
             </header>
@@ -119,21 +119,21 @@ WebQuant            </a>
 
 <h3>создание первого поста</h3>
 <p>После настройки проекта создадим первый пост в папке content. Для этого необходимо создать новый файл с расширением *.md (Markdown) следующего содержания:</p>
-<div class="highlight"><pre><span class="nl">Title:</span> <span class="err">Установка</span> <span class="err">блога</span> <span class="err">на</span> <span class="n">Pelican</span>
-<span class="nl">Date:</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span> <span class="mi">11</span><span class="o">:</span><span class="mi">59</span>
-<span class="nl">Category:</span> <span class="n">web</span>
-<span class="nl">Tags:</span> <span class="err">теги</span>
-<span class="nl">Slug:</span> <span class="n">pelican</span>
-<span class="nl">Author:</span> <span class="n">admin</span>
-<span class="nl">Summary:</span> <span class="err">Пошаговая</span> <span class="err">инструкция</span> <span class="err">по</span> <span class="err">установки</span> <span class="err">блога</span> <span class="err">на</span> <span class="n">Pelican</span>
+<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Pelican</span><span class="o">.</span> <span class="err">Установка</span> <span class="err">и</span> <span class="err">настройка</span> <span class="err">блога</span><span class="o">.</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span> <span class="mi">11</span><span class="o">:</span><span class="mi">59</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">web</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="err">теги</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">pelican</span>
+<span class="n">Author</span><span class="o">:</span> <span class="n">admin</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="err">Пошаговая</span> <span class="err">инструкция</span> <span class="err">по</span> <span class="err">установки</span> <span class="err">блога</span> <span class="err">на</span> <span class="n">Pelican</span>
 
-<span class="err">Мой</span> <span class="err">первый</span> <span class="err">пост</span> <span class="err">для</span> <span class="err">блога</span><span class="p">.</span>
+<span class="err">Мой</span> <span class="err">первый</span> <span class="err">пост</span> <span class="err">для</span> <span class="err">блога</span><span class="o">.</span>
 </pre></div>
 
 
 <h3>редактирование статьи</h3>
 <p>Запустим devserver для редактирования статьи и автоматического обновления сайта в реальном времени:</p>
-<div class="highlight"><pre><span class="n">make</span> <span class="n">devserver</span>
+<div class="highlight"><pre><span class="n">make</span> <span class="n">devserver</span> <span class="err">#</span> <span class="err">запуск</span>
 <span class="p">.</span><span class="o">/</span><span class="n">develop_server</span><span class="p">.</span><span class="n">sh</span> <span class="n">stop</span> <span class="err">#</span> <span class="err">остановка</span>
 </pre></div>
 
@@ -149,12 +149,14 @@ WebQuant            </a>
 </ul>
 <h5>2. Создаем репозиторий на github:  username.github.io</h5>
 <h5>3. Копируем проект с гитхаба на свой компьютер в папку output своего блога</h5>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">:</span><span class="n">username</span><span class="o">/</span><span class="n">username</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span> <span class="n">output</span>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">:</span><span class="n">username</span><span class="o">/</span><span class="n">username</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span> <span class="o">~/</span><span class="n">myblog_folder</span><span class="o">/</span><span class="n">output</span>
 </pre></div>
 
 
 <h5>4. работа с git</h5>
-<div class="highlight"><pre><span class="cp"># инициализируем гит</span>
+<div class="highlight"><pre><span class="cp">#переходим в папку, где находяться сгенерированные файлы</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">myblog_folder</span><span class="o">/</span><span class="n">output</span>
+<span class="cp"># инициализируем гит</span>
 <span class="n">git</span> <span class="n">init</span> 
 <span class="cp"># добавляем все файлы в локальный проект</span>
 <span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">A</span> 
@@ -167,7 +169,7 @@ WebQuant            </a>
 </pre></div>
 
 
-<p>Базовые настройки закончены. далее расширенные</p>
+<p>Базовые настройки закончены. Далее расширенные настройки.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
