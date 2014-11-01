@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/web.atom.xml" rel="self"></link><id>/</id><updated>2014-10-27T11:59:00+03:00</updated><entry><title>Установка блога на Pelican</title><link href="/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;установка&lt;/h3&gt;
-&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/web.atom.xml" rel="self"></link><id>/</id><updated>2014-10-27T11:59:00+03:00</updated><entry><title>Pelican. Установка блога.</title><link href="/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#должен быть установлен pip и git&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; 
 &lt;span class="cp"&gt;# после установки необходимо настроить git &lt;/span&gt;
@@ -25,8 +24,7 @@
 &lt;span class="cp"&gt;# смотрим путь до нашей темы &lt;/span&gt;
 &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; 
 &lt;span class="cp"&gt;# устанавливаем тему&lt;/span&gt;
-&lt;span class="cp"&gt;# добавляем переменную THEME=/path/to/my_theme&lt;/span&gt;
-&lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="n"&gt;pelicanconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="cp"&gt;# добавляем переменную THEME=/path/to/my_theme в pelicanconf.py&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -47,28 +45,37 @@
 &lt;h3&gt;редактирование статьи&lt;/h3&gt;
 &lt;p&gt;Запустим devserver для редактирования статьи и автоматического обновления сайта в реальном времени:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;devserver&lt;/span&gt;
-&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;остановка&lt;/span&gt; 
-&lt;span class="cp"&gt;# после запуска локального сервера смотреть его тут&lt;/span&gt;
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//localhost:8000/](http://localhost:8000/)&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;остановка&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;после запуска локального сервера смотреть его тут
+&lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;перенос блога на сервер github&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Подготовка&lt;ul&gt;
+&lt;h5&gt;1. Подготовка&lt;/h5&gt;
+&lt;ul&gt;
 &lt;li&gt;Необходимо ответить "Yes"  при создании блога quickstart&lt;/li&gt;
 &lt;li&gt;Нужно иметь аккаунт на github&lt;/li&gt;
-&lt;li&gt;должен быть настроен git &lt;/li&gt;
+&lt;li&gt;Должен быть настроен git&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Создаем репозиторий на github:  username.github.io&lt;/li&gt;
-&lt;li&gt;копируем проект с гитхаба на свой компьютер в папку output своего блога
-    &lt;code&gt;git clone git@github.com:username/username.github.io output&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;работа с git
-    &lt;code&gt;git init # инициализируем гит
-    git add -A # добавляем все файлы в локальный проект
-    git status # узнаем какие файлы добавлены в проект и в какой ветке (master/slave) работаем
-    git commit -a -m “Commit description” # добавляем коммит
-    git push origin # добавляем измененные файлы на сервер&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;базовые настройки закончены. далее расширенные&lt;/p&gt;</summary><category term="python"></category></entry></feed>
+&lt;h5&gt;2. Создаем репозиторий на github:  username.github.io&lt;/h5&gt;
+&lt;h5&gt;3. Копируем проект с гитхаба на свой компьютер в папку output своего блога&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;4. работа с git&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# инициализируем гит&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; 
+&lt;span class="cp"&gt;# добавляем все файлы в локальный проект&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; 
+&lt;span class="cp"&gt;# узнаем какие файлы добавлены в проект и в какой ветке (master/slave) работаем&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; 
+&lt;span class="cp"&gt;# добавляем коммит&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;Commit&lt;/span&gt; &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt; 
+&lt;span class="cp"&gt;# добавляем измененные файлы на сервер&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Базовые настройки закончены. далее расширенные&lt;/p&gt;</summary><category term="python"></category></entry></feed>
