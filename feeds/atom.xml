@@ -1,5 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/atom.xml" rel="self"></link><id>/</id><updated>2014-10-27T11:59:00+03:00</updated><entry><title>Pelican. Установка и настройка блога.</title><link href="/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/atom.xml" rel="self"></link><id>/</id><updated>2014-11-01T21:42:00+03:00</updated><entry><title>Pelican. Расширенные настройки.</title><link href="/posts/pelican-extra" rel="alternate"></link><updated>2014-11-01T21:42:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Для начала необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
+&lt;p&gt;Все изменения вносятся в основной файл настроек pelicanconf.py&lt;/p&gt;
+&lt;h3&gt;Структуризация файлов.&lt;/h3&gt;
+&lt;p&gt;Складываем все посты в отдельную папку.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;OUTPUT_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;articles&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;articles&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;articles&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;BREADCRUMBS&lt;/h3&gt;
+&lt;p&gt;Или хлебные крошки - для улучшения навигации по сайту.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;DISPLAY_BREADCRUMBS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;DISPLAY_CATEGORY_IN_BREADCRUMBS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Pygments для подсветки кода в блоках.&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#устанавливаем pygments и настраиваем, если не установлено по дефолту&lt;/span&gt;
+&lt;span class="n"&gt;PYGMENTS_STYLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;zenburn&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Favicon - иконка для сайта.&lt;/h3&gt;
+&lt;p&gt;Копируем картинку &lt;em&gt;.png или &lt;/em&gt;.ico в наш проект и настраиваем&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;FAVICON&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;images&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;favicon&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ico&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Robots.txt&lt;/h3&gt;
+&lt;p&gt;Для лучшей индексации сайта роботами, так же можно запретить индекс различный файлов.
+Необходимо создать robots.txt в корне папки output и прописать необходимые настройки:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;agent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Yandex&lt;/span&gt;
+&lt;span class="nl"&gt;Disallow:&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+
+&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;agent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="nl"&gt;Disallow:&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="nl"&gt;Sitemap:&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//site_name/sitemap.xml&lt;/span&gt;
+&lt;span class="nl"&gt;Host:&lt;/span&gt; &lt;span class="n"&gt;site_name&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Облако тегов&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# отображение тегов&lt;/span&gt;
+&lt;span class="n"&gt;DISPLAY_TAGS_ON_SIDEBAR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+&lt;span class="cp"&gt;# показывать в облаке или списком&lt;/span&gt;
+&lt;span class="n"&gt;DISPLAY_TAGS_INLINE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Sitemap&lt;/h3&gt;
+&lt;p&gt;Для улучшения индексации сайта в поисковиках. XML карта сайта&lt;/p&gt;
+&lt;p&gt;1) скачиваем плагин 
+&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap"&gt;sitemap&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2) устанавливаем в папку plugins&lt;/p&gt;
+&lt;p&gt;3) прописываем настройки:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# Plugins&lt;/span&gt;
+&lt;span class="n"&gt;PLUGIN_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;plugins&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sitemap&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="cp"&gt;# Sitemap&lt;/span&gt;
+&lt;span class="n"&gt;SITEMAP&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;xml&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;priorities&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;articles&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;indexes&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;changefreqs&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;articles&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;monthly&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;indexes&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;daily&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;monthly&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;4) читаем &lt;a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions"&gt;мануал по настройкам&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Метатеги + SEO&lt;/h3&gt;
+&lt;h3&gt;Установка доп плагинов&lt;/h3&gt;
+&lt;p&gt;Disqus 
+Google Analytics&lt;/p&gt;
+&lt;h3&gt;404 error&lt;/h3&gt;
+&lt;p&gt;https://help.github.com/articles/custom-404-pages/&lt;/p&gt;
+&lt;h3&gt;Настраиваем свое доменное имя&lt;/h3&gt;
+&lt;p&gt;http://www.circuidipity.com/github-pages.html&lt;/p&gt;
+&lt;h3&gt;Дочерний шаблон&lt;/h3&gt;
+&lt;p&gt;или в отдельную категорию. редактирование шаблона jinja2 и создание дочернего шаблона&lt;/p&gt;
+&lt;p&gt;http://docs.getpelican.com/en/latest/themes.html#inheritance&lt;/p&gt;
+&lt;p&gt;меняем sidebar&lt;/p&gt;
+&lt;h3&gt;Социальные закладки&lt;/h3&gt;
+&lt;p&gt;google+&lt;/p&gt;
+&lt;h3&gt;Полезные ссылки&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.unix-lab.org/posts/pelican/"&gt;Тут&lt;/a&gt; неплохо описана настройка блога&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>Markdown Syntax.</title><link href="/posts/markdown" rel="alternate"></link><updated>2014-11-01T21:06:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-11-01:posts/markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
+&lt;h3&gt;Заголовки&lt;/h3&gt;
+&lt;p&gt;Уровень заголовка зависит от количества хешей(#) перед строкой&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Заголовок первого уровня (&amp;lt;h1/&amp;gt;) &lt;/span&gt;
+&lt;span class="c"&gt;## Заголовок второго уровня (&amp;lt;h2/&amp;gt;) &lt;/span&gt;
+&lt;span class="c"&gt;### Заголовок третьего уровня (&amp;lt;h3/&amp;gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Главные заголовки так же можно выделить === и --- символами&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;главный заголовок
+=================&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;заголовок 2 уровня
+------------------------&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Списки&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;ненумерованные списки &lt;code&gt;* или -&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;нумерованные - цифрами
+&lt;code&gt;1.
+2.&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Картинки и ссылки&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;вставка ссылки
+&lt;code&gt;[Ссылка на котиков](http://google.com/)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;вставка картинки
+&lt;code&gt;![Описание картинки](http://anyhost.com/1.jpg)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;вставка ссылки &lt;code&gt;[сносками][1]&lt;/code&gt;для большого текста, а внизу описываем ссылку&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;[1]: google.com/ "Сноска"&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Вставки&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Код&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;для вставки кода в строке необходимо выделить текст обратными кавычками &lt;code&gt;`тут код&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;для нескольких строк&lt;code&gt;&amp;lt;pre&amp;gt; тут код&amp;lt;code&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;для выделения кода в блок - используем отступы (Tab) в начале строки и не забываем оставить пустую строку перед блоком кода.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Цитата&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;&amp;gt; цитируемый текст&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Разное&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Абзацы определяются по наличию пустой строки &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Стилизация текста&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;**Жирный текст**&lt;/code&gt; — &lt;strong&gt;Жирный текст&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;*Курсивный текст*&lt;/code&gt; — &lt;em&gt;Курсивный текст&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;***Жирный курсивный текст***&lt;/code&gt; — &lt;strong&gt;&lt;em&gt;Жирный курсивный текст&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Всегда можно использовать обычный html, если что :)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Редакторы&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://stackedit.io/"&gt;stackedit&lt;/a&gt; — удобный онлайн редактор&lt;/li&gt;
+&lt;li&gt;ReText  - оффлайн редактор под linux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Полезные ссылки&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category></entry><entry><title>Pelican. Установка и настройка блога.</title><link href="/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#должен быть установлен pip и git&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; 
 &lt;span class="cp"&gt;# после установки необходимо настроить git &lt;/span&gt;
@@ -80,4 +247,4 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Базовые настройки закончены. Далее расширенные настройки.&lt;/p&gt;</summary><category term="python"></category></entry></feed>
+&lt;p&gt;Базовые настройки закончены. Далее &lt;a href="http://localhost:8000/posts/pelican-extra/"&gt;расширенные настройки&lt;/a&gt;.&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry></feed>

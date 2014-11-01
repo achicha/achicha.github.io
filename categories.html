@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+    <link href="/images/favicon.ico" rel="icon">
 
 
         <meta name="author" content="admin" />
@@ -63,6 +64,10 @@ WebQuant            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
+    <ol class="breadcrumb">
+        <li><a href="" title="WebQuant"><i class="fa fa-home fa-lg"></i></a></li>
+        <li class="active">Categories</li>
+    </ol>
 
     <section id="categories">
         <h1>All Categories for WebQuant</h1>
@@ -70,11 +75,13 @@ WebQuant            </a>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-web">web <span class="badge pull-right">1</span></a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-web">web <span class="badge pull-right">3</span></a>
                     </h4>
                 </div>
                 <div id="collapse-web" class="panel-collapse collapse">
                     <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2014-11-01T21:42:00+03:00">01 Ноябрь 2014</time></span> <a href="/posts/pelican-extra">Pelican. Расширенные настройки.</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2014-11-01T21:06:00+03:00">01 Ноябрь 2014</time></span> <a href="/posts/markdown">Markdown Syntax.</a></p>
                         <p><span class="categories-timestamp"><time datetime="2014-10-27T11:59:00+03:00">27 Октябрь 2014</time></span> <a href="/posts/pelican">Pelican. Установка и настройка блога.</a></p>
                     </div>
                 </div>
@@ -97,8 +104,13 @@ WebQuant            </a>
 
 
             <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-4">
+                <ul class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/pelican.html">
+                            pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
                         <a href="/tag/python.html">
                             python
                         </a>
@@ -110,11 +122,6 @@ WebQuant            </a>
         <li class="list-group-item">
             <a href="http://getpelican.com/" target="_blank">
                 Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your1 config file
             </a>
         </li>
       </ul>

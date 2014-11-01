@@ -9,11 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+    <link href="/images/favicon.ico" rel="icon">
 
 <link rel="canonical" href="/posts/pelican">
 
         <meta name="author" content="admin" />
-        <meta name="keywords" content="python" />
+        <meta name="keywords" content="python,pelican" />
         <meta name="description" content="Пошаговая инструкция по установки блога на Pelican" />
 
 
@@ -60,6 +61,11 @@ WebQuant            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href="" title="WebQuant"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="/category/web.html" title="web">web</a></li>
+                <li class="active">Pelican. Установка и настройка блога.</li>
+            </ol>
 
     <section id="content">
         <article>
@@ -81,10 +87,14 @@ WebQuant            </a>
         <i class="fa fa-calendar"></i><time datetime="2014-10-27T11:59:00+03:00"> 27 Октябрь 2014</time>
     </span>
 
+        <span class="label label-default">Category</span>
+        <a href="/category/web.html">web</a>
 
 
 <span class="label label-default">Tags</span>
 	<a href="/tag/python.html">python</a>
+        /
+	<a href="/tag/pelican.html">pelican</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -169,7 +179,7 @@ WebQuant            </a>
 </pre></div>
 
 
-<p>Базовые настройки закончены. Далее расширенные настройки.</p>
+<p>Базовые настройки закончены. Далее <a href="http://localhost:8000/posts/pelican-extra/">расширенные настройки</a>.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -181,7 +191,6 @@ WebQuant            </a>
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'sitename'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'pelican';
                 var disqus_url = '/posts/pelican';
 
             var disqus_config = function () {
@@ -220,8 +229,13 @@ WebQuant            </a>
 
 
             <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-4">
+                <ul class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/pelican.html">
+                            pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
                         <a href="/tag/python.html">
                             python
                         </a>
@@ -233,11 +247,6 @@ WebQuant            </a>
         <li class="list-group-item">
             <a href="http://getpelican.com/" target="_blank">
                 Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your1 config file
             </a>
         </li>
       </ul>
