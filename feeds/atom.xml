@@ -98,9 +98,6 @@
 Google Analytics&lt;/p&gt;
 &lt;h3&gt;404 error&lt;/h3&gt;
 &lt;p&gt;https://help.github.com/articles/custom-404-pages/&lt;/p&gt;
-&lt;h3&gt;Настраиваем свое доменное имя&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/"&gt;описание c github&lt;/a&gt;
-http://www.circuidipity.com/github-pages.html&lt;/p&gt;
 &lt;h3&gt;Дочерний шаблон&lt;/h3&gt;
 &lt;p&gt;или в отдельную категорию. редактирование шаблона jinja2 и создание дочернего шаблона&lt;/p&gt;
 &lt;p&gt;http://docs.getpelican.com/en/latest/themes.html#inheritance&lt;/p&gt;
@@ -264,4 +261,6 @@ http://www.circuidipity.com/github-pages.html&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Настраиваем свое доменное имя&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/"&gt;описание c github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Базовые настройки закончены. Далее &lt;a href="http://localhost:8000/posts/pelican-extra/"&gt;расширенные настройки&lt;/a&gt;.&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry></feed>
