@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/web.atom.xml" rel="self"></link><id>/</id><updated>2014-11-01T21:42:00+03:00</updated><entry><title>Pelican. Расширенные настройки.</title><link href="/posts/pelican-extra" rel="alternate"></link><updated>2014-11-01T21:42:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Для начала необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="/" rel="alternate"></link><link href="your_site_domain/feeds/web.atom.xml" rel="self"></link><id>/</id><updated>2014-11-01T22:27:00+03:00</updated><entry><title>Базовые команды Linux.</title><link href="/posts/linux-base" rel="alternate"></link><updated>2014-11-01T22:27:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;</summary><category term="linux"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="/posts/git" rel="alternate"></link><updated>2014-11-01T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Базовые настройки&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Your name&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="n"&gt;yourmail&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;example&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+&lt;span class="cp"&gt;#инициализируем&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;
+&lt;span class="cp"&gt;#создаем ssh-key для компьютера&lt;/span&gt;
+&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keygen&lt;/span&gt;
+&lt;span class="cp"&gt;# копируем содержимое ключа из ssh keys для создания ключа на github&lt;/span&gt;
+&lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;id_rsa&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pub&lt;/span&gt;
+&lt;span class="cp"&gt;#клонируем реп с гита # в процессе вводим контрольную фразу 2 раза&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="n"&gt;to_folder&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="git"></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="/posts/pelican-extra" rel="alternate"></link><updated>2014-11-01T21:42:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Для начала необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
 &lt;p&gt;Все изменения вносятся в основной файл настроек pelicanconf.py&lt;/p&gt;
 &lt;h3&gt;Структуризация файлов.&lt;/h3&gt;
 &lt;p&gt;Складываем все посты в отдельную папку.&lt;/p&gt;
@@ -83,7 +99,8 @@ Google Analytics&lt;/p&gt;
 &lt;h3&gt;404 error&lt;/h3&gt;
 &lt;p&gt;https://help.github.com/articles/custom-404-pages/&lt;/p&gt;
 &lt;h3&gt;Настраиваем свое доменное имя&lt;/h3&gt;
-&lt;p&gt;http://www.circuidipity.com/github-pages.html&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/"&gt;описание c github&lt;/a&gt;
+http://www.circuidipity.com/github-pages.html&lt;/p&gt;
 &lt;h3&gt;Дочерний шаблон&lt;/h3&gt;
 &lt;p&gt;или в отдельную категорию. редактирование шаблона jinja2 и создание дочернего шаблона&lt;/p&gt;
 &lt;p&gt;http://docs.getpelican.com/en/latest/themes.html#inheritance&lt;/p&gt;
