@@ -262,5 +262,9 @@ Google Analytics&lt;/p&gt;
 
 
 &lt;h3&gt;Настраиваем свое доменное имя&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/"&gt;описание c github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1.Создаем файл с именем CNAME (пустой, без какого-либо расширения) в папке output
+2. Добавляем в него запись своего домена без www, например : mydomain.com 
+3. Добавляем его на github. Должен измениться домен в username/username.github.io -&amp;gt; settings(снизу в правой боковой колонке) -&amp;gt; github Pages -&amp;gt; your site is published at "your domain" 
+4. Прописываем "А" запись в &lt;a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;DNS настройки&lt;/a&gt; у своего провайдера/хостера. &lt;/p&gt;
+&lt;p&gt;Если не понятно, читаем &lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/"&gt;описание c github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Базовые настройки закончены. Далее &lt;a href="http://localhost:8000/posts/pelican-extra/"&gt;расширенные настройки&lt;/a&gt;.&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry></feed>
