@@ -101,7 +101,7 @@ WebQuant            </a>
                 <h3>подготовка зависимостей</h3>
 <div class="highlight"><pre><span class="cp">#должен быть установлен pip и git</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span> 
-<span class="cp"># после установки необходимо настроить git </span>
+<span class="cp"># после установки необходимо [настроить git](http:</span><span class="c1">//webquant.ru/posts/git/)</span>
 <span class="cp">#устанавливаем Pelican и Markdown</span>
 <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span> <span class="n">markdown</span> 
 <span class="cp">#обновляем pelican до dev версии с github&#39;a</span>
@@ -155,11 +155,11 @@ WebQuant            </a>
 <ul>
 <li>Необходимо ответить "Yes"  при создании блога quickstart</li>
 <li>Нужно иметь аккаунт на github</li>
-<li>Должен быть настроен git</li>
+<li>Должен быть <a href="http://webquant.ru/posts/git/">настроен git</a></li>
 </ul>
 <h5>2. Создаем репозиторий на github:  username.github.io</h5>
 <h5>3. Копируем проект с гитхаба на свой компьютер в папку output своего блога</h5>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">:</span><span class="n">username</span><span class="o">/</span><span class="n">username</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span> <span class="o">~/</span><span class="n">myblog_folder</span><span class="o">/</span><span class="n">output</span>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">:</span><span class="n">achicha</span><span class="o">/</span><span class="n">achicha</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span> <span class="o">~/</span><span class="n">myblog_folder</span><span class="o">/</span><span class="n">output</span>
 </pre></div>
 
 
@@ -180,12 +180,15 @@ WebQuant            </a>
 
 
 <h3>Настраиваем свое доменное имя</h3>
-<p>1.Создаем файл с именем CNAME (пустой, без какого-либо расширения) в папке output
-2. Добавляем в него запись своего домена без www, например : mydomain.com 
-3. Добавляем его на github. Должен измениться домен в username/username.github.io -&gt; settings(снизу в правой боковой колонке) -&gt; github Pages -&gt; your site is published at "your domain" 
-4. Прописываем "А" запись в <a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/">DNS настройки</a> у своего провайдера/хостера. </p>
+<ol>
+<li>Создаем файл с именем CNAME (пустой, без какого-либо расширения) в папке output</li>
+<li>Добавляем в него запись своего домена без www, например : mydomain.com </li>
+<li>Добавляем его на github. Должен измениться домен в username/username.github.io -&gt; settings(снизу в правой боковой колонке) -&gt; github Pages -&gt; your site is published at "your domain" </li>
+<li>Прописываем "А" запись c IP адресом GitHub'a в <a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/">DNS настройки</a> у своего провайдера/хостера. </li>
+<li>Не забыть "А" запись для переадрисации зеркала с "www"</li>
+</ol>
 <p>Если не понятно, читаем <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">описание c github</a></p>
-<p>Базовые настройки закончены. Далее <a href="http://localhost:8000/posts/pelican-extra/">расширенные настройки</a>.</p>
+<p>Базовые настройки закончены. Далее <a href="http://webquant.ru/posts/pelican-extra/">расширенные настройки</a>.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -195,7 +198,7 @@ WebQuant            </a>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'sitename'; // required: replace example with your forum shortname
+            var disqus_shortname = 'httpwebquantru'; // required: replace example with your forum shortname
 
                 var disqus_url = '/posts/pelican';
 
@@ -296,7 +299,7 @@ WebQuant            </a>
     <!-- Disqus -->
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'sitename'; // required: replace example with your forum shortname
+        var disqus_shortname = 'httpwebquantru'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function () {

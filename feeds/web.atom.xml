@@ -15,7 +15,8 @@
 &lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;id_rsa&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pub&lt;/span&gt;
 &lt;span class="cp"&gt;#клонируем реп с гита # в процессе вводим контрольную фразу 2 раза&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="n"&gt;to_folder&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="git"></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="/posts/pelican-extra" rel="alternate"></link><updated>2014-11-01T21:42:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Для начала необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="git"></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="/posts/pelican-extra" rel="alternate"></link><updated>2014-11-01T21:42:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Начало читать в &lt;a href="http://webquant.ru/posts/pelican/"&gt;предыдущей статье&lt;/a&gt;
+Для начала необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
 &lt;p&gt;Все изменения вносятся в основной файл настроек pelicanconf.py&lt;/p&gt;
 &lt;h3&gt;Структуризация файлов.&lt;/h3&gt;
 &lt;p&gt;Складываем все посты в отдельную папку.&lt;/p&gt;
@@ -183,7 +184,7 @@ Google Analytics&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category></entry><entry><title>Pelican. Установка и настройка блога.</title><link href="/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#должен быть установлен pip и git&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; 
-&lt;span class="cp"&gt;# после установки необходимо настроить git &lt;/span&gt;
+&lt;span class="cp"&gt;# после установки необходимо [настроить git](http:&lt;/span&gt;&lt;span class="c1"&gt;//webquant.ru/posts/git/)&lt;/span&gt;
 &lt;span class="cp"&gt;#устанавливаем Pelican и Markdown&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt; 
 &lt;span class="cp"&gt;#обновляем pelican до dev версии с github&amp;#39;a&lt;/span&gt;
@@ -237,11 +238,11 @@ Google Analytics&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Необходимо ответить "Yes"  при создании блога quickstart&lt;/li&gt;
 &lt;li&gt;Нужно иметь аккаунт на github&lt;/li&gt;
-&lt;li&gt;Должен быть настроен git&lt;/li&gt;
+&lt;li&gt;Должен быть &lt;a href="http://webquant.ru/posts/git/"&gt;настроен git&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5&gt;2. Создаем репозиторий на github:  username.github.io&lt;/h5&gt;
 &lt;h5&gt;3. Копируем проект с гитхаба на свой компьютер в папку output своего блога&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;myblog_folder&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;achicha&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;achicha&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;myblog_folder&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -262,9 +263,12 @@ Google Analytics&lt;/p&gt;
 
 
 &lt;h3&gt;Настраиваем свое доменное имя&lt;/h3&gt;
-&lt;p&gt;1.Создаем файл с именем CNAME (пустой, без какого-либо расширения) в папке output
-2. Добавляем в него запись своего домена без www, например : mydomain.com 
-3. Добавляем его на github. Должен измениться домен в username/username.github.io -&amp;gt; settings(снизу в правой боковой колонке) -&amp;gt; github Pages -&amp;gt; your site is published at "your domain" 
-4. Прописываем "А" запись в &lt;a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;DNS настройки&lt;/a&gt; у своего провайдера/хостера. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Создаем файл с именем CNAME (пустой, без какого-либо расширения) в папке output&lt;/li&gt;
+&lt;li&gt;Добавляем в него запись своего домена без www, например : mydomain.com &lt;/li&gt;
+&lt;li&gt;Добавляем его на github. Должен измениться домен в username/username.github.io -&amp;gt; settings(снизу в правой боковой колонке) -&amp;gt; github Pages -&amp;gt; your site is published at "your domain" &lt;/li&gt;
+&lt;li&gt;Прописываем "А" запись c IP адресом GitHub'a в &lt;a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;DNS настройки&lt;/a&gt; у своего провайдера/хостера. &lt;/li&gt;
+&lt;li&gt;Не забыть "А" запись для переадрисации зеркала с "www"&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Если не понятно, читаем &lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/"&gt;описание c github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Базовые настройки закончены. Далее &lt;a href="http://localhost:8000/posts/pelican-extra/"&gt;расширенные настройки&lt;/a&gt;.&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry></feed>
+&lt;p&gt;Базовые настройки закончены. Далее &lt;a href="http://webquant.ru/posts/pelican-extra/"&gt;расширенные настройки&lt;/a&gt;.&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry></feed>
