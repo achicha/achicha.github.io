@@ -1,7 +1,64 @@
-User-agent: Yandex
-Disallow: /content/
-
 User-agent: *
-Disallow: /content/
-Sitemap: http://site_name/sitemap.xml
-Host: site_name
+Allow: /images/
+Allow: /posts/
+Allow: /index.html
+Disallow: /category/
+Disallow: /author/
+Disallow: /feeds/
+Disallow: /about/
+Disallow: /tag/
+Disallow: */comment-
+Disallow: */comments
+Disallow: /*?*
+Disallow: /?s=
+Disallow: /archives.html
+Disallow: /authors.html
+Disallow: /categories.html
+
+User-agent: Googlebot
+Allow: /images/
+Allow: /posts/
+Allow: /index.html
+Disallow: /category/
+Disallow: /author/
+Disallow: /feeds/
+Disallow: /about/
+Disallow: /tag/
+Disallow: */comment-
+Disallow: */comments
+Disallow: /*?*
+Disallow: /?s=
+Disallow: /archives.html
+Disallow: /authors.html
+Disallow: /categories.html
+
+User-agent: Yandex
+Allow: /images/
+Allow: /posts/
+Allow: /index.html
+Disallow: /category/
+Disallow: /author/
+Disallow: /feeds/
+Disallow: /about/
+Disallow: /tag/
+Disallow: */comment-
+Disallow: */comments
+Disallow: /*?*
+Disallow: /?s=
+Disallow: /archives.html
+Disallow: /authors.html
+Disallow: /categories.html
+
+Host: webquant.ru
+Sitemap: http://webquant.ru/sitemap.xml
+
+
+
+User-agent: Googlebot-Image
+Allow: /images/
+ 
+User-agent: YandexImages
+Allow: /images/
+ 
+User-agent: ia_archiver
+Disallow: /
