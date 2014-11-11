@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="your_site_domain/feeds/all.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-01T22:27:00+03:00</updated><entry><title>Базовые команды Linux.</title><link href="http://webquant.ru/posts/linux-base" rel="alternate"></link><updated>2014-11-01T22:27:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;</summary><category term="linux"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-01T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="your_site_domain/feeds/all.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-08T13:37:00+03:00</updated><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-08T13:37:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;thefanclub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
+&lt;span class="cp"&gt;#в поиске набираем Grive setup и следуем инструкциям&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Отключаем комерческий сервис в меню Dash&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="n"&gt;gsettings&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;canonical&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Unity&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Lenses&lt;/span&gt; &lt;span class="n"&gt;disabled&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;scopes&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;[&amp;#39;more_suggestions-amazon.scope&amp;#39;, &amp;#39;more_suggestions-u1ms.scope&amp;#39;, &amp;#39;more_suggestions-populartracks.scope&amp;#39;, &amp;#39;music-musicstore.scope&amp;#39;, &amp;#39;more_suggestions-ebay.scope&amp;#39;, &amp;#39;more_suggestions-ubuntushop.scope&amp;#39;, &amp;#39;more_suggestions-skimlinks.scope&amp;#39;]&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Добавляем ключ от репозитория&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;adv&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;keyserver&lt;/span&gt; &lt;span class="n"&gt;keyserver&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;recv&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;FC91AE7E&lt;/span&gt; 
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Разблокировать dpkg&lt;/h3&gt;
+&lt;p&gt;Часто появляется ошибка: &lt;em&gt;Unable to lock the administration directory (/var/lib/dpkg/) is another process using it&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;process&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="mi"&gt;2345&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Создание загрузочной флешки из образа диска&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;dd&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iso&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sdb&lt;/span&gt; &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;ставить на форматированную fat32 флешку.&lt;/li&gt;
+&lt;li&gt;включить галку - загрузочный диск.&lt;/li&gt;
+&lt;li&gt;ставлю на sdb раздел, на sdb1 не получается.&lt;/li&gt;
+&lt;li&gt;bs=16m сколько за раз записывается.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Как удалить приложение со всеми зависимостями&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;remove&lt;/span&gt; &lt;span class="n"&gt;firefox&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;звездочку&lt;/span&gt; &lt;span class="err"&gt;добавляем&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Базовые команды Linux.</title><link href="http://webquant.ru/posts/linux-base" rel="alternate"></link><updated>2014-11-01T22:27:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;Folder&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#переходим&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="p"&gt;..&lt;/span&gt; &lt;span class="err"&gt;#на&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;уровень&lt;/span&gt; &lt;span class="err"&gt;вверх&lt;/span&gt;
+&lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt;
+&lt;span class="n"&gt;mkdir&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-01T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -15,37 +60,46 @@
 &lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;id_rsa&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pub&lt;/span&gt;
 &lt;span class="cp"&gt;#клонируем реп с гита # в процессе вводим контрольную фразу 2 раза&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="n"&gt;to_folder&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="git"></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="http://webquant.ru/posts/pelican-extra" rel="alternate"></link><updated>2014-11-01T21:42:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Начало читать в &lt;a href="http://webquant.ru/posts/pelican/"&gt;предыдущей статье&lt;/a&gt;
-Для начала необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
-&lt;p&gt;Все изменения вносятся в основной файл настроек pelicanconf.py&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="git"></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="http://webquant.ru/posts/pelican-extra" rel="alternate"></link><updated>2014-11-01T21:42:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Начало читаем в &lt;a href="http://webquant.ru/posts/pelican/"&gt;предыдущей статье&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Чтобы было полегче с настройками, необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
+&lt;p&gt;Все изменения вносятся в основной файл настроек &lt;strong&gt;&lt;em&gt;pelicanconf.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;Структуризация файлов.&lt;/h3&gt;
-&lt;p&gt;Складываем все посты в отдельную папку.&lt;/p&gt;
+&lt;p&gt;Для обеспечения порятка в файлах, складываем все посты в отдельную папку.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;OUTPUT_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;articles&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;articles&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;articles&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;BREADCRUMBS&lt;/h3&gt;
+&lt;h2&gt;Установка доп плагинов&lt;/h2&gt;
+&lt;h4&gt;Disqus - Добавляем коментарии к постам&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#нужно установить плагин и настроить&lt;/span&gt;
+&lt;span class="n"&gt;DISQUS_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;shortname&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;DISQUS_NO_ID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Pygments - для подсветки кода в блоках.&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#устанавливаем pygments и настраиваем, если не установлено по дефолту&lt;/span&gt;
+&lt;span class="n"&gt;PYGMENTS_STYLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;zenburn&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Немного о SEO&lt;/h2&gt;
+&lt;h4&gt;BREADCRUMBS&lt;/h4&gt;
 &lt;p&gt;Или хлебные крошки - для улучшения навигации по сайту.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;DISPLAY_BREADCRUMBS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
 &lt;span class="n"&gt;DISPLAY_CATEGORY_IN_BREADCRUMBS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Pygments для подсветки кода в блоках.&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#устанавливаем pygments и настраиваем, если не установлено по дефолту&lt;/span&gt;
-&lt;span class="n"&gt;PYGMENTS_STYLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;zenburn&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Favicon - иконка для сайта.&lt;/h3&gt;
-&lt;p&gt;Копируем картинку &lt;em&gt;.png или &lt;/em&gt;.ico в наш проект и настраиваем&lt;/p&gt;
+&lt;h4&gt;Favicon - иконка для сайта.&lt;/h4&gt;
+&lt;p&gt;Копируем картинку &lt;em&gt;.png или &lt;/em&gt;.ico в наш проект и указываем путь&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;FAVICON&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;images&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;favicon&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ico&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Robots.txt&lt;/h3&gt;
+&lt;h4&gt;Robots.txt&lt;/h4&gt;
 &lt;p&gt;Для лучшей индексации сайта роботами, так же можно запретить индекс различный файлов.
 Необходимо создать robots.txt в корне папки output и прописать необходимые настройки:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;agent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Yandex&lt;/span&gt;
@@ -58,7 +112,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Облако тегов&lt;/h3&gt;
+&lt;h4&gt;Облако тегов&lt;/h4&gt;
+&lt;p&gt;Если нужно, то включаем облако тегов в sidebar.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# отображение тегов&lt;/span&gt;
 &lt;span class="n"&gt;DISPLAY_TAGS_ON_SIDEBAR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
 &lt;span class="cp"&gt;# показывать в облаке или списком&lt;/span&gt;
@@ -66,11 +121,11 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Sitemap&lt;/h3&gt;
-&lt;p&gt;Для улучшения индексации сайта в поисковиках. XML карта сайта&lt;/p&gt;
+&lt;h4&gt;Sitemap&lt;/h4&gt;
+&lt;p&gt;XML карта сайта. Для улучшения индексации сайта в поисковиках. &lt;/p&gt;
 &lt;p&gt;1) скачиваем плагин 
 &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap"&gt;sitemap&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;2) устанавливаем в папку plugins&lt;/p&gt;
+&lt;p&gt;2) устанавливаем в любую папку, например plugins&lt;/p&gt;
 &lt;p&gt;3) прописываем настройки:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# Plugins&lt;/span&gt;
 &lt;span class="n"&gt;PLUGIN_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;plugins&amp;quot;&lt;/span&gt;
@@ -92,21 +147,40 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;4) читаем &lt;a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions"&gt;мануал по настройкам&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Метатеги + SEO&lt;/h3&gt;
-&lt;h3&gt;Установка доп плагинов&lt;/h3&gt;
-&lt;h3&gt;Disqus&lt;/h3&gt;
-&lt;p&gt;DISQUS_SITENAME = 'Your website's shortname'
-DISQUS_NO_ID = True&lt;/p&gt;
-&lt;h3&gt;Google Analytics&lt;/h3&gt;
-&lt;h3&gt;404 error&lt;/h3&gt;
+&lt;p&gt;4) читаем &lt;a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions"&gt;мануал по настройкам&lt;/a&gt;, если необходима произвольная настройка.&lt;/p&gt;
+&lt;h4&gt;Метатеги&lt;/h4&gt;
+&lt;h4&gt;404 error&lt;/h4&gt;
 &lt;p&gt;https://help.github.com/articles/custom-404-pages/&lt;/p&gt;
+&lt;h4&gt;Google+&lt;/h4&gt;
+&lt;p&gt;Синхронизируем свой сайт с гугл+:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Социальные закладки&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/achicha&amp;#39;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;myblog&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//webquant.ru&amp;#39;),)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Аналитика&lt;/h2&gt;
+&lt;h4&gt;Google Analytics&lt;/h4&gt;
+&lt;p&gt;1) Устанавливаем код аналитики в шаблон и добавляем запись&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;GOOGLE_ANALYTICS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;UA&lt;/span&gt;&lt;span class="o"&gt;-******&lt;/span&gt;&lt;span class="n"&gt;your_code&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;GOOGLE_ANALYTICS_DOMAIN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//webquant.ru/&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;2) Добавляем сайт в google &lt;a href="www.google.com/analytics"&gt;analytics&lt;/a&gt; и &lt;a href="www.google.com/webmasters"&gt;webmaster&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3) добавляем в вебмастере sitemap&lt;/p&gt;
+&lt;p&gt;4) проверяем robots.txt на наличие ошибок&lt;/p&gt;
+&lt;h4&gt;Яндекс Метрика&lt;/h4&gt;
+&lt;p&gt;1) Устанавливаем код аналитики в шаблон и добавляем запись&lt;/p&gt;
+&lt;p&gt;2) сообщаем о новом сайте в &lt;a href="http://webmaster.yandex.ru/"&gt;Яндекс Вебмастере&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3) добавляем сайт в метрику&lt;/p&gt;
 &lt;h3&gt;Дочерний шаблон&lt;/h3&gt;
 &lt;p&gt;или в отдельную категорию. редактирование шаблона jinja2 и создание дочернего шаблона&lt;/p&gt;
 &lt;p&gt;http://docs.getpelican.com/en/latest/themes.html#inheritance&lt;/p&gt;
 &lt;p&gt;меняем sidebar&lt;/p&gt;
-&lt;h3&gt;Социальные закладки&lt;/h3&gt;
-&lt;p&gt;google+&lt;/p&gt;
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
@@ -140,7 +214,7 @@ DISQUS_NO_ID = True&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;вставка ссылки
-&lt;code&gt;[Ссылка на котиков](http://google.com/)&lt;/code&gt;&lt;/p&gt;
+&lt;code&gt;[Тут ссылка на](http://google.com/)&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;вставка картинки
@@ -183,94 +257,4 @@ DISQUS_NO_ID = True&lt;/p&gt;
 &lt;li&gt;ReText  - оффлайн редактор под linux&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category></entry><entry><title>Pelican. Установка и настройка блога.</title><link href="http://webquant.ru/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;подготовка зависимостей&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#должен быть установлен pip и git&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; 
-&lt;span class="cp"&gt;# после установки необходимо [настроить git](http:&lt;/span&gt;&lt;span class="c1"&gt;//webquant.ru/posts/git/)&lt;/span&gt;
-&lt;span class="cp"&gt;#устанавливаем Pelican и Markdown&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt; 
-&lt;span class="cp"&gt;#обновляем pelican до dev версии с github&amp;#39;a&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/getpelican/pelican#egg=pelican --upgrade&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;базовая настройка pelican&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
-&lt;span class="cp"&gt;#Ответы на вопросы&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;установка новой темы&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# переходим в папку с темами&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;python2&lt;/span&gt;&lt;span class="mf"&gt;.7&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dist&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
-&lt;span class="cp"&gt;# копируем одну из тем из  &lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/DandyDev/pelican-bootstrap3.git&lt;/span&gt;
-&lt;span class="cp"&gt;# смотрим путь до нашей темы &lt;/span&gt;
-&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; 
-&lt;span class="cp"&gt;# устанавливаем тему&lt;/span&gt;
-&lt;span class="cp"&gt;# добавляем переменную THEME=/path/to/my_theme в pelicanconf.py&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;создание первого поста&lt;/h3&gt;
-&lt;p&gt;После настройки проекта создадим первый пост в папке content. Для этого необходимо создать новый файл с расширением *.md (Markdown) следующего содержания:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="err"&gt;Установка&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;настройка&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
-&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;27&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;59&lt;/span&gt;
-&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt;
-&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;теги&lt;/span&gt;
-&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;span class="n"&gt;Author&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;admin&lt;/span&gt;
-&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;Пошаговая&lt;/span&gt; &lt;span class="err"&gt;инструкция&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;установки&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt; &lt;span class="err"&gt;на&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
-
-&lt;span class="err"&gt;Мой&lt;/span&gt; &lt;span class="err"&gt;первый&lt;/span&gt; &lt;span class="err"&gt;пост&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;редактирование статьи&lt;/h3&gt;
-&lt;p&gt;Запустим devserver для редактирования статьи и автоматического обновления сайта в реальном времени:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;devserver&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;запуск&lt;/span&gt;
-&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;остановка&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;после запуска локального сервера смотреть его тут
-&lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;перенос блога на сервер github&lt;/h3&gt;
-&lt;h5&gt;1. Подготовка&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;Необходимо ответить "Yes"  при создании блога quickstart&lt;/li&gt;
-&lt;li&gt;Нужно иметь аккаунт на github&lt;/li&gt;
-&lt;li&gt;Должен быть &lt;a href="http://webquant.ru/posts/git/"&gt;настроен git&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;2. Создаем репозиторий на github:  username.github.io&lt;/h5&gt;
-&lt;h5&gt;3. Копируем проект с гитхаба на свой компьютер в папку output своего блога&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;achicha&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;achicha&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;myblog_folder&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5&gt;4. работа с git&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#переходим в папку, где находяться сгенерированные файлы&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;myblog_folder&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
-&lt;span class="cp"&gt;# инициализируем гит&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; 
-&lt;span class="cp"&gt;# добавляем все файлы в локальный проект&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; 
-&lt;span class="cp"&gt;# узнаем какие файлы добавлены в проект и в какой ветке (master/slave) работаем&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; 
-&lt;span class="cp"&gt;# добавляем коммит&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;Commit&lt;/span&gt; &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt; 
-&lt;span class="cp"&gt;# добавляем измененные файлы на сервер&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Настраиваем свое доменное имя&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Создаем файл с именем CNAME (пустой, без какого-либо расширения) в папке output&lt;/li&gt;
-&lt;li&gt;Добавляем в него запись своего домена без www, например : mydomain.com &lt;/li&gt;
-&lt;li&gt;Добавляем его на github. Должен измениться домен в username/username.github.io -&amp;gt; settings(снизу в правой боковой колонке) -&amp;gt; github Pages -&amp;gt; your site is published at "your domain" &lt;/li&gt;
-&lt;li&gt;Прописываем "А" запись c IP адресом GitHub'a в &lt;a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;DNS настройки&lt;/a&gt; у своего провайдера/хостера. &lt;/li&gt;
-&lt;li&gt;Не забыть "А" запись для переадрисации зеркала с "www"&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Если не понятно, читаем &lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/"&gt;описание c github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Базовые настройки закончены. Далее &lt;a href="http://webquant.ru/posts/pelican-extra/"&gt;расширенные настройки&lt;/a&gt;.&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry></feed>
+&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category></entry></feed>

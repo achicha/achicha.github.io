@@ -46,6 +46,9 @@ WebQuant            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://webquant.ru/category/linux.html">Linux</a>
+                        </li>
                         <li class="active">
                             <a href="http://webquant.ru/category/web.html">Web</a>
                         </li>
@@ -98,37 +101,46 @@ WebQuant            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Начало читать в <a href="http://webquant.ru/posts/pelican/">предыдущей статье</a>
-Для начала необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)</p>
-<p>Все изменения вносятся в основной файл настроек pelicanconf.py</p>
+                <p>Начало читаем в <a href="http://webquant.ru/posts/pelican/">предыдущей статье</a>.</p>
+<p>Чтобы было полегче с настройками, необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)</p>
+<p>Все изменения вносятся в основной файл настроек <strong><em>pelicanconf.py</em></strong></p>
 <h3>Структуризация файлов.</h3>
-<p>Складываем все посты в отдельную папку.</p>
+<p>Для обеспечения порятка в файлах, складываем все посты в отдельную папку.</p>
 <div class="highlight"><pre><span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">output</span><span class="o">/</span><span class="n">articles</span><span class="o">/</span><span class="err">&#39;</span>
 <span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">articles</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="err">&#39;</span>
 <span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">articles</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="err">&#39;</span>
 </pre></div>
 
 
-<h3>BREADCRUMBS</h3>
+<h2>Установка доп плагинов</h2>
+<h4>Disqus - Добавляем коментарии к постам</h4>
+<div class="highlight"><pre><span class="cp">#нужно установить плагин и настроить</span>
+<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">Your</span> <span class="n">website</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">shortname</span><span class="err">&#39;</span>
+<span class="n">DISQUS_NO_ID</span> <span class="o">=</span> <span class="n">True</span>
+</pre></div>
+
+
+<h4>Pygments - для подсветки кода в блоках.</h4>
+<div class="highlight"><pre><span class="cp">#устанавливаем pygments и настраиваем, если не установлено по дефолту</span>
+<span class="n">PYGMENTS_STYLE</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">zenburn</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<h2>Немного о SEO</h2>
+<h4>BREADCRUMBS</h4>
 <p>Или хлебные крошки - для улучшения навигации по сайту.</p>
 <div class="highlight"><pre><span class="n">DISPLAY_BREADCRUMBS</span> <span class="o">=</span> <span class="n">True</span>
 <span class="n">DISPLAY_CATEGORY_IN_BREADCRUMBS</span> <span class="o">=</span> <span class="n">True</span>
 </pre></div>
 
 
-<h3>Pygments для подсветки кода в блоках.</h3>
-<div class="highlight"><pre><span class="cp">#устанавливаем pygments и настраиваем, если не установлено по дефолту</span>
-<span class="n">PYGMENTS_STYLE</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">zenburn</span><span class="err">&#39;</span>
-</pre></div>
-
-
-<h3>Favicon - иконка для сайта.</h3>
-<p>Копируем картинку <em>.png или </em>.ico в наш проект и настраиваем</p>
+<h4>Favicon - иконка для сайта.</h4>
+<p>Копируем картинку <em>.png или </em>.ico в наш проект и указываем путь</p>
 <div class="highlight"><pre><span class="n">FAVICON</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">images</span><span class="o">/</span><span class="n">favicon</span><span class="p">.</span><span class="n">ico</span><span class="err">&#39;</span>
 </pre></div>
 
 
-<h3>Robots.txt</h3>
+<h4>Robots.txt</h4>
 <p>Для лучшей индексации сайта роботами, так же можно запретить индекс различный файлов.
 Необходимо создать robots.txt в корне папки output и прописать необходимые настройки:</p>
 <div class="highlight"><pre><span class="n">User</span><span class="o">-</span><span class="n">agent</span><span class="o">:</span> <span class="n">Yandex</span>
@@ -141,7 +153,8 @@ WebQuant            </a>
 </pre></div>
 
 
-<h3>Облако тегов</h3>
+<h4>Облако тегов</h4>
+<p>Если нужно, то включаем облако тегов в sidebar.</p>
 <div class="highlight"><pre><span class="cp"># отображение тегов</span>
 <span class="n">DISPLAY_TAGS_ON_SIDEBAR</span> <span class="o">=</span> <span class="n">True</span>
 <span class="cp"># показывать в облаке или списком</span>
@@ -149,11 +162,11 @@ WebQuant            </a>
 </pre></div>
 
 
-<h3>Sitemap</h3>
-<p>Для улучшения индексации сайта в поисковиках. XML карта сайта</p>
+<h4>Sitemap</h4>
+<p>XML карта сайта. Для улучшения индексации сайта в поисковиках. </p>
 <p>1) скачиваем плагин 
 <a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap">sitemap</a></p>
-<p>2) устанавливаем в папку plugins</p>
+<p>2) устанавливаем в любую папку, например plugins</p>
 <p>3) прописываем настройки:</p>
 <div class="highlight"><pre><span class="cp"># Plugins</span>
 <span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s">&quot;plugins&quot;</span>
@@ -175,21 +188,40 @@ WebQuant            </a>
 </pre></div>
 
 
-<p>4) читаем <a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions">мануал по настройкам</a></p>
-<h3>Метатеги + SEO</h3>
-<h3>Установка доп плагинов</h3>
-<h3>Disqus</h3>
-<p>DISQUS_SITENAME = 'Your website's shortname'
-DISQUS_NO_ID = True</p>
-<h3>Google Analytics</h3>
-<h3>404 error</h3>
+<p>4) читаем <a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions">мануал по настройкам</a>, если необходима произвольная настройка.</p>
+<h4>Метатеги</h4>
+<h4>404 error</h4>
 <p>https://help.github.com/articles/custom-404-pages/</p>
+<h4>Google+</h4>
+<p>Синхронизируем свой сайт с гугл+:</p>
+<ol>
+<li></li>
+</ol>
+<h4>Социальные закладки</h4>
+<div class="highlight"><pre><span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="err">&#39;</span><span class="n">github</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//github.com/achicha&#39;),</span>
+        <span class="p">(</span><span class="err">&#39;</span><span class="n">myblog</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//webquant.ru&#39;),)</span>
+</pre></div>
+
+
+<h2>Аналитика</h2>
+<h4>Google Analytics</h4>
+<p>1) Устанавливаем код аналитики в шаблон и добавляем запись</p>
+<div class="highlight"><pre><span class="n">GOOGLE_ANALYTICS</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">UA</span><span class="o">-******</span><span class="n">your_code</span><span class="err">&#39;</span>
+<span class="n">GOOGLE_ANALYTICS_DOMAIN</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//webquant.ru/&#39;</span>
+</pre></div>
+
+
+<p>2) Добавляем сайт в google <a href="www.google.com/analytics">analytics</a> и <a href="www.google.com/webmasters">webmaster</a></p>
+<p>3) добавляем в вебмастере sitemap</p>
+<p>4) проверяем robots.txt на наличие ошибок</p>
+<h4>Яндекс Метрика</h4>
+<p>1) Устанавливаем код аналитики в шаблон и добавляем запись</p>
+<p>2) сообщаем о новом сайте в <a href="http://webmaster.yandex.ru/">Яндекс Вебмастере</a></p>
+<p>3) добавляем сайт в метрику</p>
 <h3>Дочерний шаблон</h3>
 <p>или в отдельную категорию. редактирование шаблона jinja2 и создание дочернего шаблона</p>
 <p>http://docs.getpelican.com/en/latest/themes.html#inheritance</p>
 <p>меняем sidebar</p>
-<h3>Социальные закладки</h3>
-<p>google+</p>
 <h3>Полезные ссылки</h3>
 <ul>
 <li><a href="https://github.com/DandyDev/pelican-bootstrap3">my blog theme</a></li>
@@ -243,30 +275,6 @@ DISQUS_NO_ID = True</p>
 
 
 
-            <li class="list-group-item"><a href="http://webquant.ru/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-4">
-                        <a href="http://webquant.ru/tag/git.html">
-                            git
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://webquant.ru/tag/linux.html">
-                            linux
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="http://webquant.ru/tag/pelican.html">
-                            pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="http://webquant.ru/tag/python.html">
-                            python
-                        </a>
-                    </li>
-                </ul>
-            </li>
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
       <ul class="list-group" id="links">
         <li class="list-group-item">
