@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="your_site_domain/feeds/web.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-01T22:18:00+03:00</updated><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-01T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/web.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-22T12:00:00+03:00</updated><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-22T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -140,6 +140,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.unix-lab.org/posts/pelican/"&gt;Тут&lt;/a&gt; неплохо описана настройка блога&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.1.1/settings.html"&gt;все настройки Pelican&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>Markdown Syntax.</title><link href="http://webquant.ru/posts/markdown" rel="alternate"></link><updated>2014-11-01T21:06:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
 &lt;h3&gt;Заголовки&lt;/h3&gt;
 &lt;p&gt;Уровень заголовка зависит от количества хешей(#) перед строкой&lt;/p&gt;

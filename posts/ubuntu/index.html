@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="http://webquant.ru/images/favicon.ico" rel="icon">
+    <link href="../../favicon.ico" rel="icon">
 
-<link rel="canonical" href="http://webquant.ru/posts/ubuntu">
+<link rel="canonical" href="../../posts/ubuntu">
 
         <meta name="author" content="admin" />
         <meta name="keywords" content="linux" />
@@ -20,13 +20,13 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://webquant.ru/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="http://webquant.ru/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="http://webquant.ru/theme/css/pygments/zenburn.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://webquant.ru/theme/css/style.css" type="text/css"/>
+    <link href="../../theme/css/pygments/zenburn.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../theme/css/style.css" type="text/css"/>
 
-        <link href="http://webquant.ru/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="WebQuant ATOM Feed"/>
 
 </head>
@@ -41,20 +41,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://webquant.ru/" class="navbar-brand">
+            <a href="../../" class="navbar-brand">
 WebQuant            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="http://webquant.ru/category/linux.html">Linux</a>
+                            <a href="../../category/linux">Linux</a>
                         </li>
                         <li >
-                            <a href="http://webquant.ru/category/web.html">Web</a>
+                            <a href="../../category/web">Web</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://webquant.ru/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li><a href="../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -65,8 +65,8 @@ WebQuant            </a>
     <div class="row">
         <div class="col-sm-9">
             <ol class="breadcrumb">
-                <li><a href="http://webquant.ru" title="WebQuant"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="http://webquant.ru/category/linux.html" title="linux">linux</a></li>
+                <li><a href="../.." title="WebQuant"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="../../category/linux" title="linux">linux</a></li>
                 <li class="active">Настраиваем Ubuntu после запуска.</li>
             </ol>
 
@@ -74,7 +74,7 @@ WebQuant            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://webquant.ru/posts/ubuntu"
+                    <a href="../../posts/ubuntu"
                        rel="bookmark"
                        title="Permalink to Настраиваем Ubuntu после запуска.">
                         Настраиваем Ubuntu после запуска.
@@ -91,11 +91,11 @@ WebQuant            </a>
     </span>
 
         <span class="label label-default">Category</span>
-        <a href="http://webquant.ru/category/linux.html">linux</a>
+        <a href="../../category/linux">linux</a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://webquant.ru/tag/linux.html">linux</a>
+	<a href="../../tag/linux.html">linux</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -109,12 +109,6 @@ WebQuant            </a>
 
 <h3>Отключаем комерческий сервис в меню Dash</h3>
 <div class="highlight"><pre> <span class="n">gsettings</span> <span class="n">set</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Lenses</span> <span class="n">disabled</span><span class="o">-</span><span class="n">scopes</span> <span class="s">&quot;[&#39;more_suggestions-amazon.scope&#39;, &#39;more_suggestions-u1ms.scope&#39;, &#39;more_suggestions-populartracks.scope&#39;, &#39;music-musicstore.scope&#39;, &#39;more_suggestions-ebay.scope&#39;, &#39;more_suggestions-ubuntushop.scope&#39;, &#39;more_suggestions-skimlinks.scope&#39;]&quot;</span>
-</pre></div>
-
-
-<h3>Добавляем ключ от репозитория</h3>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="p">.</span><span class="n">ubuntu</span><span class="p">.</span><span class="n">com</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="n">FC91AE7E</span> 
-<span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">list</span>
 </pre></div>
 
 
@@ -140,6 +134,18 @@ WebQuant            </a>
 <h3>Как удалить приложение со всеми зависимостями</h3>
 <div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">remove</span> <span class="n">firefox</span><span class="o">*</span> <span class="err">#</span> <span class="err">звездочку</span> <span class="err">добавляем</span>
 </pre></div>
+
+
+<h3>VLC</h3>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">djcj</span><span class="o">/</span><span class="n">vlc</span><span class="o">-</span><span class="n">stable</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">vlc</span>
+</pre></div>
+
+
+<h3>Добавляем ключ от репозитория (как пример)</h3>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="p">.</span><span class="n">ubuntu</span><span class="p">.</span><span class="n">com</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="n">FC91AE7E</span> 
+<span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">list</span>
+</pre></div>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -151,7 +157,7 @@ WebQuant            </a>
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'httpwebquantru'; // required: replace example with your forum shortname
 
-                var disqus_url = 'http://webquant.ru/posts/ubuntu';
+                var disqus_url = '../../posts/ubuntu';
 
             var disqus_config = function () {
                 this.language = "ru";
@@ -215,13 +221,13 @@ WebQuant            </a>
       </div>
    </div>
 </footer>
-<script src="http://webquant.ru/theme/js/jquery.min.js"></script>
+<script src="../../theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://webquant.ru/theme/js/bootstrap.min.js"></script>
+<script src="../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://webquant.ru/theme/js/respond.min.js"></script>
+<script src="../../theme/js/respond.min.js"></script>
 
     <!-- Disqus -->
     <script type="text/javascript">

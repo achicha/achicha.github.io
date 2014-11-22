@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="your_site_domain/feeds/atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-08T13:37:00+03:00</updated><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-08T13:37:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-22T12:00:00+03:00</updated><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-08T13:37:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;thefanclub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
@@ -9,12 +9,6 @@
 
 &lt;h3&gt;Отключаем комерческий сервис в меню Dash&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="n"&gt;gsettings&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;canonical&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Unity&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Lenses&lt;/span&gt; &lt;span class="n"&gt;disabled&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;scopes&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;[&amp;#39;more_suggestions-amazon.scope&amp;#39;, &amp;#39;more_suggestions-u1ms.scope&amp;#39;, &amp;#39;more_suggestions-populartracks.scope&amp;#39;, &amp;#39;music-musicstore.scope&amp;#39;, &amp;#39;more_suggestions-ebay.scope&amp;#39;, &amp;#39;more_suggestions-ubuntushop.scope&amp;#39;, &amp;#39;more_suggestions-skimlinks.scope&amp;#39;]&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Добавляем ключ от репозитория&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;adv&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;keyserver&lt;/span&gt; &lt;span class="n"&gt;keyserver&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;recv&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;FC91AE7E&lt;/span&gt; 
-&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -39,12 +33,25 @@
 &lt;/ol&gt;
 &lt;h3&gt;Как удалить приложение со всеми зависимостями&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;remove&lt;/span&gt; &lt;span class="n"&gt;firefox&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;звездочку&lt;/span&gt; &lt;span class="err"&gt;добавляем&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;VLC&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;djcj&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vlc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stable&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;vlc&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Добавляем ключ от репозитория (как пример)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;adv&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;keyserver&lt;/span&gt; &lt;span class="n"&gt;keyserver&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;recv&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;FC91AE7E&lt;/span&gt; 
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Базовые команды Linux.</title><link href="http://webquant.ru/posts/linux-base" rel="alternate"></link><updated>2014-11-01T22:27:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;Folder&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#переходим&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt;
 &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="p"&gt;..&lt;/span&gt; &lt;span class="err"&gt;#на&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;уровень&lt;/span&gt; &lt;span class="err"&gt;вверх&lt;/span&gt;
 &lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt;
 &lt;span class="n"&gt;mkdir&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-01T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
+&lt;span class="n"&gt;pwd&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;какой&lt;/span&gt; &lt;span class="err"&gt;директории&lt;/span&gt; &lt;span class="err"&gt;мы&lt;/span&gt; &lt;span class="err"&gt;сейчас&lt;/span&gt; &lt;span class="err"&gt;находимся&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-22T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -185,6 +192,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.unix-lab.org/posts/pelican/"&gt;Тут&lt;/a&gt; неплохо описана настройка блога&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.1.1/settings.html"&gt;все настройки Pelican&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>Markdown Syntax.</title><link href="http://webquant.ru/posts/markdown" rel="alternate"></link><updated>2014-11-01T21:06:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
 &lt;h3&gt;Заголовки&lt;/h3&gt;
 &lt;p&gt;Уровень заголовка зависит от количества хешей(#) перед строкой&lt;/p&gt;
