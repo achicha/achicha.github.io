@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/all.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-22T12:00:00+03:00</updated><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-08T13:37:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/all.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-22T12:50:00+03:00</updated><entry><title>Базовые структуры данных в Python.</title><link href="http://webquant.ru/posts/data-structures" rel="alternate"></link><updated>2014-11-22T12:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-22:posts/data-structures</id><summary type="html">&lt;h2&gt;Структуры данных&lt;/h2&gt;
+&lt;p&gt;Они используются для хранения связанных данных вместе.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;список&lt;/li&gt;
+&lt;li&gt;кортеж&lt;/li&gt;
+&lt;li&gt;словарь&lt;/li&gt;
+&lt;li&gt;множества&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Список&lt;/h3&gt;
+&lt;p&gt;Изменяемый тип данных, который содержит упорядоченный набор элементов, т.е. хранит последовательность элементов.&lt;/p&gt;
+&lt;p&gt;Список элементов должен быть заключён в &lt;strong&gt;&lt;em&gt;квадратные скобки&lt;/em&gt;&lt;/strong&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Изменяемые&lt;/strong&gt;, как только список создан, можно добавлять, удалять или искать элементы в нём.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#создаем список&lt;/span&gt;
+&lt;span class="n"&gt;shoplist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;яблоки&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;манго&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;морковь&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;бананы&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;рис&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;Добавить&lt;/span&gt; &lt;span class="err"&gt;элемент&lt;/span&gt;
+&lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;отсортируем&lt;/span&gt; &lt;span class="err"&gt;список&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;вывести&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;элемент&lt;/span&gt; &lt;span class="err"&gt;списка&lt;/span&gt;
+&lt;span class="n"&gt;del&lt;/span&gt; &lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;удалить&lt;/span&gt; &lt;span class="err"&gt;элемент&lt;/span&gt;
+&lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;хелп&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;спискам&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Кортеж&lt;/h3&gt;
+&lt;p&gt;Служат для хранения нескольких объектов вместе. Аналог списков, но без такой обширной функциональности, которую предоставляет класс списка. 
+Являются &lt;strong&gt;неизменяемыми&lt;/strong&gt;.
+Элементы заключаются в &lt;strong&gt;&lt;em&gt;круглые скобки&lt;/em&gt;&lt;/strong&gt;, через запятую.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#создаем котеж&lt;/span&gt;
+&lt;span class="n"&gt;zoo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;питон&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;слон&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;пингвин&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;zoo&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;обращаемся&lt;/span&gt; &lt;span class="err"&gt;к&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="err"&gt;элементу&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;отсчет&lt;/span&gt; &lt;span class="err"&gt;начинается&lt;/span&gt; &lt;span class="err"&gt;с&lt;/span&gt; &lt;span class="err"&gt;нуля&lt;/span&gt;
+&lt;span class="cp"&gt;# пустой кортеж&lt;/span&gt;
+&lt;span class="n"&gt;myempty&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="cp"&gt;# кортеж из 1 элемента&lt;/span&gt;
+&lt;span class="n"&gt;singleton&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,)&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;запятая&lt;/span&gt; &lt;span class="err"&gt;обязательна&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Словарь&lt;/h3&gt;
+&lt;p&gt;Словарь (&lt;strong&gt;dict&lt;/strong&gt;) – это некий аналог адресной книги.
+Задаются пары ключ:значение (разделяемые двоеточием), заключенные в &lt;strong&gt;&lt;em&gt;фигурные скобки&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Пары ключ-значение никоим образом не упорядочены в словаре.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#Пары ключ-значение указываются в словаре следующим образом&lt;/span&gt;
+&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;key1&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;value1&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;key2&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;value2&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; 
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="cp"&gt;# Добавление пары ключ-значение&lt;/span&gt;
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Guido&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;guido&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;del&lt;/span&gt; &lt;span class="n"&gt;ab&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Spammer&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;удаление&lt;/span&gt;
+&lt;span class="cp"&gt;#вывести все пары&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;address&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;Контакт&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="err"&gt;с&lt;/span&gt; &lt;span class="err"&gt;адресом&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Множества&lt;/h3&gt;
+&lt;p&gt;Множества – это неупорядоченные наборы простых объектов. Они необходимы тогда, когда присутствие объекта в наборе важнее порядка или того, сколько раз данный объект там встречается.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;bri&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;Бразилия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;Россия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;Индия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="err"&gt;&amp;#39;Индия&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;bri&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;bric&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bri&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;bric&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;Китай&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;bric&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;issuperset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bri&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;bri&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;Россия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;bri&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;bric&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;OR&lt;/span&gt; &lt;span class="n"&gt;bri&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bric&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;Бразилия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;Индия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Основные операции со всеми данными&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="s-Atom"&gt;shoplist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s-Atom"&gt;&amp;#39;яблоки&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;манго&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;морковь&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;бананы&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="s-Atom"&gt;#&lt;/span&gt; &lt;span class="s-Atom"&gt;Операция&lt;/span&gt; &lt;span class="s-Atom"&gt;индексирования&lt;/span&gt;
+&lt;span class="nf"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s-Atom"&gt;&amp;#39;Элемент 0 -&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; 
+&lt;span class="nf"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s-Atom"&gt;&amp;#39;Элемент -1 -&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="s-Atom"&gt;#&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="s-Atom"&gt;с&lt;/span&gt; &lt;span class="s-Atom"&gt;конца&lt;/span&gt;
+&lt;span class="s-Atom"&gt;#&lt;/span&gt; &lt;span class="s-Atom"&gt;Вырезка&lt;/span&gt; &lt;span class="s-Atom"&gt;из&lt;/span&gt; &lt;span class="s-Atom"&gt;списка&lt;/span&gt;
+&lt;span class="nf"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s-Atom"&gt;&amp;#39;Элементы с 1 по 3:&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="s-Atom"&gt;:&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="s-Atom"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s-Atom"&gt;::-&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="s-Atom"&gt;#&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="s-Atom"&gt;элемент&lt;/span&gt; &lt;span class="s-Atom"&gt;это&lt;/span&gt; &lt;span class="s-Atom"&gt;шаг&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;тут&lt;/span&gt; &lt;span class="s-Atom"&gt;обратный&lt;/span&gt; &lt;span class="s-Atom"&gt;порядок&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s-Atom"&gt;&amp;#39;бананы&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;морковь&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;манго&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;яблоки&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Полезные ссылки&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://habrahabr.ru/post/128457/"&gt;статья на Хабре&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="data structures"></category></entry><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-08T13:37:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;thefanclub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
@@ -45,12 +127,56 @@
 &lt;h3&gt;Добавляем ключ от репозитория (как пример)&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;adv&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;keyserver&lt;/span&gt; &lt;span class="n"&gt;keyserver&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;recv&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;FC91AE7E&lt;/span&gt; 
 &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Базовые команды Linux.</title><link href="http://webquant.ru/posts/linux-base" rel="alternate"></link><updated>2014-11-01T22:27:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;Folder&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#переходим&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Базовые команды Linux.</title><link href="http://webquant.ru/posts/linux-base" rel="alternate"></link><updated>2014-11-22T12:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pwd&lt;/span&gt;  &lt;span class="err"&gt;#текущая&lt;/span&gt; &lt;span class="err"&gt;директория&lt;/span&gt;
+&lt;span class="n"&gt;ls&lt;/span&gt;  &lt;span class="err"&gt;#список&lt;/span&gt; &lt;span class="err"&gt;файлов&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="err"&gt;#мануал&lt;/span&gt; &lt;span class="err"&gt;имя&lt;/span&gt; &lt;span class="err"&gt;команды&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;данном&lt;/span&gt; &lt;span class="err"&gt;случае&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;clear&lt;/span&gt; &lt;span class="err"&gt;#очистить&lt;/span&gt; &lt;span class="err"&gt;экран&lt;/span&gt; &lt;span class="err"&gt;терминала&lt;/span&gt;
+&lt;span class="n"&gt;exit&lt;/span&gt;  &lt;span class="err"&gt;#закрыть&lt;/span&gt; &lt;span class="err"&gt;терминал&lt;/span&gt;
+
+&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="err"&gt;путь&lt;/span&gt; &lt;span class="err"&gt;#создать&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt;
+&lt;span class="n"&gt;touch&lt;/span&gt; &lt;span class="err"&gt;путь&lt;/span&gt; &lt;span class="err"&gt;#создать&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;Folder&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#переходим&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt;
 &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="p"&gt;..&lt;/span&gt; &lt;span class="err"&gt;#на&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;уровень&lt;/span&gt; &lt;span class="err"&gt;вверх&lt;/span&gt;
-&lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt;
-&lt;span class="n"&gt;mkdir&lt;/span&gt;
-&lt;span class="n"&gt;pwd&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;какой&lt;/span&gt; &lt;span class="err"&gt;директории&lt;/span&gt; &lt;span class="err"&gt;мы&lt;/span&gt; &lt;span class="err"&gt;сейчас&lt;/span&gt; &lt;span class="err"&gt;находимся&lt;/span&gt;
+&lt;span class="n"&gt;rm&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;rf&lt;/span&gt; &lt;span class="err"&gt;#удалить&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt; &lt;span class="err"&gt;со&lt;/span&gt; &lt;span class="err"&gt;всеми&lt;/span&gt; &lt;span class="err"&gt;подпапками&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;файлами&lt;/span&gt; &lt;span class="err"&gt;внутри&lt;/span&gt;
+&lt;span class="n"&gt;cp&lt;/span&gt; &lt;span class="err"&gt;путь&lt;/span&gt; &lt;span class="err"&gt;откуда&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;путь&lt;/span&gt; &lt;span class="err"&gt;куда&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;копируем&lt;/span&gt;
+&lt;span class="n"&gt;cp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="err"&gt;#копировать&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt;
+&lt;span class="n"&gt;mv&lt;/span&gt; &lt;span class="err"&gt;путь&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;путь&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="err"&gt;#передвигаем&lt;/span&gt;
+&lt;span class="n"&gt;chmod&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;nameprog&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="err"&gt;#задать&lt;/span&gt; &lt;span class="err"&gt;права&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;progname&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="err"&gt;#в&lt;/span&gt; &lt;span class="err"&gt;фоновом&lt;/span&gt; &lt;span class="err"&gt;режиме&lt;/span&gt; &lt;span class="err"&gt;или&lt;/span&gt;  &lt;span class="n"&gt;Ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bg&lt;/span&gt;
+
+&lt;span class="cp"&gt;#записывать вывод из терминала в файл.&lt;/span&gt;
+&lt;span class="n"&gt;program&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stder&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="cp"&gt;#порядок в аргументах к команде не важен&lt;/span&gt;
+&lt;span class="cp"&gt;#ctrl+a , ctrl+e переход в начало или конец строки &lt;/span&gt;
+&lt;span class="cp"&gt;#Tab предложение продолжения команд&lt;/span&gt;
+&lt;span class="cp"&gt;#ипользуем nano редактор для редактирования файлов&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;wget&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;wget&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;O&lt;/span&gt;  &lt;span class="err"&gt;или&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="err"&gt;путь&lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="err"&gt;до&lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="err"&gt;директории&lt;/span&gt; &lt;span class="err"&gt;ссылка&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;скачивания&lt;/span&gt; &lt;span class="err"&gt;файлов&lt;/span&gt;
+&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;spider&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;проверить&lt;/span&gt; &lt;span class="err"&gt;ссылку&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="err"&gt;#скачать&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;ссылкам&lt;/span&gt; &lt;span class="err"&gt;из&lt;/span&gt; &lt;span class="err"&gt;файла&lt;/span&gt;
+&lt;span class="n"&gt;wget&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;jpg&lt;/span&gt; &lt;span class="err"&gt;ссылка&lt;/span&gt; &lt;span class="err"&gt;#скачать&lt;/span&gt; &lt;span class="err"&gt;все&lt;/span&gt; &lt;span class="n"&gt;jpg&lt;/span&gt; &lt;span class="err"&gt;до&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;уровня&lt;/span&gt; &lt;span class="err"&gt;со&lt;/span&gt; &lt;span class="err"&gt;страниц&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;zip&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;unzip&lt;/span&gt;
+&lt;span class="n"&gt;gunzip&lt;/span&gt;   &lt;span class="err"&gt;#удаляет&lt;/span&gt; &lt;span class="err"&gt;архив&lt;/span&gt; &lt;span class="err"&gt;после&lt;/span&gt; &lt;span class="err"&gt;распаковки&lt;/span&gt;
+&lt;span class="n"&gt;zip&lt;/span&gt; &lt;span class="err"&gt;архив&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;zip&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="err"&gt;…&lt;/span&gt;
+&lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;zcvf&lt;/span&gt; &lt;span class="err"&gt;архив&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="err"&gt;…&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;создаем&lt;/span&gt; &lt;span class="err"&gt;архив&lt;/span&gt; &lt;span class="err"&gt;файлов&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;запаковываем&lt;/span&gt; &lt;span class="n"&gt;gunzip&lt;/span&gt;
+&lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;xzvf&lt;/span&gt; &lt;span class="err"&gt;архив&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gz&lt;/span&gt; &lt;span class="err"&gt;распаковываем&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;grep&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt; &lt;span class="err"&gt;найти&lt;/span&gt; &lt;span class="err"&gt;все&lt;/span&gt; &lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="err"&gt;файлы&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;домашней&lt;/span&gt; &lt;span class="err"&gt;директории&lt;/span&gt;
+&lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="err"&gt;“строка”&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;  &lt;span class="err"&gt;найти&lt;/span&gt; &lt;span class="err"&gt;строку&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;файле&lt;/span&gt;
+&lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;srt&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;  &lt;span class="err"&gt;посчитать&lt;/span&gt; &lt;span class="err"&gt;кол&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;во&lt;/span&gt; &lt;span class="err"&gt;вхождений&lt;/span&gt; &lt;span class="err"&gt;строки&lt;/span&gt;
+&lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt; &lt;span class="n"&gt;folder&lt;/span&gt;  &lt;span class="err"&gt;найти&lt;/span&gt; &lt;span class="err"&gt;строку&lt;/span&gt; &lt;span class="err"&gt;во&lt;/span&gt; &lt;span class="err"&gt;всех&lt;/span&gt; &lt;span class="err"&gt;файлах&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;папке&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-22T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -157,7 +283,7 @@
 &lt;p&gt;4) читаем &lt;a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions"&gt;мануал по настройкам&lt;/a&gt;, если необходима произвольная настройка.&lt;/p&gt;
 &lt;h4&gt;Метатеги&lt;/h4&gt;
 &lt;h4&gt;404 error&lt;/h4&gt;
-&lt;p&gt;https://help.github.com/articles/custom-404-pages/&lt;/p&gt;
+&lt;p&gt;нужно сгенерировать страницу с названием 404.html и положить в корневую папку &lt;/p&gt;
 &lt;h4&gt;Google+&lt;/h4&gt;
 &lt;p&gt;Синхронизируем свой сайт с гугл+:&lt;/p&gt;
 &lt;ol&gt;
@@ -193,76 +319,4 @@
 &lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.unix-lab.org/posts/pelican/"&gt;Тут&lt;/a&gt; неплохо описана настройка блога&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.1.1/settings.html"&gt;все настройки Pelican&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>Markdown Syntax.</title><link href="http://webquant.ru/posts/markdown" rel="alternate"></link><updated>2014-11-01T21:06:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
-&lt;h3&gt;Заголовки&lt;/h3&gt;
-&lt;p&gt;Уровень заголовка зависит от количества хешей(#) перед строкой&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Заголовок первого уровня (&amp;lt;h1/&amp;gt;) &lt;/span&gt;
-&lt;span class="c"&gt;## Заголовок второго уровня (&amp;lt;h2/&amp;gt;) &lt;/span&gt;
-&lt;span class="c"&gt;### Заголовок третьего уровня (&amp;lt;h3/&amp;gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Главные заголовки так же можно выделить === и --- символами&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;главный заголовок
-=================&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;заголовок 2 уровня
-------------------------&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Списки&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;ненумерованные списки &lt;code&gt;* или -&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;нумерованные - цифрами
-&lt;code&gt;1.
-2.&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;Картинки и ссылки&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;вставка ссылки
-&lt;code&gt;[Тут ссылка на](http://google.com/)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;вставка картинки
-&lt;code&gt;![Описание картинки](http://anyhost.com/1.jpg)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;вставка ссылки &lt;code&gt;[сносками][1]&lt;/code&gt;для большого текста, а внизу описываем ссылку&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;[1]: google.com/ "Сноска"&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Вставки&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Код&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;для вставки кода в строке необходимо выделить текст обратными кавычками &lt;code&gt;`тут код&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;для нескольких строк&lt;code&gt;&amp;lt;pre&amp;gt; тут код&amp;lt;code&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;для выделения кода в блок - используем отступы (Tab) в начале строки и не забываем оставить пустую строку перед блоком кода.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Цитата&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;&amp;gt; цитируемый текст&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Разное&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Абзацы определяются по наличию пустой строки &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Стилизация текста&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;**Жирный текст**&lt;/code&gt; — &lt;strong&gt;Жирный текст&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;*Курсивный текст*&lt;/code&gt; — &lt;em&gt;Курсивный текст&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;***Жирный курсивный текст***&lt;/code&gt; — &lt;strong&gt;&lt;em&gt;Жирный курсивный текст&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Всегда можно использовать обычный html, если что :)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;Редакторы&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://stackedit.io/"&gt;stackedit&lt;/a&gt; — удобный онлайн редактор&lt;/li&gt;
-&lt;li&gt;ReText  - оффлайн редактор под linux&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Полезные ссылки&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category></entry></feed>
+&lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category></entry></feed>

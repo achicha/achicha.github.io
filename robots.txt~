@@ -14,7 +14,6 @@ Disallow: /?s=
 Disallow: /archives.html
 Disallow: /authors.html
 Disallow: /categories.html
-Disallow: /404.html
 
 User-agent: Googlebot
 Allow: /images/
@@ -32,7 +31,6 @@ Disallow: /?s=
 Disallow: /archives.html
 Disallow: /authors.html
 Disallow: /categories.html
-Disallow: /404.html
 
 User-agent: Yandex
 Allow: /images/
@@ -50,7 +48,6 @@ Disallow: /?s=
 Disallow: /archives.html
 Disallow: /authors.html
 Disallow: /categories.html
-Disallow: /404.html
 
 Host: webquant.ru
 Sitemap: http://webquant.ru/sitemap.xml
