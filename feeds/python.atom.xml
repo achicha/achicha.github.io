@@ -8,12 +8,12 @@
 &lt;li&gt;множества&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Список&lt;/h3&gt;
-&lt;p&gt;Изменяемый тип данных, который содержит упорядоченный набор элементов, т.е. хранит последовательность элементов.&lt;/p&gt;
+&lt;p&gt;Список (&lt;strong&gt;list&lt;/strong&gt;) - изменяемый тип данных, который содержит упорядоченный набор элементов, т.е. хранит последовательность элементов.&lt;/p&gt;
 &lt;p&gt;Список элементов должен быть заключён в &lt;strong&gt;&lt;em&gt;квадратные скобки&lt;/em&gt;&lt;/strong&gt;. &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Изменяемые&lt;/strong&gt;, как только список создан, можно добавлять, удалять или искать элементы в нём.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#создаем список&lt;/span&gt;
 &lt;span class="n"&gt;shoplist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;яблоки&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;манго&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;морковь&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;бананы&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;рис&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;Добавить&lt;/span&gt; &lt;span class="err"&gt;элемент&lt;/span&gt;
+&lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;рис&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;Добавить&lt;/span&gt; &lt;span class="err"&gt;элемент&lt;/span&gt; &lt;span class="err"&gt;эквивалент&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;отсортируем&lt;/span&gt; &lt;span class="err"&gt;список&lt;/span&gt;
 &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;вывести&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="err"&gt;элемент&lt;/span&gt; &lt;span class="err"&gt;списка&lt;/span&gt;
 &lt;span class="n"&gt;del&lt;/span&gt; &lt;span class="n"&gt;shoplist&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;удалить&lt;/span&gt; &lt;span class="err"&gt;элемент&lt;/span&gt;
@@ -22,7 +22,7 @@
 
 
 &lt;h3&gt;Кортеж&lt;/h3&gt;
-&lt;p&gt;Служат для хранения нескольких объектов вместе. Аналог списков, но без такой обширной функциональности, которую предоставляет класс списка. 
+&lt;p&gt;Кортежы (&lt;strong&gt;tuple&lt;/strong&gt;) служат для хранения нескольких объектов вместе. Аналог списков, но без такой обширной функциональности, которую предоставляет класс списка. 
 Являются &lt;strong&gt;неизменяемыми&lt;/strong&gt;.
 Элементы заключаются в &lt;strong&gt;&lt;em&gt;круглые скобки&lt;/em&gt;&lt;/strong&gt;, через запятую.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#создаем котеж&lt;/span&gt;
@@ -54,7 +54,7 @@
 
 
 &lt;h3&gt;Множества&lt;/h3&gt;
-&lt;p&gt;Множества – это неупорядоченные наборы простых объектов. Они необходимы тогда, когда присутствие объекта в наборе важнее порядка или того, сколько раз данный объект там встречается.&lt;/p&gt;
+&lt;p&gt;Множества или Наборы (&lt;strong&gt;set&lt;/strong&gt;) – это неупорядоченные наборы простых объектов. Они необходимы тогда, когда присутствие объекта в наборе важнее порядка или того, сколько раз данный объект там встречается.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;bri&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;Бразилия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;Россия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;Индия&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="err"&gt;&amp;#39;Индия&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;bri&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;True&lt;/span&gt;
 &lt;span class="n"&gt;bric&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bri&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -66,6 +66,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Инструменты функционального программирования&lt;/h3&gt;
+&lt;p&gt;Есть три встроенных функции, которые очень удобно использовать в сочетании со списками: filter(), map() и reduce().&lt;/p&gt;
 &lt;h3&gt;Основные операции со всеми данными&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="s-Atom"&gt;shoplist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s-Atom"&gt;&amp;#39;яблоки&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;манго&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;морковь&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;бананы&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="s-Atom"&gt;#&lt;/span&gt; &lt;span class="s-Atom"&gt;Операция&lt;/span&gt; &lt;span class="s-Atom"&gt;индексирования&lt;/span&gt;
@@ -81,4 +83,5 @@
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://habrahabr.ru/post/128457/"&gt;статья на Хабре&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pep8.ru/doc/tutorial-2.6/6.html"&gt;pep8.ru&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="python"></category><category term="data structures"></category></entry></feed>

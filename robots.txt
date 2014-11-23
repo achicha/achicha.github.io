@@ -2,6 +2,7 @@ User-agent: *
 Allow: /images/
 Allow: /posts/
 Allow: /index.html
+Allow: /pages/
 Disallow: /category/
 Disallow: /author/
 Disallow: /feeds/
@@ -20,6 +21,7 @@ User-agent: Googlebot
 Allow: /images/
 Allow: /posts/
 Allow: /index.html
+Allow: /pages/
 Disallow: /category/
 Disallow: /author/
 Disallow: /feeds/
@@ -38,6 +40,7 @@ User-agent: Yandex
 Allow: /images/
 Allow: /posts/
 Allow: /index.html
+Allow: /pages/
 Disallow: /category/
 Disallow: /author/
 Disallow: /feeds/

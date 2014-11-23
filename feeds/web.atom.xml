@@ -125,17 +125,28 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;2) Добавляем сайт в google &lt;a href="www.google.com/analytics"&gt;analytics&lt;/a&gt; и &lt;a href="www.google.com/webmasters"&gt;webmaster&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2) Добавляем сайт в google &lt;a href="http://www.google.com/analytics/"&gt;analytics&lt;/a&gt; и &lt;a href="http://www.google.com/webmasters/"&gt;webmaster&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;3) добавляем в вебмастере sitemap&lt;/p&gt;
 &lt;p&gt;4) проверяем robots.txt на наличие ошибок&lt;/p&gt;
 &lt;h4&gt;Яндекс Метрика&lt;/h4&gt;
-&lt;p&gt;1) Устанавливаем код аналитики в шаблон и добавляем запись&lt;/p&gt;
-&lt;p&gt;2) сообщаем о новом сайте в &lt;a href="http://webmaster.yandex.ru/"&gt;Яндекс Вебмастере&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;3) добавляем сайт в метрику&lt;/p&gt;
+&lt;p&gt;1) Добавляем счетчик &lt;a href="http://metrika.yandex.ru/add/"&gt;метрики&lt;/a&gt; во вкладке &lt;em&gt;общие&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;2) Дальше во вкладке &lt;em&gt;Код счетчика&lt;/em&gt; нажимаем галку &lt;em&gt;Вебвизор&lt;/em&gt; и копируем код ниже.&lt;/p&gt;
+&lt;p&gt;3) Устанавливаем код аналитики в шаблон:&lt;/p&gt;
+&lt;p&gt;Самый простой (но не самый правильный) способ установить метрику, редактировать файл с счетчиком Google Analytics &lt;code&gt;pelican-bootstrap3/templates/ga.html&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;End&lt;/span&gt; &lt;span class="n"&gt;Google&lt;/span&gt; &lt;span class="n"&gt;Analytics&lt;/span&gt; &lt;span class="n"&gt;Code&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;
+
+&lt;span class="cp"&gt;#тут вставляем код Яндекс Метрики, который скопировали.&lt;/span&gt;
+
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;endif&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;4) сообщаем о новом сайте в &lt;a href="https://webmaster.yandex.ru/addurl.xml"&gt;Яндекс Вебмастере&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;5) &lt;a href="https://webmaster.yandex.ru/site/?wizard=add.site"&gt;добавляем сайт&lt;/a&gt; в Вебмастер&lt;/p&gt;
 &lt;h3&gt;Дочерний шаблон&lt;/h3&gt;
-&lt;p&gt;или в отдельную категорию. редактирование шаблона jinja2 и создание дочернего шаблона&lt;/p&gt;
-&lt;p&gt;http://docs.getpelican.com/en/latest/themes.html#inheritance&lt;/p&gt;
-&lt;p&gt;меняем sidebar&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/themes.html#inheritance"&gt;мануал тут&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Но я пока ограничился редактированием template файлов (html) для вставки нужных элементов кода, пример вставки Яндекс метрики можно посмотреть выше. 
+Только нужно помнить, что при таком подходе, после обновления основной темы, все Ваши надстройки пропадут.&lt;/p&gt;
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
