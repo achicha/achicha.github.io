@@ -153,6 +153,37 @@ WebQuant            </a>
 <span class="n">grep</span> <span class="o">-</span><span class="n">c</span> <span class="err">“</span><span class="n">srt</span><span class="err">”</span> <span class="n">file</span>  <span class="err">посчитать</span> <span class="err">кол</span><span class="o">-</span><span class="err">во</span> <span class="err">вхождений</span> <span class="err">строки</span>
 <span class="n">grep</span> <span class="o">-</span><span class="n">r</span> <span class="err">“</span><span class="n">str</span><span class="err">”</span> <span class="n">folder</span>  <span class="err">найти</span> <span class="err">строку</span> <span class="err">во</span> <span class="err">всех</span> <span class="err">файлах</span> <span class="err">в</span> <span class="err">папке</span>
 </pre></div>
+
+
+<h3>Доступ на удаленный сервер</h3>
+<div class="highlight"><pre><span class="cp">#заходим на сервер, порт можно не указывать, если только 1 сервер</span>
+<span class="n">shh</span> <span class="n">your_login</span><span class="err">@</span><span class="n">server_adress</span> <span class="o">-</span><span class="n">p</span> <span class="n">port</span> 
+<span class="n">exit</span> <span class="err">#выход</span>
+<span class="cp">#копирование с сервера на локальный</span>
+<span class="n">scp</span> <span class="o">-</span><span class="n">P</span> <span class="n">port</span> <span class="n">login</span><span class="err">@</span><span class="n">server_adress</span><span class="o">:</span> <span class="n">path1</span> <span class="n">path2</span>
+<span class="cp">#path1 = server, path2 = client</span>
+<span class="cp">#копирование с локального компа на сервер</span>
+<span class="n">scp</span> <span class="o">-</span><span class="n">P</span> <span class="n">port</span> <span class="n">path1</span> <span class="n">login</span><span class="err">@</span><span class="n">server_adress</span><span class="o">:</span><span class="n">path2</span>
+<span class="cp">#path1 = client, path2 = server</span>
+</pre></div>
+
+
+<h3>Процессы</h3>
+<div class="highlight"><pre><span class="n">jobs</span> <span class="err">#посмотреть</span> <span class="err">запущенные</span> <span class="err">программы</span>
+<span class="cp">#приостановка и запуск в фоновом режиме</span>
+<span class="n">fg</span> <span class="o">%</span><span class="mi">2</span>
+<span class="n">bg</span> <span class="o">%</span><span class="mi">2</span>
+
+<span class="n">ps</span> <span class="err">#</span> <span class="err">все</span> <span class="err">процессы</span>
+<span class="n">top</span> <span class="o">-</span><span class="n">u</span> <span class="n">login_name</span> <span class="err">#топ</span> <span class="err">процессы</span> <span class="err">пользователя</span>
+<span class="cp">#убить процесс/программу когда зависла</span>
+<span class="n">kill</span> <span class="o">-</span><span class="mi">9</span> <span class="n">process_number</span><span class="p">(</span><span class="n">PID</span> <span class="err">в</span> <span class="n">top</span><span class="p">)</span>
+
+<span class="cp">#info </span>
+<span class="n">free</span> <span class="o">-</span><span class="n">g</span> <span class="err">#об</span> <span class="err">опреративной</span> <span class="err">памяти</span>
+<span class="n">nproc</span> <span class="err">#</span> <span class="err">сколько</span> <span class="err">ядер</span>
+<span class="n">lscpu</span> <span class="err">#</span> <span class="err">о</span> <span class="err">процесооре</span>
+</pre></div>
             </div>
             <!-- /.entry-content -->
     <hr/>

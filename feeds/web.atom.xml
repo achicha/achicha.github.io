@@ -142,7 +142,9 @@
 
 
 &lt;p&gt;4) сообщаем о новом сайте в &lt;a href="https://webmaster.yandex.ru/addurl.xml"&gt;Яндекс Вебмастере&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;5) &lt;a href="https://webmaster.yandex.ru/site/?wizard=add.site"&gt;добавляем сайт&lt;/a&gt; в Вебмастер&lt;/p&gt;
+&lt;p&gt;5) &lt;a href="https://webmaster.yandex.ru/site/?wizard=add.site"&gt;добавляем сайт&lt;/a&gt; в Вебмастер, я делал через проверку txt файлом.&lt;/p&gt;
+&lt;p&gt;6) нужно добавить на сайте sitemap, главное зеркало.&lt;/p&gt;
+&lt;p&gt;И через пару недель Ваш сайт будет корректно отображаться в Я.Вебмастере :)  по сравнению с гуглом, где добавляется в течении нескольких дней, нужно запастись терпением.&lt;/p&gt;
 &lt;h3&gt;Дочерний шаблон&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/themes.html#inheritance"&gt;мануал тут&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Но я пока ограничился редактированием template файлов (html) для вставки нужных элементов кода, пример вставки Яндекс метрики можно посмотреть выше. 

@@ -7,6 +7,13 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Обновление&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;upgrade&lt;/span&gt;
+&lt;span class="cp"&gt;# обновить только 1 программу&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;only&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;upgade&lt;/span&gt; &lt;span class="n"&gt;program&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;Отключаем комерческий сервис в меню Dash&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="n"&gt;gsettings&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;canonical&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Unity&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Lenses&lt;/span&gt; &lt;span class="n"&gt;disabled&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;scopes&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;[&amp;#39;more_suggestions-amazon.scope&amp;#39;, &amp;#39;more_suggestions-u1ms.scope&amp;#39;, &amp;#39;more_suggestions-populartracks.scope&amp;#39;, &amp;#39;music-musicstore.scope&amp;#39;, &amp;#39;more_suggestions-ebay.scope&amp;#39;, &amp;#39;more_suggestions-ubuntushop.scope&amp;#39;, &amp;#39;more_suggestions-skimlinks.scope&amp;#39;]&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -95,4 +102,35 @@
 &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="err"&gt;“строка”&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;  &lt;span class="err"&gt;найти&lt;/span&gt; &lt;span class="err"&gt;строку&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;файле&lt;/span&gt;
 &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;srt&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;  &lt;span class="err"&gt;посчитать&lt;/span&gt; &lt;span class="err"&gt;кол&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;во&lt;/span&gt; &lt;span class="err"&gt;вхождений&lt;/span&gt; &lt;span class="err"&gt;строки&lt;/span&gt;
 &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt; &lt;span class="n"&gt;folder&lt;/span&gt;  &lt;span class="err"&gt;найти&lt;/span&gt; &lt;span class="err"&gt;строку&lt;/span&gt; &lt;span class="err"&gt;во&lt;/span&gt; &lt;span class="err"&gt;всех&lt;/span&gt; &lt;span class="err"&gt;файлах&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;папке&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Доступ на удаленный сервер&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#заходим на сервер, порт можно не указывать, если только 1 сервер&lt;/span&gt;
+&lt;span class="n"&gt;shh&lt;/span&gt; &lt;span class="n"&gt;your_login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; 
+&lt;span class="n"&gt;exit&lt;/span&gt; &lt;span class="err"&gt;#выход&lt;/span&gt;
+&lt;span class="cp"&gt;#копирование с сервера на локальный&lt;/span&gt;
+&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;path1&lt;/span&gt; &lt;span class="n"&gt;path2&lt;/span&gt;
+&lt;span class="cp"&gt;#path1 = server, path2 = client&lt;/span&gt;
+&lt;span class="cp"&gt;#копирование с локального компа на сервер&lt;/span&gt;
+&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;path1&lt;/span&gt; &lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;path2&lt;/span&gt;
+&lt;span class="cp"&gt;#path1 = client, path2 = server&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Процессы&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;jobs&lt;/span&gt; &lt;span class="err"&gt;#посмотреть&lt;/span&gt; &lt;span class="err"&gt;запущенные&lt;/span&gt; &lt;span class="err"&gt;программы&lt;/span&gt;
+&lt;span class="cp"&gt;#приостановка и запуск в фоновом режиме&lt;/span&gt;
+&lt;span class="n"&gt;fg&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;bg&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+
+&lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;все&lt;/span&gt; &lt;span class="err"&gt;процессы&lt;/span&gt;
+&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="n"&gt;login_name&lt;/span&gt; &lt;span class="err"&gt;#топ&lt;/span&gt; &lt;span class="err"&gt;процессы&lt;/span&gt; &lt;span class="err"&gt;пользователя&lt;/span&gt;
+&lt;span class="cp"&gt;#убить процесс/программу когда зависла&lt;/span&gt;
+&lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="n"&gt;process_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PID&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="cp"&gt;#info &lt;/span&gt;
+&lt;span class="n"&gt;free&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="err"&gt;#об&lt;/span&gt; &lt;span class="err"&gt;опреративной&lt;/span&gt; &lt;span class="err"&gt;памяти&lt;/span&gt;
+&lt;span class="n"&gt;nproc&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;сколько&lt;/span&gt; &lt;span class="err"&gt;ядер&lt;/span&gt;
+&lt;span class="n"&gt;lscpu&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;о&lt;/span&gt; &lt;span class="err"&gt;процесооре&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry></feed>
