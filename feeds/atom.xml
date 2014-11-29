@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-26T22:50:00+03:00</updated><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;НОД&lt;/h2&gt;
-&lt;p&gt;Наибольший общий делитель - самое большое число, на которое можно без остатка разделить два числа, для которых ищется НОД.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-26T22:50:00+03:00</updated><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;Нахождение НОД&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Наибольший общий делитель&lt;/em&gt; - самое большое число, на которое можно без остатка разделить два числа, для которых ищется НОД.&lt;/p&gt;
 &lt;h4&gt;Алгоритм:&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;Большее число делим на меньшее.&lt;/li&gt;
-&lt;li&gt;Если делится без остатка, то меньшее число и есть НОД (следует выйти из цикла).&lt;/li&gt;
+&lt;li&gt;Если делится без остатка, то меньшее число и есть &lt;strong&gt;НОД&lt;/strong&gt; (следует выйти из цикла).&lt;/li&gt;
 &lt;li&gt;Если есть остаток, то большее число заменяем на остаток от деления.&lt;/li&gt;
 &lt;li&gt;Переходим к пункту 1&lt;/li&gt;
 &lt;/ol&gt;
@@ -20,8 +20,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;НОК&lt;/h2&gt;
-&lt;p&gt;Наименьшее общее кратное - наименьшее число, которое делиться без остатка на каждое из двух заданных числел.&lt;/p&gt;
+&lt;h2&gt;Нахождение НОК&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Наименьшее общее кратное&lt;/em&gt; - наименьшее число, которое делиться без остатка на каждое из двух заданных числел.&lt;/p&gt;
 &lt;h4&gt;Алгоритм&lt;/h4&gt;
 &lt;p&gt;НОК = a*b / НОД(a,b)&lt;/p&gt;
 &lt;h4&gt;Код&lt;/h4&gt;
@@ -31,11 +31,11 @@
 &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;gcd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;gcd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
 &lt;span class="cp"&gt;#выводим НОК&lt;/span&gt;
-&lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gcd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gcd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;/p&gt;</summary><category term="python"></category><category term="algorithms"></category></entry><entry><title>Базовые структуры данных в Python.</title><link href="http://webquant.ru/posts/data-structures" rel="alternate"></link><updated>2014-11-22T12:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-22:posts/data-structures</id><summary type="html">&lt;h2&gt;Структуры данных&lt;/h2&gt;
+&lt;p&gt;&lt;/p&gt;</summary><category term="python"></category><category term="algorithms"></category><category term="нахождение НОК"></category><category term="нахождение НОД"></category><category term="python алгоритмы"></category></entry><entry><title>Базовые структуры данных в Python.</title><link href="http://webquant.ru/posts/data-structures" rel="alternate"></link><updated>2014-11-22T12:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-22:posts/data-structures</id><summary type="html">&lt;h2&gt;Структуры данных&lt;/h2&gt;
 &lt;p&gt;Они используются для хранения связанных данных вместе.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;список&lt;/li&gt;
@@ -120,7 +120,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://habrahabr.ru/post/128457/"&gt;статья на Хабре&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://pep8.ru/doc/tutorial-2.6/6.html"&gt;pep8.ru&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="data structures"></category></entry><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-08T13:37:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="data structures"></category><category term="структуры данных"></category><category term="python методы"></category><category term="python списоки"></category><category term="словари python"></category><category term="python кортеж"></category></entry><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-08T13:37:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;thefanclub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
@@ -173,7 +173,21 @@
 &lt;h3&gt;Добавляем ключ от репозитория (как пример)&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;adv&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;keyserver&lt;/span&gt; &lt;span class="n"&gt;keyserver&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;recv&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;FC91AE7E&lt;/span&gt; 
 &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Базовые команды Linux.</title><link href="http://webquant.ru/posts/linux-base" rel="alternate"></link><updated>2014-11-22T12:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Apple slim keyboard исправляем кнопки F1-F12  в Ubuntu 14.04&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#Правильное Alt отображение и Command&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt; &lt;span class="n"&gt;hid_apple&lt;/span&gt; &lt;span class="n"&gt;swap_opt_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;tee&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;modprobe&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hid_apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+&lt;span class="cp"&gt;#Восстановить работу функции кнопок &lt;/span&gt;
+&lt;span class="cp"&gt;#0 = отключено: Позволяет отключить клавиши &amp;#39;Fn &amp;quot;&lt;/span&gt;
+&lt;span class="cp"&gt;#1 = fkeyslast: Функциональные клавиши имеют низкий приоритет.&lt;/span&gt;
+&lt;span class="cp"&gt;#2 = fkeysfirst: Функциональные клавиши имеют приоритет&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt; &lt;span class="n"&gt;hid_apple&lt;/span&gt; &lt;span class="n"&gt;fnmode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;tee&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;modprobe&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hid_apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+&lt;span class="cp"&gt;#Добавьте копирование конфигурации загрузки файлов initramfs.&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;initramfs&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;reboot&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category><category term="настройка ubuntu"></category></entry><entry><title>Базовые команды Linux.</title><link href="http://webquant.ru/posts/linux-base" rel="alternate"></link><updated>2014-11-22T12:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pwd&lt;/span&gt;  &lt;span class="err"&gt;#текущая&lt;/span&gt; &lt;span class="err"&gt;директория&lt;/span&gt;
 &lt;span class="n"&gt;ls&lt;/span&gt;  &lt;span class="err"&gt;#список&lt;/span&gt; &lt;span class="err"&gt;файлов&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="err"&gt;#мануал&lt;/span&gt; &lt;span class="err"&gt;имя&lt;/span&gt; &lt;span class="err"&gt;команды&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;данном&lt;/span&gt; &lt;span class="err"&gt;случае&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -254,20 +268,140 @@
 &lt;span class="n"&gt;free&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="err"&gt;#об&lt;/span&gt; &lt;span class="err"&gt;опреративной&lt;/span&gt; &lt;span class="err"&gt;памяти&lt;/span&gt;
 &lt;span class="n"&gt;nproc&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;сколько&lt;/span&gt; &lt;span class="err"&gt;ядер&lt;/span&gt;
 &lt;span class="n"&gt;lscpu&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;о&lt;/span&gt; &lt;span class="err"&gt;процесооре&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-22T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;h3&gt;Установка&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="основные команды linux"></category><category term="grep"></category><category term="работа в терминале"></category><category term="bash"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-22T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;Git&lt;/em&gt;&lt;/strong&gt; - &lt;em&gt;это распределенная система контроля версий, которая может использовать несколько репозиториев, связанных между собой.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Разработчики, работая совместно над одним проектом, делают это каждый отдельно, в своем локальном (на своем компьютере) репозитории, после чего синхронизируют все изменения на сервере. И в случае необходимости, можно использовать другие ветки для продолжения работы над проетом. &lt;/p&gt;
+&lt;p&gt;В данной статье я хотел бы рассказать об основах работы с Git: установка в Ubuntu, базовые команды, термины, ветки в Гит (branch).&lt;/p&gt;
+&lt;p&gt;Всё будет описано с примерами в терминале, без использования Gui приложений. Можно сказать, что описанное является моей шпаргалкой, на случай если вдруг что-то забуду. :)&lt;/p&gt;
+&lt;h3&gt;Установка в терминале Ubuntu&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;Базовые настройки&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Your name&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# глобальные настройки, используются для коммитов &lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="n"&gt;Your&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="n"&gt;yourmail&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;example&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
-&lt;span class="cp"&gt;#инициализируем&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;
-&lt;span class="cp"&gt;#создаем ssh-key для компьютера&lt;/span&gt;
+
+&lt;span class="cp"&gt;# создаем на сайте github тестовый репозиторий и ssh ключ для работы с ним&lt;/span&gt;
+&lt;span class="cp"&gt;# создаем ssh-key для компьютера&lt;/span&gt;
 &lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keygen&lt;/span&gt;
 &lt;span class="cp"&gt;# копируем содержимое ключа из ssh keys для создания ключа на github&lt;/span&gt;
 &lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;id_rsa&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pub&lt;/span&gt;
-&lt;span class="cp"&gt;#клонируем реп с гита # в процессе вводим контрольную фразу 2 раза&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="n"&gt;to_folder&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="git"></category></entry></feed>
+&lt;span class="cp"&gt;# добавляем созданный ключ на сайт github&lt;/span&gt;
+&lt;span class="cp"&gt;# github.com/settings/ssh жмем add ssh key&lt;/span&gt;
+
+&lt;span class="cp"&gt;# клонируем реп с github&amp;#39;a, в процессе вводим контрольную фразу 2 раза&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;some_folder&lt;/span&gt; &lt;span class="err"&gt;#переход&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt; &lt;span class="err"&gt;где&lt;/span&gt; &lt;span class="err"&gt;сохранить&lt;/span&gt; &lt;span class="err"&gt;Ваш&lt;/span&gt; &lt;span class="err"&gt;проект&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;инициализуруем&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yourname&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="n"&gt;to_folder&lt;/span&gt;  &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;копируем&lt;/span&gt; &lt;span class="err"&gt;с&lt;/span&gt; &lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Делаем первый commit&lt;/h3&gt;
+&lt;p&gt;Для добавления новых файлов или изменений в Ваш проект, необходимо сделать следующие действия.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#самая используемая команда для просмотра статуса инменений&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;your_folder&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;переход&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;папку&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;скопированного&lt;/span&gt; &lt;span class="err"&gt;проекта&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;инициализация&lt;/span&gt; &lt;span class="err"&gt;гита&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;если&lt;/span&gt; &lt;span class="err"&gt;не&lt;/span&gt; &lt;span class="err"&gt;была&lt;/span&gt; &lt;span class="err"&gt;сделана&lt;/span&gt; &lt;span class="err"&gt;раньше&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;статус&lt;/span&gt; &lt;span class="err"&gt;изменений&lt;/span&gt;
+
+&lt;span class="cp"&gt;# например, нужно создать новый файл для Вашего проекта&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;some text&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;README&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="cp"&gt;#дальше необходимо подготовить файлы, добавив данный файл в staging area&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;README&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;или&lt;/span&gt; &lt;span class="err"&gt;добавить&lt;/span&gt; &lt;span class="err"&gt;все&lt;/span&gt; &lt;span class="err"&gt;файлы&lt;/span&gt; &lt;span class="err"&gt;из&lt;/span&gt; &lt;span class="err"&gt;данной&lt;/span&gt; &lt;span class="err"&gt;папки&lt;/span&gt;
+&lt;span class="cp"&gt;# убрать файл, если добавили лишнее&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;rm&lt;/span&gt; &lt;span class="n"&gt;file_to_be_removed&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="cp"&gt;# изменить файл&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;mv&lt;/span&gt; &lt;span class="n"&gt;oldname&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="n"&gt;newname&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+
+&lt;span class="cp"&gt;#проверяем статус добавления: зеленым показываются изменения, например new file: README.txt&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;
+
+&lt;span class="cp"&gt;# делаем свой первый коммит&lt;/span&gt;
+&lt;span class="cp"&gt;# man git-commit # мануал по использованию данной команды&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;am&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;My first commit&amp;quot;&lt;/span&gt;
+&lt;span class="cp"&gt;#смотрим испорию коммитов&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;log&lt;/span&gt;
+
+&lt;span class="cp"&gt;# сохраняем изменения на сервере в master ветку&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Ветвления и объединения проекта.&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#список всех веток данного проекта&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;звездочкой&lt;/span&gt; &lt;span class="err"&gt;отмечена&lt;/span&gt; &lt;span class="err"&gt;текущая&lt;/span&gt; &lt;span class="err"&gt;ветвь&lt;/span&gt;
+&lt;span class="cp"&gt;# переключаемся на нужную ветку&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="n"&gt;some_branch&lt;/span&gt;
+&lt;span class="cp"&gt;# или создаем новую ветку&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt; &lt;span class="n"&gt;some_branch&lt;/span&gt;
+&lt;span class="cp"&gt;# создать ветку начиная с определенного коммита&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;log&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;ищем&lt;/span&gt; &lt;span class="err"&gt;нужный&lt;/span&gt; &lt;span class="err"&gt;коммит&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt; &lt;span class="n"&gt;a90387a2d0f081ad7e3a3eed14c5252aee99f589&lt;/span&gt;
+&lt;span class="cp"&gt;# переименуем ветку&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;
+
+&lt;span class="cp"&gt;# удаляем ненужную ветку локально&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;D&lt;/span&gt; &lt;span class="n"&gt;some_branch&lt;/span&gt;
+&lt;span class="cp"&gt;# удаляем branch на сервере, после того как удалили локально &lt;/span&gt;
+&lt;span class="cp"&gt;#нельзя удалить дефолтный бранч, сначала надо в админке сменить дефолт на другой&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;some_branch&lt;/span&gt;
+
+&lt;span class="cp"&gt;# merge или объединения веток&lt;/span&gt;
+&lt;span class="cp"&gt;# Заходим в ветку куда хотим добавить файлы, например master. И объединяем с файлами из другой ветки.&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;merge&lt;/span&gt; &lt;span class="n"&gt;another_branch&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Работа на сервере&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;
+&lt;span class="cp"&gt;# on remote gitserver&lt;/span&gt;
+&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;project_directory&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;project_directory&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;bare&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;shared&lt;/span&gt;
+&lt;span class="n"&gt;exit&lt;/span&gt;
+
+&lt;span class="cp"&gt;#скачиваем изменения из origin master&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;pull&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;fetch&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt;
+
+&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;remote&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Скрываем файлы в .gitignore&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#создаем файл для нашего проекта и откроем его&lt;/span&gt;
+&lt;span class="n"&gt;touch&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gitignore&lt;/span&gt;
+&lt;span class="n"&gt;nano&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gitignore&lt;/span&gt;
+
+&lt;span class="cp"&gt;# пропишем в нем необходимые правила &lt;/span&gt;
+&lt;span class="cp"&gt;# например мы хотим игнорировать все файлы с расширением txt и md кроме my.txt&lt;/span&gt;
+&lt;span class="cp"&gt;# таким образом Git не будет отслеживать изменения в этих файлах&lt;/span&gt;
+&lt;span class="cp"&gt;# git help gitignore - справка&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;
+&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+
+&lt;span class="cp"&gt;# добавить в игнор директории целиком&lt;/span&gt;
+&lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gitignore&lt;/span&gt;
+&lt;span class="n"&gt;ignore&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;папка&lt;/span&gt; &lt;span class="err"&gt;с&lt;/span&gt; &lt;span class="err"&gt;файлами&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ignore&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;скрытая&lt;/span&gt; &lt;span class="err"&gt;папка&lt;/span&gt;
+&lt;span class="cp"&gt;# шаблоны .gitignore&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Разное&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;diff&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;изменения&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;не&lt;/span&gt; &lt;span class="err"&gt;внесенные&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;индекс&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;diff&lt;/span&gt; &lt;span class="n"&gt;HEAD&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;изменения&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;проекте&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;сравнению&lt;/span&gt; &lt;span class="err"&gt;с&lt;/span&gt; &lt;span class="err"&gt;последним&lt;/span&gt; &lt;span class="err"&gt;коммитом&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;show&lt;/span&gt; &lt;span class="n"&gt;COMMIT_TAG&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;изменения&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;внесенные&lt;/span&gt; &lt;span class="err"&gt;любым&lt;/span&gt; &lt;span class="err"&gt;коммитом&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;истории&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;reset&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;soft&lt;/span&gt; &lt;span class="n"&gt;COMMIT&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;откат&lt;/span&gt; &lt;span class="err"&gt;изменений&lt;/span&gt; &lt;span class="err"&gt;на&lt;/span&gt; &lt;span class="err"&gt;определенный&lt;/span&gt; &lt;span class="err"&gt;коммит&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;поиск&lt;/span&gt; &lt;span class="err"&gt;слов&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;проекту&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;прошлом&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Полезные ссылки&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://habrahabr.ru/post/60347/"&gt;на хабре&lt;/a&gt; очень подробно о каждой команде&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.regolit.com/2014/02/17/a-bit-of-git"&gt;тут&lt;/a&gt; неплохо описано, но много воды&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.codeschool.com/courses/try-git"&gt;онлайн курс&lt;/a&gt; для быстрого изучения (минут 10-15) основных команд&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="git"></category><category term="git команды"></category><category term="git настройка"></category><category term="работа с git"></category><category term="git репозиторий"></category><category term="установка git"></category><category term=""></category></entry></feed>

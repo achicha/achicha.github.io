@@ -2,7 +2,7 @@
 <html lang="ru"
 >
 <head>
-    <title>python - WebQuant</title>
+    <title>Markdown Syntax. - WebQuant</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,16 +11,12 @@
 
     <link href="http://webquant.ru/favicon.ico" rel="icon">
 
+<link rel="canonical" href="http://webquant.ru/posts/markdown синтаксис, синтаксис маркдаун, markdown">
 
-    <meta name="author" content="admin" />
-    <meta name="keywords" content="python" />
+        <meta name="author" content="admin" />
+        <meta name="keywords" content="pelican" />
+        <meta name="description" content="Шпаргалка по основному синтаксису markdown." />
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="WebQuant" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="WebQuant"/>
-        <meta property="og:url" content="http://webquant.ru"/>
-        <meta property="og:description" content="WebQuant"/>
 
 
     <!-- Bootstrap -->
@@ -56,7 +52,7 @@ WebQuant            </a>
                         <li >
                             <a href="http://webquant.ru/category/python">Python</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://webquant.ru/category/web">Web</a>
                         </li>
             </ul>
@@ -71,47 +67,150 @@ WebQuant            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-    <ol class="breadcrumb">
-        <li><a href="http://webquant.ru" title="WebQuant"><i class="fa fa-home fa-lg"></i></a></li>
-        <li><a href="http://webquant.ru/" title="Tags">Tags</a></li>
-        <li class="active">python</li>
-    </ol>
+            <ol class="breadcrumb">
+                <li><a href="http://webquant.ru" title="WebQuant"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="http://webquant.ru/category/web" title="web">web</a></li>
+                <li class="active">Markdown Syntax.</li>
+            </ol>
 
-            <article>
-                <h2><a href="http://webquant.ru/posts/nod-nok">Нахождение НОД и НОК.</a></h2>
-                <div class="summary"><p>Нахождение наибольшего общего делителя (Алгоритм Евклида) и Наименьшего Общего Кратного (язык Python)</p>
-<p><small><a href="http://webquant.ru/posts/nod-nok#disqus_thread" >View comments</a>.</small></p>                    <a class="btn btn-default btn-xs" href="http://webquant.ru/posts/nod-nok">more ...</a>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://webquant.ru/posts/markdown синтаксис, синтаксис маркдаун, markdown"
+                       rel="bookmark"
+                       title="Permalink to Markdown Syntax.">
+                        Markdown Syntax.
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+               
+                <h2>Основной синтаксис</h2>
+<h3>Заголовки</h3>
+<p>Уровень заголовка зависит от количества хешей(#) перед строкой</p>
+<div class="highlight"><pre><span class="c"># Заголовок первого уровня (&lt;h1/&gt;) </span>
+<span class="c">## Заголовок второго уровня (&lt;h2/&gt;) </span>
+<span class="c">### Заголовок третьего уровня (&lt;h3/&gt;)</span>
+</pre></div>
+
+
+<p>Главные заголовки так же можно выделить === и --- символами</p>
+<p><code>главный заголовок
+=================</code></p>
+<p><code>заголовок 2 уровня
+------------------------</code></p>
+<h3>Списки</h3>
+<ol>
+<li>
+<p>ненумерованные списки <code>* или -</code></p>
+</li>
+<li>
+<p>нумерованные - цифрами
+<code>1.
+2.</code></p>
+</li>
+</ol>
+<h3>Картинки и ссылки</h3>
+<ol>
+<li>
+<p>вставка ссылки
+<code>[Тут ссылка на](http://google.com/)</code></p>
+</li>
+<li>
+<p>вставка картинки
+<code>![Описание картинки](http://anyhost.com/1.jpg)</code></p>
+</li>
+<li>вставка ссылки <code>[сносками][1]</code>для большого текста, а внизу описываем ссылку</li>
+</ol>
+<p><code>[1]: google.com/ "Сноска"</code></p>
+<h3>Вставки</h3>
+<ol>
+<li>
+<p>Код</p>
+<ul>
+<li>для вставки кода в строке необходимо выделить текст обратными кавычками <code>`тут код</code></li>
+<li>для нескольких строк<code>&lt;pre&gt; тут код&lt;code&gt;</code></li>
+<li>для выделения кода в блок - используем отступы (Tab) в начале строки и не забываем оставить пустую строку перед блоком кода.</li>
+</ul>
+</li>
+<li>
+<p>Цитата</p>
+</li>
+</ol>
+<p><code>&gt; цитируемый текст</code></p>
+<h3>Разное</h3>
+<ol>
+<li>Абзацы определяются по наличию пустой строки </li>
+<li>
+<p>Стилизация текста</p>
+<p><code>**Жирный текст**</code> — <strong>Жирный текст</strong></p>
+<p><code>*Курсивный текст*</code> — <em>Курсивный текст</em></p>
+<p><code>***Жирный курсивный текст***</code> — <strong><em>Жирный курсивный текст</em></strong></p>
+</li>
+<li>
+<p>Всегда можно использовать обычный html, если что :)</p>
+</li>
+</ol>
+<h2>Редакторы</h2>
+<ul>
+<li><a href="https://stackedit.io/">stackedit</a> — удобный онлайн редактор</li>
+<li>ReText  - оффлайн редактор под linux</li>
+</ul>
+<h3>Полезные ссылки</h3>
+<p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown-Cheatsheet</a> - на github</p>
+		 <div class="panel">
+                    <div class="panel-body">   
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-11-01T21:06:00+03:00"> 01 Ноябрь 2014</time>
+    </span>
+
+        <span class="label label-default">Category</span>
+        <a href="http://webquant.ru/category/web">web</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://webquant.ru/tag/pelican.html">pelican</a>
+    
+</footer><!-- /.post-info -->                  
+                    </div>
                 </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://webquant.ru/posts/data-structures">Базовые структуры данных в Python.</a></h2>
-                <div class="summary"><p>Немного о базовых структурах данных в языке Python и методах их использования.</p>
-<p><small><a href="http://webquant.ru/posts/data-structures#disqus_thread" >View comments</a>.</small></p>                    <a class="btn btn-default btn-xs" href="http://webquant.ru/posts/data-structures">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://webquant.ru/posts/git">Используем Git для контроля версий.</a></h2>
-                <div class="summary"><p>Установка, настройка и основы работы с Git, создание репозитория и работы с ветками (основные команды), Github настройка .</p>
-<p><small><a href="http://webquant.ru/posts/git#disqus_thread" >View comments</a>.</small></p>                    <a class="btn btn-default btn-xs" href="http://webquant.ru/posts/git">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://webquant.ru/posts/pelican-extra">Pelican. Расширенные настройки.</a></h2>
-                <div class="summary"><p>Установка плагинов, редактирование темы и другие расширенные настройки блога.</p>
-<p><small><a href="http://webquant.ru/posts/pelican-extra#disqus_thread" >View comments</a>.</small></p>                    <a class="btn btn-default btn-xs" href="http://webquant.ru/posts/pelican-extra">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://webquant.ru/posts/pelican">Pelican. Установка и настройка блога.</a></h2>
-                <div class="summary"><p>Пошаговая инструкция по установки блога и базовым настройкам в Pelican.</p>
-<p><small><a href="http://webquant.ru/posts/pelican#disqus_thread" >View comments</a>.</small></p>                    <a class="btn btn-default btn-xs" href="http://webquant.ru/posts/pelican">more ...</a>
-                </div>
-            </article>
-            <hr/>
+		
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'httpwebquantru'; // required: replace example with your forum shortname
+
+                var disqus_url = 'http://webquant.ru/posts/markdown синтаксис, синтаксис маркдаун, markdown';
+
+            var disqus_config = function () {
+                this.language = "ru";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -138,18 +237,18 @@ WebQuant            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/ubuntu">
+                            Настраиваем Ubuntu после запуска.
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/linux-base">
+                            Базовые команды Linux.
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://webquant.ru/posts/git">
                             Используем Git для контроля версий.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://webquant.ru/posts/pelican-extra">
-                            Pelican. Расширенные настройки.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://webquant.ru/posts/pelican">
-                            Pelican. Установка и настройка блога.
                         </a>
                     </li>
                 </ul>

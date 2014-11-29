@@ -14,8 +14,8 @@
 <link rel="canonical" href="http://webquant.ru/posts/git">
 
         <meta name="author" content="admin" />
-        <meta name="keywords" content="python,git" />
-        <meta name="description" content="Установка и настройка git." />
+        <meta name="keywords" content="python,git,git команды,git настройка,работа с git,git репозиторий,установка git," />
+        <meta name="description" content="Установка, настройка и основы работы с Git, создание репозитория и работы с ветками (основные команды), Github настройка ." />
 
 
 
@@ -85,8 +85,146 @@ WebQuant            </a>
                 </h1>
             </header>
             <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
+               
+                <p><strong><em>Git</em></strong> - <em>это распределенная система контроля версий, которая может использовать несколько репозиториев, связанных между собой.</em></p>
+<p>Разработчики, работая совместно над одним проектом, делают это каждый отдельно, в своем локальном (на своем компьютере) репозитории, после чего синхронизируют все изменения на сервере. И в случае необходимости, можно использовать другие ветки для продолжения работы над проетом. </p>
+<p>В данной статье я хотел бы рассказать об основах работы с Git: установка в Ubuntu, базовые команды, термины, ветки в Гит (branch).</p>
+<p>Всё будет описано с примерами в терминале, без использования Gui приложений. Можно сказать, что описанное является моей шпаргалкой, на случай если вдруг что-то забуду. :)</p>
+<h3>Установка в терминале Ubuntu</h3>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span>
+</pre></div>
+
+
+<h3>Базовые настройки</h3>
+<div class="highlight"><pre><span class="cp"># глобальные настройки, используются для коммитов </span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="n">Your</span> <span class="n">name</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span> <span class="n">yourmail</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span>
+
+<span class="cp"># создаем на сайте github тестовый репозиторий и ssh ключ для работы с ним</span>
+<span class="cp"># создаем ssh-key для компьютера</span>
+<span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span>
+<span class="cp"># копируем содержимое ключа из ssh keys для создания ключа на github</span>
+<span class="n">cat</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span>
+<span class="cp"># добавляем созданный ключ на сайт github</span>
+<span class="cp"># github.com/settings/ssh жмем add ssh key</span>
+
+<span class="cp"># клонируем реп с github&#39;a, в процессе вводим контрольную фразу 2 раза</span>
+<span class="n">cd</span> <span class="n">some_folder</span> <span class="err">#переход</span> <span class="err">в</span> <span class="err">папку</span> <span class="err">где</span> <span class="err">сохранить</span> <span class="err">Ваш</span> <span class="err">проект</span>
+<span class="n">git</span> <span class="n">init</span> <span class="err">#</span> <span class="err">инициализуруем</span> <span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">:</span><span class="n">yourname</span><span class="o">/</span><span class="n">yourname</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span> <span class="n">to_folder</span>  <span class="err">#</span> <span class="err">копируем</span> <span class="err">с</span> <span class="n">github</span><span class="err">&#39;</span><span class="n">a</span>
+</pre></div>
+
+
+<h3>Делаем первый commit</h3>
+<p>Для добавления новых файлов или изменений в Ваш проект, необходимо сделать следующие действия.</p>
+<div class="highlight"><pre><span class="cp">#самая используемая команда для просмотра статуса инменений</span>
+<span class="n">cd</span> <span class="n">your_folder</span> <span class="err">#</span> <span class="err">переход</span> <span class="err">в</span> <span class="err">папку</span><span class="p">,</span> <span class="err">скопированного</span> <span class="err">проекта</span>
+<span class="n">git</span> <span class="n">init</span> <span class="err">#</span> <span class="err">инициализация</span> <span class="err">гита</span><span class="p">,</span> <span class="err">если</span> <span class="err">не</span> <span class="err">была</span> <span class="err">сделана</span> <span class="err">раньше</span>
+<span class="n">git</span> <span class="n">status</span> <span class="err">#</span> <span class="err">статус</span> <span class="err">изменений</span>
+
+<span class="cp"># например, нужно создать новый файл для Вашего проекта</span>
+<span class="n">echo</span> <span class="s">&quot;some text&quot;</span> <span class="o">&gt;</span> <span class="n">README</span><span class="p">.</span><span class="n">txt</span>
+<span class="cp">#дальше необходимо подготовить файлы, добавив данный файл в staging area</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">README</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">A</span> <span class="err">#</span> <span class="err">или</span> <span class="err">добавить</span> <span class="err">все</span> <span class="err">файлы</span> <span class="err">из</span> <span class="err">данной</span> <span class="err">папки</span>
+<span class="cp"># убрать файл, если добавили лишнее</span>
+<span class="n">git</span> <span class="n">rm</span> <span class="n">file_to_be_removed</span><span class="p">.</span><span class="n">txt</span>
+<span class="cp"># изменить файл</span>
+<span class="n">git</span> <span class="n">mv</span> <span class="n">oldname</span><span class="p">.</span><span class="n">txt</span> <span class="n">newname</span><span class="p">.</span><span class="n">txt</span>
+
+<span class="cp">#проверяем статус добавления: зеленым показываются изменения, например new file: README.txt</span>
+<span class="n">git</span> <span class="n">status</span>
+
+<span class="cp"># делаем свой первый коммит</span>
+<span class="cp"># man git-commit # мануал по использованию данной команды</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s">&quot;My first commit&quot;</span>
+<span class="cp">#смотрим испорию коммитов</span>
+<span class="n">git</span> <span class="n">log</span>
+
+<span class="cp"># сохраняем изменения на сервере в master ветку</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span>
+</pre></div>
+
+
+<h3>Ветвления и объединения проекта.</h3>
+<div class="highlight"><pre><span class="cp">#список всех веток данного проекта</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">a</span> <span class="err">#</span> <span class="err">звездочкой</span> <span class="err">отмечена</span> <span class="err">текущая</span> <span class="err">ветвь</span>
+<span class="cp"># переключаемся на нужную ветку</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">some_branch</span>
+<span class="cp"># или создаем новую ветку</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="n">some_branch</span>
+<span class="cp"># создать ветку начиная с определенного коммита</span>
+<span class="n">git</span> <span class="n">log</span> <span class="err">#</span> <span class="err">ищем</span> <span class="err">нужный</span> <span class="err">коммит</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">new</span><span class="o">-</span><span class="n">branch</span> <span class="n">a90387a2d0f081ad7e3a3eed14c5252aee99f589</span>
+<span class="cp"># переименуем ветку</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">branch</span>
+
+<span class="cp"># удаляем ненужную ветку локально</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">some_branch</span>
+<span class="cp"># удаляем branch на сервере, после того как удалили локально </span>
+<span class="cp">#нельзя удалить дефолтный бранч, сначала надо в админке сменить дефолт на другой</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">:</span><span class="n">some_branch</span>
+
+<span class="cp"># merge или объединения веток</span>
+<span class="cp"># Заходим в ветку куда хотим добавить файлы, например master. И объединяем с файлами из другой ветки.</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">another_branch</span>
+</pre></div>
+
+
+<h3>Работа на сервере</h3>
+<div class="highlight"><pre><span class="n">ssh</span> <span class="n">username</span><span class="err">@</span><span class="n">server</span>
+<span class="cp"># on remote gitserver</span>
+<span class="n">mkdir</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">project_directory</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">project_directory</span>
+<span class="n">git</span> <span class="n">init</span> <span class="o">--</span><span class="n">bare</span> <span class="o">--</span><span class="n">shared</span>
+<span class="n">exit</span>
+
+<span class="cp">#скачиваем изменения из origin master</span>
+<span class="n">git</span> <span class="n">pull</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>
+
+<span class="n">get</span> <span class="n">remote</span> <span class="n">update</span> <span class="n">origin</span>
+</pre></div>
+
+
+<h3>Скрываем файлы в .gitignore</h3>
+<div class="highlight"><pre><span class="cp">#создаем файл для нашего проекта и откроем его</span>
+<span class="n">touch</span> <span class="p">.</span><span class="n">gitignore</span>
+<span class="n">nano</span> <span class="o">-</span><span class="n">w</span> <span class="p">.</span><span class="n">gitignore</span>
+
+<span class="cp"># пропишем в нем необходимые правила </span>
+<span class="cp"># например мы хотим игнорировать все файлы с расширением txt и md кроме my.txt</span>
+<span class="cp"># таким образом Git не будет отслеживать изменения в этих файлах</span>
+<span class="cp"># git help gitignore - справка</span>
+<span class="o">*</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">*</span><span class="p">.</span><span class="n">md</span>
+<span class="o">!</span><span class="n">my</span><span class="p">.</span><span class="n">txt</span>
+
+<span class="cp"># добавить в игнор директории целиком</span>
+<span class="n">cat</span> <span class="p">.</span><span class="n">gitignore</span>
+<span class="n">ignore</span><span class="o">/</span> <span class="err">#</span> <span class="err">папка</span> <span class="err">с</span> <span class="err">файлами</span>
+<span class="p">.</span><span class="n">ignore</span><span class="o">/</span> <span class="err">#</span> <span class="err">скрытая</span> <span class="err">папка</span>
+<span class="cp"># шаблоны .gitignore</span>
+</pre></div>
+
+
+<h3>Разное</h3>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">diff</span> <span class="err">#</span> <span class="err">изменения</span><span class="p">,</span> <span class="err">не</span> <span class="err">внесенные</span> <span class="err">в</span> <span class="err">индекс</span><span class="p">.</span>
+<span class="n">git</span> <span class="n">diff</span> <span class="n">HEAD</span> <span class="err">#</span> <span class="err">изменения</span> <span class="err">в</span> <span class="err">проекте</span> <span class="err">по</span> <span class="err">сравнению</span> <span class="err">с</span> <span class="err">последним</span> <span class="err">коммитом</span>
+<span class="n">git</span> <span class="n">show</span> <span class="n">COMMIT_TAG</span> <span class="err">#</span> <span class="err">изменения</span><span class="p">,</span> <span class="err">внесенные</span> <span class="err">любым</span> <span class="err">коммитом</span> <span class="err">в</span> <span class="err">истории</span>
+<span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">COMMIT</span> <span class="err">#</span> <span class="err">откат</span> <span class="err">изменений</span> <span class="err">на</span> <span class="err">определенный</span> <span class="err">коммит</span>
+<span class="n">git</span> <span class="n">grep</span> <span class="n">test</span> <span class="err">#</span> <span class="err">поиск</span> <span class="err">слов</span> <span class="err">по</span> <span class="err">проекту</span> <span class="err">в</span> <span class="err">прошлом</span>
+</pre></div>
+
+
+<h3>Полезные ссылки</h3>
+<ul>
+<li><a href="http://habrahabr.ru/post/60347/">на хабре</a> очень подробно о каждой команде</li>
+<li><a href="http://blog.regolit.com/2014/02/17/a-bit-of-git">тут</a> неплохо описано, но много воды</li>
+<li><a href="https://www.codeschool.com/courses/try-git">онлайн курс</a> для быстрого изучения (минут 10-15) основных команд</li>
+</ul>
+		 <div class="panel">
+                    <div class="panel-body">   
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -101,26 +239,23 @@ WebQuant            </a>
 	<a href="http://webquant.ru/tag/python.html">python</a>
         /
 	<a href="http://webquant.ru/tag/git.html">git</a>
+        /
+	<a href="http://webquant.ru/tag/git-komandy.html">git команды</a>
+        /
+	<a href="http://webquant.ru/tag/git-nastroika.html">git настройка</a>
+        /
+	<a href="http://webquant.ru/tag/rabota-s-git.html">работа с git</a>
+        /
+	<a href="http://webquant.ru/tag/git-repozitorii.html">git репозиторий</a>
+        /
+	<a href="http://webquant.ru/tag/ustanovka-git.html">установка git</a>
+        /
+	<a href="http://webquant.ru/tag/.html"></a>
     
-</footer><!-- /.post-info -->                    </div>
+</footer><!-- /.post-info -->                  
+                    </div>
                 </div>
-                <h3>Установка</h3>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span>
-</pre></div>
-
-
-<h3>Базовые настройки</h3>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="s">&quot;Your name&quot;</span>
-<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span> <span class="n">yourmail</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span>
-<span class="cp">#инициализируем</span>
-<span class="n">git</span> <span class="n">init</span>
-<span class="cp">#создаем ssh-key для компьютера</span>
-<span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span>
-<span class="cp"># копируем содержимое ключа из ssh keys для создания ключа на github</span>
-<span class="n">cat</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span>
-<span class="cp">#клонируем реп с гита # в процессе вводим контрольную фразу 2 раза</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">:</span><span class="n">yourname</span><span class="o">/</span><span class="n">yourname</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span> <span class="n">to_folder</span>
-</pre></div>
+		
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -167,6 +302,35 @@ WebQuant            </a>
               </ul>
             </li>
 
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/nod-nok">
+                            Нахождение НОД и НОК.
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/data-structures">
+                            Базовые структуры данных в Python.
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/ubuntu">
+                            Настраиваем Ubuntu после запуска.
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/linux-base">
+                            Базовые команды Linux.
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/git">
+                            Используем Git для контроля версий.
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
 
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>

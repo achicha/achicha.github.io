@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/python.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-26T22:50:00+03:00</updated><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;НОД&lt;/h2&gt;
-&lt;p&gt;Наибольший общий делитель - самое большое число, на которое можно без остатка разделить два числа, для которых ищется НОД.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/python.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-26T22:50:00+03:00</updated><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;Нахождение НОД&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Наибольший общий делитель&lt;/em&gt; - самое большое число, на которое можно без остатка разделить два числа, для которых ищется НОД.&lt;/p&gt;
 &lt;h4&gt;Алгоритм:&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;Большее число делим на меньшее.&lt;/li&gt;
-&lt;li&gt;Если делится без остатка, то меньшее число и есть НОД (следует выйти из цикла).&lt;/li&gt;
+&lt;li&gt;Если делится без остатка, то меньшее число и есть &lt;strong&gt;НОД&lt;/strong&gt; (следует выйти из цикла).&lt;/li&gt;
 &lt;li&gt;Если есть остаток, то большее число заменяем на остаток от деления.&lt;/li&gt;
 &lt;li&gt;Переходим к пункту 1&lt;/li&gt;
 &lt;/ol&gt;
@@ -20,8 +20,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;НОК&lt;/h2&gt;
-&lt;p&gt;Наименьшее общее кратное - наименьшее число, которое делиться без остатка на каждое из двух заданных числел.&lt;/p&gt;
+&lt;h2&gt;Нахождение НОК&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Наименьшее общее кратное&lt;/em&gt; - наименьшее число, которое делиться без остатка на каждое из двух заданных числел.&lt;/p&gt;
 &lt;h4&gt;Алгоритм&lt;/h4&gt;
 &lt;p&gt;НОК = a*b / НОД(a,b)&lt;/p&gt;
 &lt;h4&gt;Код&lt;/h4&gt;
@@ -31,11 +31,11 @@
 &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;gcd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;gcd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
 &lt;span class="cp"&gt;#выводим НОК&lt;/span&gt;
-&lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gcd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gcd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;/p&gt;</summary><category term="python"></category><category term="algorithms"></category></entry><entry><title>Базовые структуры данных в Python.</title><link href="http://webquant.ru/posts/data-structures" rel="alternate"></link><updated>2014-11-22T12:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-22:posts/data-structures</id><summary type="html">&lt;h2&gt;Структуры данных&lt;/h2&gt;
+&lt;p&gt;&lt;/p&gt;</summary><category term="python"></category><category term="algorithms"></category><category term="нахождение НОК"></category><category term="нахождение НОД"></category><category term="python алгоритмы"></category></entry><entry><title>Базовые структуры данных в Python.</title><link href="http://webquant.ru/posts/data-structures" rel="alternate"></link><updated>2014-11-22T12:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-22:posts/data-structures</id><summary type="html">&lt;h2&gt;Структуры данных&lt;/h2&gt;
 &lt;p&gt;Они используются для хранения связанных данных вместе.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;список&lt;/li&gt;
@@ -120,4 +120,4 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://habrahabr.ru/post/128457/"&gt;статья на Хабре&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://pep8.ru/doc/tutorial-2.6/6.html"&gt;pep8.ru&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="data structures"></category></entry></feed>
+&lt;/ul&gt;</summary><category term="python"></category><category term="data structures"></category><category term="структуры данных"></category><category term="python методы"></category><category term="python списоки"></category><category term="словари python"></category><category term="python кортеж"></category></entry></feed>
