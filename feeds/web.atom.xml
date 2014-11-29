@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/web.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-22T12:00:00+03:00</updated><entry><title>Используем Git для контроля над версиями.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-22T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;Git&lt;/em&gt;&lt;/strong&gt; - &lt;em&gt;это распределенная система контроля версий, которая может использовать несколько репозиториев, связанных между собой.&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/web.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-29T12:00:00+03:00</updated><entry><title>Используем Git для контроля над версиями.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-29T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;Git&lt;/em&gt;&lt;/strong&gt; - &lt;em&gt;это распределенная система контроля версий, которая может использовать несколько репозиториев, связанных между собой.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Разработчики, работая совместно над одним проектом, делают это каждый отдельно, в своем локальном (на своем компьютере) репозитории, после чего синхронизируют все изменения на сервере. И в случае необходимости, можно использовать другие ветки для продолжения работы над проетом. &lt;/p&gt;
 &lt;p&gt;В данной статье я хотел бы рассказать об основах работы с Git: установка в Ubuntu, базовые команды, термины, ветки в Гит (branch).&lt;/p&gt;
 &lt;p&gt;Всё будет описано с примерами в терминале, без использования Gui приложений. Можно сказать, что описанное является моей шпаргалкой, на случай если вдруг что-то забуду. :)&lt;/p&gt;
@@ -135,7 +135,7 @@
 &lt;li&gt;&lt;a href="http://habrahabr.ru/post/60347/"&gt;на хабре&lt;/a&gt; очень подробно о каждой команде&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.regolit.com/2014/02/17/a-bit-of-git"&gt;тут&lt;/a&gt; неплохо описано, но много воды&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.codeschool.com/courses/try-git"&gt;онлайн курс&lt;/a&gt; для быстрого изучения (минут 10-15) основных команд&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="git"></category><category term="git команды"></category><category term="git настройка"></category><category term="работа с git"></category><category term="git репозиторий"></category><category term="установка git"></category><category term=""></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="http://webquant.ru/posts/pelican-extra" rel="alternate"></link><updated>2014-11-01T21:42:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Начало читаем в &lt;a href="http://webquant.ru/posts/pelican/"&gt;предыдущей статье&lt;/a&gt;.&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="git"></category><category term="git команды"></category><category term="git настройка"></category><category term="работа с git"></category><category term="git репозиторий"></category><category term="установка git"></category><category term=""></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="http://webquant.ru/posts/pelican-extra" rel="alternate"></link><updated>2014-11-09T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Начало читаем в &lt;a href="http://webquant.ru/posts/pelican/"&gt;предыдущей статье&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Чтобы было полегче с настройками, необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
 &lt;p&gt;Все изменения вносятся в основной файл настроек &lt;strong&gt;&lt;em&gt;pelicanconf.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;Структуризация файлов.&lt;/h3&gt;
@@ -157,6 +157,11 @@
 &lt;h4&gt;Pygments - для подсветки кода в блоках.&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#устанавливаем pygments и настраиваем, если не установлено по дефолту&lt;/span&gt;
 &lt;span class="n"&gt;PYGMENTS_STYLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;zenburn&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Related Posts&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#В моей теме уже он настроен автоматически, необходимо только скачать сам плагин (по аналогии с sitemap ниже)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -199,8 +204,13 @@
 &lt;h4&gt;Sitemap&lt;/h4&gt;
 &lt;p&gt;XML карта сайта. Для улучшения индексации сайта в поисковиках. &lt;/p&gt;
 &lt;p&gt;1) скачиваем плагин 
-&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap"&gt;sitemap&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://github.com/getpelican/pelican-plugins/"&gt;sitemap&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2) устанавливаем в любую папку, например plugins&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;submodule&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/getpelican/pelican-plugins&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;submodule&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;init&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;3) прописываем настройки:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# Plugins&lt;/span&gt;
 &lt;span class="n"&gt;PLUGIN_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;plugins&amp;quot;&lt;/span&gt;
@@ -274,7 +284,7 @@
 &lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.unix-lab.org/posts/pelican/"&gt;Тут&lt;/a&gt; неплохо описана настройка блога&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.1.1/settings.html"&gt;все настройки Pelican&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category><category term="настройка блога"></category><category term="сайт pelican"></category></entry><entry><title>Markdown Syntax.</title><link href="http://webquant.ru/posts/markdown%20%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81,%20%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81%20%D0%BC%D0%B0%D1%80%D0%BA%D0%B4%D0%B0%D1%83%D0%BD,%20markdown" rel="alternate"></link><updated>2014-11-01T21:06:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/markdown синтаксис, синтаксис маркдаун, markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category><category term="настройка блога"></category><category term="сайт pelican"></category></entry><entry><title>Markdown Syntax.</title><link href="http://webquant.ru/posts/markdown" rel="alternate"></link><updated>2014-11-07T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
 &lt;h3&gt;Заголовки&lt;/h3&gt;
 &lt;p&gt;Уровень заголовка зависит от количества хешей(#) перед строкой&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Заголовок первого уровня (&amp;lt;h1/&amp;gt;) &lt;/span&gt;
@@ -346,7 +356,7 @@
 &lt;li&gt;ReText  - оффлайн редактор под linux&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category></entry><entry><title>Pelican. Установка и настройка блога.</title><link href="http://webquant.ru/posts/pelican" rel="alternate"></link><updated>2014-10-27T11:59:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-10-27:posts/pelican</id><summary type="html">&lt;h3&gt;Подготовка зависимостей&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category><category term="синтаксис маркдаун"></category><category term="markdown синтаксис"></category></entry><entry><title>Pelican. Установка и настройка блога.</title><link href="http://webquant.ru/posts/pelican" rel="alternate"></link><updated>2014-11-29T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-10-01:posts/pelican</id><summary type="html">&lt;h3&gt;Подготовка зависимостей&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#должен быть установлен pip и git&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; 
 &lt;span class="cp"&gt;# после установки необходимо [настроить git](http:&lt;/span&gt;&lt;span class="c1"&gt;//webquant.ru/posts/git/)&lt;/span&gt;

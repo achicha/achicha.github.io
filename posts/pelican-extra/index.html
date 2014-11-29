@@ -111,6 +111,11 @@ WebQuant            </a>
 </pre></div>
 
 
+<h4>Related Posts</h4>
+<div class="highlight"><pre><span class="c">#В моей теме уже он настроен автоматически, необходимо только скачать сам плагин (по аналогии с sitemap ниже)</span>
+</pre></div>
+
+
 <h2>Немного о SEO</h2>
 <h4>BREADCRUMBS</h4>
 <p>Или хлебные крошки - для улучшения навигации по сайту.</p>
@@ -150,8 +155,13 @@ WebQuant            </a>
 <h4>Sitemap</h4>
 <p>XML карта сайта. Для улучшения индексации сайта в поисковиках. </p>
 <p>1) скачиваем плагин 
-<a href="https://github.com/getpelican/pelican-plugins/tree/master/sitemap">sitemap</a></p>
+<a href="https://github.com/getpelican/pelican-plugins/">sitemap</a></p>
 <p>2) устанавливаем в любую папку, например plugins</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">submodule</span> <span class="n">add</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/getpelican/pelican-plugins</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span>
+</pre></div>
+
+
 <p>3) прописываем настройки:</p>
 <div class="highlight"><pre><span class="cp"># Plugins</span>
 <span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s">&quot;plugins&quot;</span>
@@ -253,6 +263,16 @@ WebQuant            </a>
 		
             </div>
             <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="http://webquant.ru/posts/pelican">Pelican. Установка и настройка блога.</a></li>
+        <li><a href="http://webquant.ru/posts/markdown">Markdown Syntax.</a></li>
+        <li><a href="http://webquant.ru/posts/nod-nok">Нахождение НОД и НОК.</a></li>
+        <li><a href="http://webquant.ru/posts/data-structures">Базовые структуры данных в Python.</a></li>
+        <li><a href="http://webquant.ru/posts/git">Используем Git для контроля над версиями.</a></li>
+    </ul>
+</section>
     <hr/>
     <section class="comments" id="comments">
         <h2>Comments</h2>
@@ -296,7 +316,15 @@ WebQuant            </a>
                 <li class="list-group-item"><a href="http://github.com/achicha"><i class="fa fa-github-square fa-lg"></i> github</a></li>
               </ul>
             </li>
-
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://webquant.ru/pages/pyalgo" target="_blank">
+                Алгоритмы и задачки.py
+            </a>
+        </li>
+      </ul>
+    </li>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
@@ -328,15 +356,6 @@ WebQuant            </a>
             </li>
 
 
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://webquant.ru/pages/pyalgo" target="_blank">
-                Алгоритмы и задачки.py
-            </a>
-        </li>
-      </ul>
-    </li>
     </ul>
 </section>
             </aside>
