@@ -5,14 +5,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://webquant.ru/index.html</loc>
-<lastmod>2014-11-30T12:27:27-00:00</lastmod>
+<lastmod>2014-12-08T20:33:33-00:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0</priority>
 </url>
 
 <url>
 <loc>http://webquant.ru/archives.html</loc>
-<lastmod>2014-11-30T12:27:27-00:00</lastmod>
+<lastmod>2014-12-08T20:33:33-00:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0</priority>
 </url>
@@ -32,6 +32,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://webquant.ru/posts/quicksort</loc>
+<lastmod>2014-12-08T22:18:00+03:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://webquant.ru/posts/nod-nok</loc>
 <lastmod>2014-11-26T22:50:00+03:00</lastmod>
 <changefreq>weekly</changefreq>
@@ -40,7 +47,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://webquant.ru/posts/data-structures</loc>
-<lastmod>2014-11-23T12:18:00+03:00</lastmod>
+<lastmod>2014-12-08T12:18:00+03:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>

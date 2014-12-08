@@ -121,14 +121,17 @@
 
 &lt;h3&gt;Доступ на удаленный сервер&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#заходим на сервер, порт можно не указывать, если только 1 сервер&lt;/span&gt;
-&lt;span class="n"&gt;shh&lt;/span&gt; &lt;span class="n"&gt;your_login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; 
+&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;your_login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; 
 &lt;span class="n"&gt;exit&lt;/span&gt; &lt;span class="err"&gt;#выход&lt;/span&gt;
-&lt;span class="cp"&gt;#копирование с сервера на локальный&lt;/span&gt;
-&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;path1&lt;/span&gt; &lt;span class="n"&gt;path2&lt;/span&gt;
+&lt;span class="cp"&gt;#копирование с сервера на локальный комп&lt;/span&gt;
 &lt;span class="cp"&gt;#path1 = server, path2 = client&lt;/span&gt;
+&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;path1&lt;/span&gt; &lt;span class="n"&gt;path2&lt;/span&gt;
+&lt;span class="cp"&gt;# Error using SCP: “not a regular file” добавляем -r&lt;/span&gt;
+&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="mf"&gt;10.31.2.1&lt;/span&gt;&lt;span class="o"&gt;:/&lt;/span&gt;&lt;span class="n"&gt;srv&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;files_on_server&lt;/span&gt;&lt;span class="o"&gt;/*&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;quiz&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;files_on_client&lt;/span&gt;
+
 &lt;span class="cp"&gt;#копирование с локального компа на сервер&lt;/span&gt;
-&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;path1&lt;/span&gt; &lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;path2&lt;/span&gt;
 &lt;span class="cp"&gt;#path1 = client, path2 = server&lt;/span&gt;
+&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;path1&lt;/span&gt; &lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;server_adress&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;path2&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
