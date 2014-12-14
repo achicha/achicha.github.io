@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/web.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-12-09T22:18:00+03:00</updated><entry><title>Парсер поисковых запросов, используя grab и firebug.</title><link href="http://webquant.ru/posts/go-parser" rel="alternate"></link><updated>2014-12-09T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-09:posts/go-parser</id><summary type="html">&lt;p&gt;Для начала &lt;em&gt;поставим цель&lt;/em&gt;, продумав &lt;strong&gt;алгоритм&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;Для поиска буду использовать &lt;strong&gt;Python 3 с фреймворком Grab&lt;/strong&gt; и Firebug для написания &lt;em&gt;xpath выражений&lt;/em&gt; &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/web.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-12-14T12:18:00+03:00</updated><entry><title>Парсим поисковую выдачу Яндекса.</title><link href="http://webquant.ru/posts/ya-parser" rel="alternate"></link><updated>2014-12-14T12:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-14:posts/ya-parser</id><summary type="html">&lt;p&gt;Продолжая изучать парсинг сайтов, наткнулся на интересную задачу, которую постараюсь и решить в данном посте.&lt;/p&gt;
+&lt;h3&gt;Задача:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Получить данные из поисковой выдачи яндекса по любому запросу&lt;/li&gt;
+&lt;li&gt;Данные с трех страниц выдачи&lt;/li&gt;
+&lt;li&gt;Выбрать данные только по конкретному региону ( Москва)&lt;/li&gt;
+&lt;li&gt;Записать полученные ссылки в файл&lt;/li&gt;
+&lt;li&gt;создать список с номером страницы, ссылкой, названием страницы для последующего обращения к нему, такого вида:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;result = [ { page :'', url : '', title : '' } ,{ page :'', url : '', title : '' } ,{ page :'', url : '', title : '' } ,{ page :'', url : '', title : '' } ..... ]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Как и в прошлом &lt;a href="http://webquant.ru/posts/go-parser/"&gt;посте&lt;/a&gt;, буду использовать Grab для парсинга. Поехали :)&lt;/p&gt;
+&lt;h3&gt;Подготовка&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;определим слова для поиска &lt;code&gt;words = 'grab, python'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;вбиваем их в строку поиска яндекса и смотрим как образуется ссылка на выдачу результатов&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;переменная &lt;code&gt;rstr=-213&lt;/code&gt; отвечает за регион поиска - Москву&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;р=0&lt;/code&gt; , страница поисковой выдачи&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text=grab%2C+python&lt;/code&gt; - наши ключевые слова для поиска в конце ссылки&lt;/li&gt;
+&lt;li&gt;в итоге общая ссылка будет иметь вид: url = &lt;code&gt;http://yandex.ru/yandsearch?rstr=-213&amp;amp;p={0}&amp;amp;text={1}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Код на Python:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;grab&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Grab&lt;/span&gt;
+
+&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Grab&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;grab&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;lst&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+
+&lt;span class="cp"&gt;#go to url (moscow region: rstr=-213) (page: p=0) with keywords: text=&lt;/span&gt;
+&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//yandex.ru/yandsearch?rstr=-213&amp;amp;p={0}&amp;amp;text={1}&amp;#39;&lt;/span&gt;
+&lt;span class="cp"&gt;#добавляем ключевые слова к ссылке&lt;/span&gt;
+&lt;span class="n"&gt;param&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sc"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;param2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;elem&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;param&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="cp"&gt;#открываем файл в который будем записывать полученные ссылки&lt;/span&gt;
+&lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;somefile&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;wt&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="err"&gt;#записываем&lt;/span&gt; &lt;span class="err"&gt;результаты&lt;/span&gt; &lt;span class="err"&gt;поиска&lt;/span&gt; &lt;span class="err"&gt;с&lt;/span&gt; &lt;span class="err"&gt;первых&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="err"&gt;страниц&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="err"&gt;#итоговая&lt;/span&gt; &lt;span class="err"&gt;ссылка&lt;/span&gt;
+        &lt;span class="n"&gt;fullurl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;param2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fullurl&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="err"&gt;#находим&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="err"&gt;ссылки&lt;/span&gt; &lt;span class="n"&gt;firebug&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ом&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;начинаем&lt;/span&gt; &lt;span class="err"&gt;их&lt;/span&gt; &lt;span class="err"&gt;искать&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="c1"&gt;//a[@class=&amp;quot;b-link serp-item__title-link serp-item__title-link&amp;quot;]&amp;#39;):&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="c1"&gt;//a[@class=&amp;quot;b-link serp-item__title-link serp-item__title-link&amp;quot;]&amp;#39;).exists():&lt;/span&gt;
+                &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;последний&lt;/span&gt; &lt;span class="err"&gt;пункт&lt;/span&gt; &lt;span class="err"&gt;задания&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;составляем&lt;/span&gt; &lt;span class="err"&gt;список&lt;/span&gt;
+                &lt;span class="n"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)})&lt;/span&gt;
+                &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;сохраняем&lt;/span&gt; &lt;span class="err"&gt;ссылки&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;
+                &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sc"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Результаты поиска&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;[{&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Grab&lt;/span&gt; &lt;span class="err"&gt;—&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="err"&gt;библиотека&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;парсинга&lt;/span&gt; &lt;span class="err"&gt;сайтов&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="err"&gt;Хабрахабр&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//habrahabr.ru/post/127584/&amp;#39;, &amp;#39;page&amp;#39;: 1}, {&amp;#39;title&amp;#39;: &amp;#39;Grab - site scraping framework | Discussions in python-grab&amp;#39;,&amp;#39;url&amp;#39;: &amp;#39;http://grablib.org/&amp;#39;, &amp;#39;page&amp;#39;: 1},..................]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="parser"></category><category term="парсер яндекс python"></category></entry><entry><title>Парсер поисковых запросов, используя grab и firebug.</title><link href="http://webquant.ru/posts/go-parser" rel="alternate"></link><updated>2014-12-10T22:19:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-09:posts/go-parser</id><summary type="html">&lt;p&gt;Для начала &lt;em&gt;поставим цель&lt;/em&gt;, продумав &lt;strong&gt;алгоритм&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Для парсинга буду использовать &lt;strong&gt;Python 3 с фреймворком Grab&lt;/strong&gt; и Firebug для написания &lt;em&gt;xpath выражений&lt;/em&gt; &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Заходим на сайт Google&lt;/li&gt;
 &lt;li&gt;Исследуем Firebug'ом сайт для определения нужных элементов кода&lt;/li&gt;
@@ -12,7 +71,7 @@
 &lt;p&gt;Далее нужно определить объекты, к которым будем обращаться из &lt;em&gt;Python&lt;/em&gt;. &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Для этого нужно нажать правой кнопкой мыши на объекте, над которым будем производить действие и нажать inspect with Firebug&lt;/li&gt;
-&lt;li&gt;откроется панель с html кодом, где нужно найти необходимые атрибуты.&lt;/li&gt;
+&lt;li&gt;откроется панель с html кодом, где нужно найти необходимые атрибуты для &lt;em&gt;парсера&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Пример:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -36,7 +95,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;КОД: Парсим первую страницу результатов поиска из гугла&lt;/h3&gt;
+&lt;h3&gt;КОД на python: Парсим первую страницу результатов поиска из google&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
 &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;grab&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Grab&lt;/span&gt;
 
@@ -55,7 +114,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Результаты поиска&lt;/h3&gt;
+&lt;h3&gt;Результаты парсера&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Grab&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;фреймворк&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;парсинга&lt;/span&gt; &lt;span class="err"&gt;сайтов&lt;/span&gt; &lt;span class="err"&gt;—&lt;/span&gt; &lt;span class="err"&gt;Документация&lt;/span&gt; &lt;span class="p"&gt;...&lt;/span&gt;
 &lt;span class="nl"&gt;https:&lt;/span&gt;&lt;span class="c1"&gt;//grab.readthedocs.org/&lt;/span&gt;
 &lt;span class="n"&gt;Grab&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="err"&gt;фреймворк&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;парсинга&lt;/span&gt; &lt;span class="err"&gt;сайтов&lt;/span&gt;
@@ -72,99 +131,10 @@
 
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="http://webquant.ru/posts/ya-parser/"&gt;Парсим Яндекс&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://grab.readthedocs.org/ru/latest/"&gt;grab docs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.w3schools.com/xpath/"&gt;xpath tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="parser"></category><category term="парсер"></category></entry><entry><title>Pelican. Установка и настройка блога.</title><link href="http://webquant.ru/posts/pelican" rel="alternate"></link><updated>2014-11-30T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-02:posts/pelican</id><summary type="html">&lt;h3&gt;Подготовка зависимостей&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#должен быть установлен pip и git&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; 
-&lt;span class="cp"&gt;# после установки необходимо [настроить git](http:&lt;/span&gt;&lt;span class="c1"&gt;//webquant.ru/posts/git/)&lt;/span&gt;
-&lt;span class="cp"&gt;#устанавливаем Pelican и Markdown&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt; 
-&lt;span class="cp"&gt;#обновляем pelican до dev версии с github&amp;#39;a&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/getpelican/pelican#egg=pelican --upgrade&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Базовая настройка pelican&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
-&lt;span class="cp"&gt;#Ответы на вопросы&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Установка новой темы&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# переходим в папку с темами&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;python2&lt;/span&gt;&lt;span class="mf"&gt;.7&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dist&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
-&lt;span class="cp"&gt;# копируем одну из тем из  &lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/DandyDev/pelican-bootstrap3.git&lt;/span&gt;
-&lt;span class="cp"&gt;# смотрим путь до нашей темы &lt;/span&gt;
-&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; 
-&lt;span class="cp"&gt;# устанавливаем тему&lt;/span&gt;
-&lt;span class="cp"&gt;# добавляем переменную THEME=/path/to/my_theme в pelicanconf.py&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Создание первого поста&lt;/h3&gt;
-&lt;p&gt;После настройки проекта создадим первый пост в папке content. Для этого необходимо создать новый файл с расширением *.md (&lt;a href="http://webquant.ru/posts/markdown/"&gt;Markdown&lt;/a&gt;) следующего содержания:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="err"&gt;Установка&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;настройка&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
-&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;27&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;59&lt;/span&gt;
-&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt;
-&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;теги&lt;/span&gt;
-&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;span class="n"&gt;Author&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;admin&lt;/span&gt;
-&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;Пошаговая&lt;/span&gt; &lt;span class="err"&gt;инструкция&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;установки&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt; &lt;span class="err"&gt;на&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
-
-&lt;span class="err"&gt;Мой&lt;/span&gt; &lt;span class="err"&gt;первый&lt;/span&gt; &lt;span class="err"&gt;пост&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;блога&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Редактирование статьи&lt;/h3&gt;
-&lt;p&gt;Запустим devserver для редактирования статьи и автоматического обновления сайта в реальном времени:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;devserver&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;запуск&lt;/span&gt;
-&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;остановка&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;после запуска локального сервера смотреть его тут
-&lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Перенос блога на сервер github&lt;/h3&gt;
-&lt;h5&gt;1. Подготовка&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;Необходимо ответить "Yes"  при создании блога quickstart&lt;/li&gt;
-&lt;li&gt;Нужно иметь аккаунт на github&lt;/li&gt;
-&lt;li&gt;Должен быть &lt;a href="http://webquant.ru/posts/git/"&gt;настроен git&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;2. Создаем репозиторий на github:  username.github.io&lt;/h5&gt;
-&lt;h5&gt;3. Копируем проект с гитхаба на свой компьютер в папку output своего блога&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;achicha&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;achicha&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;myblog_folder&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5&gt;4. работа с git&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#переходим в папку, где находяться сгенерированные файлы&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;myblog_folder&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
-&lt;span class="cp"&gt;# инициализируем гит&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; 
-&lt;span class="cp"&gt;# добавляем все файлы в локальный проект&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; 
-&lt;span class="cp"&gt;# узнаем какие файлы добавлены в проект и в какой ветке (master/slave) работаем&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; 
-&lt;span class="cp"&gt;# добавляем коммит&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;Commit&lt;/span&gt; &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt; 
-&lt;span class="cp"&gt;# добавляем измененные файлы на сервер&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Настраиваем свое доменное имя&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Создаем файл с именем CNAME (пустой, без какого-либо расширения) в папке output&lt;/li&gt;
-&lt;li&gt;Добавляем в него запись своего домена без www, например : mydomain.com &lt;/li&gt;
-&lt;li&gt;Добавляем его на github. Должен измениться домен в username/username.github.io -&amp;gt; settings(снизу в правой боковой колонке) -&amp;gt; github Pages -&amp;gt; your site is published at "your domain" &lt;/li&gt;
-&lt;li&gt;Прописываем "А" запись c IP адресом GitHub'a в &lt;a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;DNS настройки&lt;/a&gt; у своего провайдера/хостера. &lt;/li&gt;
-&lt;li&gt;Не забыть "А" запись для переадрисации зеркала с "www"&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Если не понятно, читаем &lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/"&gt;описание c github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Базовые настройки закончены. Далее &lt;a href="http://webquant.ru/posts/pelican-extra/"&gt;расширенные настройки&lt;/a&gt;.&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category><category term="настройка блога"></category><category term="сайт pelican"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-29T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;Git&lt;/em&gt;&lt;/strong&gt; - &lt;em&gt;это распределенная система контроля версий, которая может использовать несколько репозиториев, связанных между собой.&lt;/em&gt;&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="parser"></category><category term="парсер google python"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-30T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;Git&lt;/em&gt;&lt;/strong&gt; - &lt;em&gt;это распределенная система контроля версий, которая может использовать несколько репозиториев, связанных между собой.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Разработчики, работая совместно над одним проектом, делают это каждый отдельно, в своем локальном (на своем компьютере) репозитории, после чего синхронизируют все изменения на сервере. И в случае необходимости, можно использовать другие ветки для продолжения работы над проетом. &lt;/p&gt;
 &lt;p&gt;В данной статье я хотел бы рассказать об основах работы с Git: установка в Ubuntu, базовые команды, термины, ветки в Гит (branch).&lt;/p&gt;
 &lt;p&gt;Всё будет описано с примерами в терминале, без использования Gui приложений. Можно сказать, что описанное является моей шпаргалкой, на случай если вдруг что-то забуду. :)&lt;/p&gt;
@@ -300,7 +270,7 @@
 &lt;li&gt;&lt;a href="http://habrahabr.ru/post/60347/"&gt;на хабре&lt;/a&gt; очень подробно о каждой команде&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.regolit.com/2014/02/17/a-bit-of-git"&gt;тут&lt;/a&gt; неплохо описано, но много воды&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.codeschool.com/courses/try-git"&gt;онлайн курс&lt;/a&gt; для быстрого изучения (минут 10-15) основных команд&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="git"></category><category term="git команды"></category><category term="git настройка"></category><category term="работа с git"></category><category term="git репозиторий"></category><category term="установка git"></category><category term=""></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="http://webquant.ru/posts/pelican-extra" rel="alternate"></link><updated>2014-11-09T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Начало читаем в &lt;a href="http://webquant.ru/posts/pelican/"&gt;предыдущей статье&lt;/a&gt;.&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="git"></category><category term="git команды"></category><category term="git настройка"></category><category term="работа с git"></category><category term="git репозиторий"></category><category term="установка git"></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="http://webquant.ru/posts/pelican-extra" rel="alternate"></link><updated>2014-11-10T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Начало читаем в &lt;a href="http://webquant.ru/posts/pelican/"&gt;предыдущей статье&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Чтобы было полегче с настройками, необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
 &lt;p&gt;Все изменения вносятся в основной файл настроек &lt;strong&gt;&lt;em&gt;pelicanconf.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;Структуризация файлов.&lt;/h3&gt;
@@ -449,7 +419,7 @@
 &lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.unix-lab.org/posts/pelican/"&gt;Тут&lt;/a&gt; неплохо описана настройка блога&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.1.1/settings.html"&gt;все настройки Pelican&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category><category term="настройка блога"></category><category term="сайт pelican"></category></entry><entry><title>Markdown Syntax.</title><link href="http://webquant.ru/posts/markdown" rel="alternate"></link><updated>2014-11-07T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category><category term="настройка блога"></category><category term="сайт pelican"></category><category term="установка pelican"></category></entry><entry><title>Основы синтаксиса Маркдаун (Markdown).</title><link href="http://webquant.ru/posts/markdown" rel="alternate"></link><updated>2014-11-08T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
 &lt;h3&gt;Заголовки&lt;/h3&gt;
 &lt;p&gt;Уровень заголовка зависит от количества хешей(#) перед строкой&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Заголовок первого уровня (&amp;lt;h1/&amp;gt;) &lt;/span&gt;
@@ -477,7 +447,7 @@
 &lt;h3&gt;Картинки и ссылки&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;вставка ссылки
+&lt;p&gt;вставка ссылки в маркдаун
 &lt;code&gt;[Тут ссылка на](http://google.com/)&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -504,7 +474,7 @@
 &lt;p&gt;&lt;code&gt;&amp;gt; цитируемый текст&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;Разное&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;Абзацы определяются по наличию пустой строки &lt;/li&gt;
+&lt;li&gt;Абзацы в markdown определяются по наличию пустой строки &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Стилизация текста&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;**Жирный текст**&lt;/code&gt; — &lt;strong&gt;Жирный текст&lt;/strong&gt;&lt;/p&gt;
@@ -512,13 +482,13 @@
 &lt;p&gt;&lt;code&gt;***Жирный курсивный текст***&lt;/code&gt; — &lt;strong&gt;&lt;em&gt;Жирный курсивный текст&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Всегда можно использовать обычный html, если что :)&lt;/p&gt;
+&lt;p&gt;В маркдаун всегда можно использовать обычный html, если что :)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Редакторы&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://stackedit.io/"&gt;stackedit&lt;/a&gt; — удобный онлайн редактор&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stackedit.io/"&gt;stackedit&lt;/a&gt; — удобный онлайн редактор для markdown&lt;/li&gt;
 &lt;li&gt;ReText  - оффлайн редактор под linux&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category><category term="синтаксис маркдаун"></category><category term="markdown синтаксис"></category></entry></feed>
+&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category><category term="синтаксис маркдаун"></category><category term="markdown синтаксис"></category><category term="основы маркдаун"></category></entry></feed>

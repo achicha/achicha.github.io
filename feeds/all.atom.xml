@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/all.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-12-09T22:18:00+03:00</updated><entry><title>Парсер поисковых запросов, используя grab и firebug.</title><link href="http://webquant.ru/posts/go-parser" rel="alternate"></link><updated>2014-12-09T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-09:posts/go-parser</id><summary type="html">&lt;p&gt;Для начала &lt;em&gt;поставим цель&lt;/em&gt;, продумав &lt;strong&gt;алгоритм&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;Для поиска буду использовать &lt;strong&gt;Python 3 с фреймворком Grab&lt;/strong&gt; и Firebug для написания &lt;em&gt;xpath выражений&lt;/em&gt; &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/all.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-12-14T12:18:00+03:00</updated><entry><title>Парсим поисковую выдачу Яндекса.</title><link href="http://webquant.ru/posts/ya-parser" rel="alternate"></link><updated>2014-12-14T12:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-14:posts/ya-parser</id><summary type="html">&lt;p&gt;Продолжая изучать парсинг сайтов, наткнулся на интересную задачу, которую постараюсь и решить в данном посте.&lt;/p&gt;
+&lt;h3&gt;Задача:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Получить данные из поисковой выдачи яндекса по любому запросу&lt;/li&gt;
+&lt;li&gt;Данные с трех страниц выдачи&lt;/li&gt;
+&lt;li&gt;Выбрать данные только по конкретному региону ( Москва)&lt;/li&gt;
+&lt;li&gt;Записать полученные ссылки в файл&lt;/li&gt;
+&lt;li&gt;создать список с номером страницы, ссылкой, названием страницы для последующего обращения к нему, такого вида:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;result = [ { page :'', url : '', title : '' } ,{ page :'', url : '', title : '' } ,{ page :'', url : '', title : '' } ,{ page :'', url : '', title : '' } ..... ]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Как и в прошлом &lt;a href="http://webquant.ru/posts/go-parser/"&gt;посте&lt;/a&gt;, буду использовать Grab для парсинга. Поехали :)&lt;/p&gt;
+&lt;h3&gt;Подготовка&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;определим слова для поиска &lt;code&gt;words = 'grab, python'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;вбиваем их в строку поиска яндекса и смотрим как образуется ссылка на выдачу результатов&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;переменная &lt;code&gt;rstr=-213&lt;/code&gt; отвечает за регион поиска - Москву&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;р=0&lt;/code&gt; , страница поисковой выдачи&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text=grab%2C+python&lt;/code&gt; - наши ключевые слова для поиска в конце ссылки&lt;/li&gt;
+&lt;li&gt;в итоге общая ссылка будет иметь вид: url = &lt;code&gt;http://yandex.ru/yandsearch?rstr=-213&amp;amp;p={0}&amp;amp;text={1}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Код на Python:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;grab&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Grab&lt;/span&gt;
+
+&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Grab&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;grab&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;lst&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+
+&lt;span class="cp"&gt;#go to url (moscow region: rstr=-213) (page: p=0) with keywords: text=&lt;/span&gt;
+&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//yandex.ru/yandsearch?rstr=-213&amp;amp;p={0}&amp;amp;text={1}&amp;#39;&lt;/span&gt;
+&lt;span class="cp"&gt;#добавляем ключевые слова к ссылке&lt;/span&gt;
+&lt;span class="n"&gt;param&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sc"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;param2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;elem&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;param&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="cp"&gt;#открываем файл в который будем записывать полученные ссылки&lt;/span&gt;
+&lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;somefile&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;wt&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="err"&gt;#записываем&lt;/span&gt; &lt;span class="err"&gt;результаты&lt;/span&gt; &lt;span class="err"&gt;поиска&lt;/span&gt; &lt;span class="err"&gt;с&lt;/span&gt; &lt;span class="err"&gt;первых&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="err"&gt;страниц&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="err"&gt;#итоговая&lt;/span&gt; &lt;span class="err"&gt;ссылка&lt;/span&gt;
+        &lt;span class="n"&gt;fullurl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;param2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fullurl&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="err"&gt;#находим&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="err"&gt;ссылки&lt;/span&gt; &lt;span class="n"&gt;firebug&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ом&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;начинаем&lt;/span&gt; &lt;span class="err"&gt;их&lt;/span&gt; &lt;span class="err"&gt;искать&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="c1"&gt;//a[@class=&amp;quot;b-link serp-item__title-link serp-item__title-link&amp;quot;]&amp;#39;):&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="c1"&gt;//a[@class=&amp;quot;b-link serp-item__title-link serp-item__title-link&amp;quot;]&amp;#39;).exists():&lt;/span&gt;
+                &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;последний&lt;/span&gt; &lt;span class="err"&gt;пункт&lt;/span&gt; &lt;span class="err"&gt;задания&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;составляем&lt;/span&gt; &lt;span class="err"&gt;список&lt;/span&gt;
+                &lt;span class="n"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)})&lt;/span&gt;
+                &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;сохраняем&lt;/span&gt; &lt;span class="err"&gt;ссылки&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;файл&lt;/span&gt;
+                &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sc"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Результаты поиска&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;[{&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Grab&lt;/span&gt; &lt;span class="err"&gt;—&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="err"&gt;библиотека&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;парсинга&lt;/span&gt; &lt;span class="err"&gt;сайтов&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="err"&gt;Хабрахабр&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//habrahabr.ru/post/127584/&amp;#39;, &amp;#39;page&amp;#39;: 1}, {&amp;#39;title&amp;#39;: &amp;#39;Grab - site scraping framework | Discussions in python-grab&amp;#39;,&amp;#39;url&amp;#39;: &amp;#39;http://grablib.org/&amp;#39;, &amp;#39;page&amp;#39;: 1},..................]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="parser"></category><category term="парсер яндекс python"></category></entry><entry><title>Парсер поисковых запросов, используя grab и firebug.</title><link href="http://webquant.ru/posts/go-parser" rel="alternate"></link><updated>2014-12-10T22:19:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-09:posts/go-parser</id><summary type="html">&lt;p&gt;Для начала &lt;em&gt;поставим цель&lt;/em&gt;, продумав &lt;strong&gt;алгоритм&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Для парсинга буду использовать &lt;strong&gt;Python 3 с фреймворком Grab&lt;/strong&gt; и Firebug для написания &lt;em&gt;xpath выражений&lt;/em&gt; &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Заходим на сайт Google&lt;/li&gt;
 &lt;li&gt;Исследуем Firebug'ом сайт для определения нужных элементов кода&lt;/li&gt;
@@ -12,7 +71,7 @@
 &lt;p&gt;Далее нужно определить объекты, к которым будем обращаться из &lt;em&gt;Python&lt;/em&gt;. &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Для этого нужно нажать правой кнопкой мыши на объекте, над которым будем производить действие и нажать inspect with Firebug&lt;/li&gt;
-&lt;li&gt;откроется панель с html кодом, где нужно найти необходимые атрибуты.&lt;/li&gt;
+&lt;li&gt;откроется панель с html кодом, где нужно найти необходимые атрибуты для &lt;em&gt;парсера&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Пример:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -36,7 +95,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;КОД: Парсим первую страницу результатов поиска из гугла&lt;/h3&gt;
+&lt;h3&gt;КОД на python: Парсим первую страницу результатов поиска из google&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
 &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;grab&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Grab&lt;/span&gt;
 
@@ -55,7 +114,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Результаты поиска&lt;/h3&gt;
+&lt;h3&gt;Результаты парсера&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Grab&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;фреймворк&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;парсинга&lt;/span&gt; &lt;span class="err"&gt;сайтов&lt;/span&gt; &lt;span class="err"&gt;—&lt;/span&gt; &lt;span class="err"&gt;Документация&lt;/span&gt; &lt;span class="p"&gt;...&lt;/span&gt;
 &lt;span class="nl"&gt;https:&lt;/span&gt;&lt;span class="c1"&gt;//grab.readthedocs.org/&lt;/span&gt;
 &lt;span class="n"&gt;Grab&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="err"&gt;фреймворк&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;парсинга&lt;/span&gt; &lt;span class="err"&gt;сайтов&lt;/span&gt;
@@ -72,9 +131,10 @@
 
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="http://webquant.ru/posts/ya-parser/"&gt;Парсим Яндекс&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://grab.readthedocs.org/ru/latest/"&gt;grab docs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.w3schools.com/xpath/"&gt;xpath tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="parser"></category><category term="парсер"></category></entry><entry><title>Быстрая сортировка в Python (Quicksort, сортировка Хоара).</title><link href="http://webquant.ru/posts/quicksort" rel="alternate"></link><updated>2014-12-08T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-08:posts/quicksort</id><summary type="html">&lt;h4&gt;Алгоритм&lt;/h4&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="parser"></category><category term="парсер google python"></category></entry><entry><title>Быстрая сортировка в Python (Quicksort, сортировка Хоара).</title><link href="http://webquant.ru/posts/quicksort" rel="alternate"></link><updated>2014-12-09T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-08:posts/quicksort</id><summary type="html">&lt;h4&gt;Алгоритм&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;Выбираем в массиве данных &lt;strong&gt;опорный элемент&lt;/strong&gt; приближенный к медиане&lt;/li&gt;
 &lt;li&gt;Разделяем массив. Все элементы, которые меньше или равного опорному, переносим влево от него, все остальные (большие опорного) переносим вправо. &lt;/li&gt;
@@ -88,7 +148,7 @@
 &lt;li&gt;Неустойчив&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Код&lt;/h4&gt;
-&lt;p&gt;Чтобы нейтрализовать все недостатки данного алгоритма быстрой сортировки, &lt;/p&gt;
+&lt;p&gt;Чтобы нейтрализовать все недостатки данного алгоритма быстрой сортировки в python, &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
 &lt;span class="n"&gt;less&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;span class="n"&gt;equal&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
@@ -116,7 +176,7 @@
 &lt;li&gt;&lt;a href="https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0"&gt;Wiki&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://bigocheatsheet.com/#sorting"&gt;Big O - sorting&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://py-algorithm.blogspot.ru/2011/11/quicksort.html"&gt;еще статья&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="algorithms"></category><category term="python алгоритмы"></category><category term="quicksort"></category><category term="алгоритм сортировки"></category></entry><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;Нахождение НОД&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="algorithms"></category><category term="python алгоритмы"></category><category term="quicksort"></category><category term="алгоритм сортировки"></category><category term="быстрая сортировка python"></category></entry><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;Нахождение НОД&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Наибольший общий делитель&lt;/em&gt; - самое большое число, на которое можно без остатка разделить два числа, для которых ищется НОД.&lt;/p&gt;
 &lt;h4&gt;Алгоритм:&lt;/h4&gt;
 &lt;ol&gt;
@@ -293,71 +353,4 @@ help(S.replace) узнать описание метода&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://habrahabr.ru/post/128457/"&gt;статья на Хабре&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://pep8.ru/doc/tutorial-2.6/6.html"&gt;pep8.ru&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"&gt;Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="data structures"></category><category term="структуры данных"></category><category term="python методы"></category><category term="python списоки"></category><category term="словари python"></category><category term="python кортеж"></category></entry><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-15T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;thefanclub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
-&lt;span class="cp"&gt;#в поиске набираем Grive setup и следуем инструкциям&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Обновление&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;upgrade&lt;/span&gt;
-&lt;span class="cp"&gt;# обновить только 1 программу&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;only&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;upgade&lt;/span&gt; &lt;span class="n"&gt;program&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Отключаем комерческий сервис в меню Dash&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="n"&gt;gsettings&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;canonical&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Unity&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Lenses&lt;/span&gt; &lt;span class="n"&gt;disabled&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;scopes&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;[&amp;#39;more_suggestions-amazon.scope&amp;#39;, &amp;#39;more_suggestions-u1ms.scope&amp;#39;, &amp;#39;more_suggestions-populartracks.scope&amp;#39;, &amp;#39;music-musicstore.scope&amp;#39;, &amp;#39;more_suggestions-ebay.scope&amp;#39;, &amp;#39;more_suggestions-ubuntushop.scope&amp;#39;, &amp;#39;more_suggestions-skimlinks.scope&amp;#39;]&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Разблокировать dpkg&lt;/h3&gt;
-&lt;p&gt;Часто появляется ошибка: &lt;em&gt;Unable to lock the administration directory (/var/lib/dpkg/) is another process using it&lt;/em&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;process&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="mi"&gt;2345&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Создание загрузочной флешки из образа диска&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;dd&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iso&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sdb&lt;/span&gt; &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;ставить на форматированную fat32 флешку.&lt;/li&gt;
-&lt;li&gt;включить галку - загрузочный диск.&lt;/li&gt;
-&lt;li&gt;ставлю на sdb раздел, на sdb1 не получается.&lt;/li&gt;
-&lt;li&gt;bs=16m сколько за раз записывается.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;Как удалить приложение со всеми зависимостями&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;remove&lt;/span&gt; &lt;span class="n"&gt;firefox&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;звездочку&lt;/span&gt; &lt;span class="err"&gt;добавляем&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;VLC&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;djcj&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vlc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stable&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;vlc&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Добавляем ключ от репозитория (как пример)&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;adv&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;keyserver&lt;/span&gt; &lt;span class="n"&gt;keyserver&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;recv&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;FC91AE7E&lt;/span&gt; 
-&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Apple slim keyboard исправляем кнопки F1-F12  в Ubuntu 14.04&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#Правильное Alt отображение и Command&lt;/span&gt;
-&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt; &lt;span class="n"&gt;hid_apple&lt;/span&gt; &lt;span class="n"&gt;swap_opt_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;tee&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;modprobe&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hid_apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
-&lt;span class="cp"&gt;#Восстановить работу функции кнопок &lt;/span&gt;
-&lt;span class="cp"&gt;#0 = отключено: Позволяет отключить клавиши &amp;#39;Fn &amp;quot;&lt;/span&gt;
-&lt;span class="cp"&gt;#1 = fkeyslast: Функциональные клавиши имеют низкий приоритет.&lt;/span&gt;
-&lt;span class="cp"&gt;#2 = fkeysfirst: Функциональные клавиши имеют приоритет&lt;/span&gt;
-&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt; &lt;span class="n"&gt;hid_apple&lt;/span&gt; &lt;span class="n"&gt;fnmode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;tee&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;modprobe&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hid_apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
-&lt;span class="cp"&gt;#Добавьте копирование конфигурации загрузки файлов initramfs.&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;initramfs&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;reboot&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category><category term="настройка ubuntu"></category></entry></feed>
+&lt;/ul&gt;</summary><category term="python"></category><category term="data structures"></category><category term="структуры данных"></category><category term="python методы"></category><category term="python списоки"></category><category term="словари python"></category><category term="python кортеж"></category></entry></feed>

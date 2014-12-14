@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/python.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-12-08T22:18:00+03:00</updated><entry><title>Быстрая сортировка в Python (Quicksort, сортировка Хоара).</title><link href="http://webquant.ru/posts/quicksort" rel="alternate"></link><updated>2014-12-08T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-08:posts/quicksort</id><summary type="html">&lt;h4&gt;Алгоритм&lt;/h4&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/python.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-12-09T22:18:00+03:00</updated><entry><title>Быстрая сортировка в Python (Quicksort, сортировка Хоара).</title><link href="http://webquant.ru/posts/quicksort" rel="alternate"></link><updated>2014-12-09T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-08:posts/quicksort</id><summary type="html">&lt;h4&gt;Алгоритм&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;Выбираем в массиве данных &lt;strong&gt;опорный элемент&lt;/strong&gt; приближенный к медиане&lt;/li&gt;
 &lt;li&gt;Разделяем массив. Все элементы, которые меньше или равного опорному, переносим влево от него, все остальные (большие опорного) переносим вправо. &lt;/li&gt;
@@ -13,7 +13,7 @@
 &lt;li&gt;Неустойчив&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Код&lt;/h4&gt;
-&lt;p&gt;Чтобы нейтрализовать все недостатки данного алгоритма быстрой сортировки, &lt;/p&gt;
+&lt;p&gt;Чтобы нейтрализовать все недостатки данного алгоритма быстрой сортировки в python, &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
 &lt;span class="n"&gt;less&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;span class="n"&gt;equal&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
@@ -41,7 +41,7 @@
 &lt;li&gt;&lt;a href="https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0"&gt;Wiki&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://bigocheatsheet.com/#sorting"&gt;Big O - sorting&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://py-algorithm.blogspot.ru/2011/11/quicksort.html"&gt;еще статья&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="python"></category><category term="algorithms"></category><category term="python алгоритмы"></category><category term="quicksort"></category><category term="алгоритм сортировки"></category></entry><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;Нахождение НОД&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="algorithms"></category><category term="python алгоритмы"></category><category term="quicksort"></category><category term="алгоритм сортировки"></category><category term="быстрая сортировка python"></category></entry><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;Нахождение НОД&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Наибольший общий делитель&lt;/em&gt; - самое большое число, на которое можно без остатка разделить два числа, для которых ищется НОД.&lt;/p&gt;
 &lt;h4&gt;Алгоритм:&lt;/h4&gt;
 &lt;ol&gt;

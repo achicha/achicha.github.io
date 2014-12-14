@@ -14,7 +14,7 @@
 <link rel="canonical" href="http://webquant.ru/posts/go-parser">
 
         <meta name="author" content="admin" />
-        <meta name="keywords" content="python,parser,парсер" />
+        <meta name="keywords" content="python,parser,парсер google python" />
         <meta name="description" content="Парсим поисковую выдачу по запросам из гугла, и обрабатываем полученные результаты." />
 
 
@@ -87,7 +87,7 @@ WebQuant            </a>
             <div class="entry-content">
                
                 <p>Для начала <em>поставим цель</em>, продумав <strong>алгоритм</strong>:</p>
-<p>Для поиска буду использовать <strong>Python 3 с фреймворком Grab</strong> и Firebug для написания <em>xpath выражений</em> </p>
+<p>Для парсинга буду использовать <strong>Python 3 с фреймворком Grab</strong> и Firebug для написания <em>xpath выражений</em> </p>
 <ol>
 <li>Заходим на сайт Google</li>
 <li>Исследуем Firebug'ом сайт для определения нужных элементов кода</li>
@@ -99,7 +99,7 @@ WebQuant            </a>
 <p>Далее нужно определить объекты, к которым будем обращаться из <em>Python</em>. </p>
 <ol>
 <li>Для этого нужно нажать правой кнопкой мыши на объекте, над которым будем производить действие и нажать inspect with Firebug</li>
-<li>откроется панель с html кодом, где нужно найти необходимые атрибуты.</li>
+<li>откроется панель с html кодом, где нужно найти необходимые атрибуты для <em>парсера</em>.</li>
 </ol>
 <p><strong><em>Пример:</em></strong></p>
 <ul>
@@ -123,7 +123,7 @@ WebQuant            </a>
 </pre></div>
 
 
-<h3>КОД: Парсим первую страницу результатов поиска из гугла</h3>
+<h3>КОД на python: Парсим первую страницу результатов поиска из google</h3>
 <div class="highlight"><pre><span class="cp"># -*- coding: utf-8 -*-</span>
 <span class="n">from</span> <span class="n">grab</span> <span class="n">import</span> <span class="n">Grab</span>
 
@@ -142,7 +142,7 @@ WebQuant            </a>
 </pre></div>
 
 
-<h3>Результаты поиска</h3>
+<h3>Результаты парсера</h3>
 <div class="highlight"><pre><span class="n">Grab</span> <span class="o">-</span> <span class="err">фреймворк</span> <span class="err">для</span> <span class="err">парсинга</span> <span class="err">сайтов</span> <span class="err">—</span> <span class="err">Документация</span> <span class="p">...</span>
 <span class="nl">https:</span><span class="c1">//grab.readthedocs.org/</span>
 <span class="n">Grab</span> <span class="o">-</span> <span class="n">python</span> <span class="err">фреймворк</span> <span class="err">для</span> <span class="err">парсинга</span> <span class="err">сайтов</span>
@@ -159,6 +159,7 @@ WebQuant            </a>
 
 <h3>Полезные ссылки</h3>
 <ul>
+<li><a href="http://webquant.ru/posts/ya-parser/">Парсим Яндекс</a></li>
 <li><a href="https://grab.readthedocs.org/ru/latest/">grab docs</a></li>
 <li><a href="http://www.w3schools.com/xpath/">xpath tutorial</a></li>
 </ul>
@@ -179,7 +180,7 @@ WebQuant            </a>
         /
 	<a href="http://webquant.ru/tag/parser.html">parser</a>
         /
-	<a href="http://webquant.ru/tag/parser.html">парсер</a>
+	<a href="http://webquant.ru/tag/parser-google-python.html">парсер google python</a>
     
 </footer><!-- /.post-info -->                  
                     </div>
@@ -190,11 +191,11 @@ WebQuant            </a>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
+        <li><a href="http://webquant.ru/posts/ya-parser">Парсим поисковую выдачу Яндекса.</a></li>
+        <li><a href="http://webquant.ru/posts/nod-nok">Нахождение НОД и НОК.</a></li>
         <li><a href="http://webquant.ru/posts/pelican">Pelican. Установка и настройка блога.</a></li>
-        <li><a href="http://webquant.ru/posts/git">Используем Git для контроля версий.</a></li>
         <li><a href="http://webquant.ru/posts/data-structures">Базовые типы и структуры данных в Python.</a></li>
-        <li><a href="http://webquant.ru/posts/pelican-extra">Pelican. Расширенные настройки.</a></li>
-        <li><a href="http://webquant.ru/posts/quicksort">Быстрая сортировка в Python (Quicksort, сортировка Хоара).</a></li>
+        <li><a href="http://webquant.ru/posts/git">Используем Git для контроля версий.</a></li>
     </ul>
 </section>
     <hr/>
@@ -253,6 +254,11 @@ WebQuant            </a>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/ya-parser">
+                            Парсим поисковую выдачу Яндекса.
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://webquant.ru/posts/go-parser">
                             Парсер поисковых запросов, используя grab и firebug.
                         </a>
@@ -270,11 +276,6 @@ WebQuant            </a>
                     <li class="list-group-item">
                         <a href="http://webquant.ru/posts/data-structures">
                             Базовые типы и структуры данных в Python.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://webquant.ru/posts/ubuntu">
-                            Настраиваем Ubuntu после запуска.
                         </a>
                     </li>
                 </ul>
