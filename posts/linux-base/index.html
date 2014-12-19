@@ -53,6 +53,9 @@ WebQuant            </a>
                             <a href="http://webquant.ru/category/python">Python</a>
                         </li>
                         <li >
+                            <a href="http://webquant.ru/category/trading">Trading</a>
+                        </li>
+                        <li >
                             <a href="http://webquant.ru/category/web">Web</a>
                         </li>
             </ul>
@@ -101,8 +104,14 @@ WebQuant            </a>
 <span class="n">cp</span> <span class="err">путь</span> <span class="err">откуда</span> <span class="err">и</span> <span class="err">путь</span> <span class="err">куда</span> <span class="err">#</span> <span class="err">копируем</span>
 <span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="err">#копировать</span> <span class="err">папку</span>
 <span class="n">mv</span> <span class="err">путь</span><span class="mi">1</span> <span class="err">путь</span><span class="mi">2</span> <span class="err">#передвигаем</span>
-<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">nameprog</span><span class="p">.</span><span class="n">py</span> <span class="err">#задать</span> <span class="err">права</span>
 <span class="p">.</span><span class="o">/</span><span class="n">progname</span> <span class="o">&amp;</span> <span class="err">#в</span> <span class="err">фоновом</span> <span class="err">режиме</span> <span class="err">или</span>  <span class="n">Ctrl</span><span class="o">+</span><span class="n">Z</span><span class="p">,</span> <span class="n">bg</span>
+
+<span class="cp">#сделать файл исполняемым, для запуска скриптов например</span>
+<span class="cp"># в наутилусе для запуска -&gt; Правка-&gt; Параметры-&gt;Поведение-&gt; Каждый раз спрашивать </span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">nameprog</span><span class="p">.</span><span class="n">py</span>
+
+<span class="n">chown</span> <span class="n">you</span><span class="o">:</span><span class="n">yourgroup</span> <span class="o">/</span><span class="n">home</span> <span class="o">-</span><span class="n">R</span> <span class="err">#сменить</span> <span class="err">владельца</span> <span class="err">директории</span>
+<span class="n">chmod</span> <span class="mi">755</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">folder</span>  <span class="err">#</span> <span class="err">задать</span> <span class="err">права</span>
 
 <span class="cp">#записывать вывод из терминала в файл.</span>
 <span class="n">program</span> <span class="o">&gt;</span><span class="n">out</span><span class="p">.</span><span class="n">txt</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">file</span><span class="p">.</span><span class="n">txt</span> <span class="o">&lt;</span><span class="n">in</span><span class="p">.</span><span class="n">txt</span> <span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="n">stder</span><span class="p">,</span> <span class="n">stdin</span><span class="p">)</span>
@@ -256,8 +265,13 @@ WebQuant            </a>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://webquant.ru/posts/trading-data">
+                            Где скачать исторические данные для акций?
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://webquant.ru/posts/ya-parser">
-                            Парсим поисковую выдачу Яндекса.
+                            Парсим поисковую выдачу Яндекса, Python + Grab.
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -273,11 +287,6 @@ WebQuant            </a>
                     <li class="list-group-item">
                         <a href="http://webquant.ru/posts/nod-nok">
                             Нахождение НОД и НОК.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://webquant.ru/posts/data-structures">
-                            Базовые типы и структуры данных в Python.
                         </a>
                     </li>
                 </ul>
