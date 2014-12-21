@@ -116,14 +116,10 @@ WebQuant            </a>
 </ol>
 <h3>Картинки и ссылки</h3>
 <ol>
-<li>
-<p>вставка ссылки в маркдаун
-<code>[Тут ссылка на](http://google.com/)</code></p>
-</li>
-<li>
-<p>вставка картинки
-<code>![Описание картинки](http://anyhost.com/1.jpg)</code></p>
-</li>
+<li>вставка ссылки в маркдаун
+<code>[Тут ссылка на](http://google.com/){: rel="nofollow"}</code></li>
+<li>вставка картинки
+<code>![Описание картинки](http://anyhost.com/1.jpg)</code></li>
 <li>вставка ссылки <code>[сносками][1]</code>для большого текста, а внизу описываем ссылку</li>
 </ol>
 <p><code>[1]: google.com/ "Сноска"</code></p>
@@ -157,11 +153,11 @@ WebQuant            </a>
 </ol>
 <h2>Редакторы</h2>
 <ul>
-<li><a href="https://stackedit.io/">stackedit</a> — удобный онлайн редактор для markdown</li>
+<li><a href="https://stackedit.io/" rel="nofollow">stackedit</a> — удобный онлайн редактор для markdown</li>
 <li>ReText  - оффлайн редактор под linux</li>
 </ul>
 <h3>Полезные ссылки</h3>
-<p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown-Cheatsheet</a> - на github</p>
+<p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" rel="nofollow">Markdown-Cheatsheet</a> - на github</p>
 		 <div class="panel">
                     <div class="panel-body">   
 <footer class="post-info">
@@ -342,7 +338,7 @@ WebQuant            </a>
             var ga = document.createElement('script');
             ga.type = 'text/javascript';
             ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ga, s);
         })();

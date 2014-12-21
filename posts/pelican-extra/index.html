@@ -155,6 +155,17 @@ WebQuant            </a>
 </pre></div>
 
 
+<h4>Отключаем индексирование страниц и предложений в тексте</h4>
+<p>Для отключение страниц нужно в шаблонной странице <code>tag.html</code> вставить метатег в код:</p>
+<div class="highlight"><pre><span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;robots&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s">&quot;noindex&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+
+
+<p>А если Вам необходимо исключить из индексирования какую-либо фразу:</p>
+<div class="highlight"><pre><span class="nt">&lt;noindex&gt;</span>Это предложение не видно Яндексу<span class="nt">&lt;/noindex&gt;</span>
+</pre></div>
+
+
 <h4>Sitemap</h4>
 <p>XML карта сайта. Для улучшения индексации сайта в поисковиках. </p>
 <p>1) скачиваем плагин 
@@ -273,8 +284,8 @@ WebQuant            </a>
     <ul>
         <li><a href="http://webquant.ru/posts/pelican">Pelican. Установка и настройка блога.</a></li>
         <li><a href="http://webquant.ru/posts/go-parser">Парсер поисковых запросов, используя grab и firebug.</a></li>
-        <li><a href="http://webquant.ru/posts/quicksort">Быстрая сортировка в Python (Quicksort, сортировка Хоара).</a></li>
         <li><a href="http://webquant.ru/posts/markdown">Основы синтаксиса Маркдаун (Markdown).</a></li>
+        <li><a href="http://webquant.ru/posts/trading-data">Где скачать исторические данные для акций?</a></li>
         <li><a href="http://webquant.ru/posts/git">Используем Git для контроля версий.</a></li>
     </ul>
 </section>
@@ -424,7 +435,7 @@ WebQuant            </a>
             var ga = document.createElement('script');
             ga.type = 'text/javascript';
             ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ga, s);
         })();

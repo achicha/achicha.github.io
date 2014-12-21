@@ -8,6 +8,8 @@ Disallow: /author/
 Disallow: /feeds/
 Disallow: /about/
 Disallow: /tag/
+Disallow: /tag/*
+Disallow: /tag
 Disallow: */comment-
 Disallow: */comments
 Disallow: /*?*
@@ -27,6 +29,8 @@ Disallow: /author/
 Disallow: /feeds/
 Disallow: /about/
 Disallow: /tag/
+Disallow: /tag/*
+Disallow: /tag
 Disallow: */comment-
 Disallow: */comments
 Disallow: /*?*
@@ -46,6 +50,8 @@ Disallow: /author/
 Disallow: /feeds/
 Disallow: /about/
 Disallow: /tag/
+Disallow: /tag
+Disallow: /tag/*
 Disallow: */comment-
 Disallow: */comments
 Disallow: /*?*

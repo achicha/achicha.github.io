@@ -336,6 +336,17 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h4&gt;Отключаем индексирование страниц и предложений в тексте&lt;/h4&gt;
+&lt;p&gt;Для отключение страниц нужно в шаблонной странице &lt;code&gt;tag.html&lt;/code&gt; вставить метатег в код:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;meta&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;robots&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;noindex&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;А если Вам необходимо исключить из индексирования какую-либо фразу:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;noindex&amp;gt;&lt;/span&gt;Это предложение не видно Яндексу&lt;span class="nt"&gt;&amp;lt;/noindex&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Sitemap&lt;/h4&gt;
 &lt;p&gt;XML карта сайта. Для улучшения индексации сайта в поисковиках. &lt;/p&gt;
 &lt;p&gt;1) скачиваем плагин 
@@ -446,14 +457,10 @@
 &lt;/ol&gt;
 &lt;h3&gt;Картинки и ссылки&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;вставка ссылки в маркдаун
-&lt;code&gt;[Тут ссылка на](http://google.com/)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;вставка картинки
-&lt;code&gt;![Описание картинки](http://anyhost.com/1.jpg)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;вставка ссылки в маркдаун
+&lt;code&gt;[Тут ссылка на](http://google.com/){: rel="nofollow"}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;вставка картинки
+&lt;code&gt;![Описание картинки](http://anyhost.com/1.jpg)&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;вставка ссылки &lt;code&gt;[сносками][1]&lt;/code&gt;для большого текста, а внизу описываем ссылку&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;code&gt;[1]: google.com/ "Сноска"&lt;/code&gt;&lt;/p&gt;
@@ -487,8 +494,8 @@
 &lt;/ol&gt;
 &lt;h2&gt;Редакторы&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://stackedit.io/"&gt;stackedit&lt;/a&gt; — удобный онлайн редактор для markdown&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stackedit.io/" rel="nofollow"&gt;stackedit&lt;/a&gt; — удобный онлайн редактор для markdown&lt;/li&gt;
 &lt;li&gt;ReText  - оффлайн редактор под linux&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category><category term="синтаксис маркдаун"></category><category term="markdown синтаксис"></category><category term="основы маркдаун"></category></entry></feed>
+&lt;p&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" rel="nofollow"&gt;Markdown-Cheatsheet&lt;/a&gt; - на github&lt;/p&gt;</summary><category term="pelican"></category><category term="синтаксис маркдаун"></category><category term="markdown синтаксис"></category><category term="основы маркдаун"></category></entry></feed>
