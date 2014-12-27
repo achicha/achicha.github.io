@@ -2,7 +2,7 @@
 <html lang="ru"
 >
 <head>
-    <title>Pelican. Расширенные настройки. | WebQuant</title>
+    <title>Pelican. Расширенные настройки блога. | WebQuant</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -14,8 +14,8 @@
 <link rel="canonical" href="http://webquant.ru/posts/pelican-extra">
 
         <meta name="author" content="admin" />
-        <meta name="keywords" content="pelican,python,настройка блога,сайт pelican,установка pelican" />
-        <meta name="description" content="Установка плагинов, редактирование темы и другие расширенные настройки блога." />
+        <meta name="keywords" content="pelican,python,настройка блога,сайт pelican,pelican настройки блога,сайт на getpelican" />
+        <meta name="description" content="Установка плагинов, редактирование темы и другие расширенные настройки блога Pelican." />
 
 
 
@@ -73,7 +73,7 @@ WebQuant            </a>
             <ol class="breadcrumb">
                 <li><a href="http://webquant.ru" title="WebQuant"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="http://webquant.ru/category/web" title="web">web</a></li>
-                <li class="active">Pelican. Расширенные настройки.</li>
+                <li class="active">Pelican. Расширенные настройки блога.</li>
             </ol>
 
     <section id="content">
@@ -82,25 +82,25 @@ WebQuant            </a>
                 <h1>
                     <a href="http://webquant.ru/posts/pelican-extra"
                        rel="bookmark"
-                       title="Permalink to Pelican. Расширенные настройки.">
-                        Pelican. Расширенные настройки.
+                       title="Permalink to Pelican. Расширенные настройки блога.">
+                        Pelican. Расширенные настройки блога.
                     </a>
                 </h1>
             </header>
             <div class="entry-content">
                
-                <p>Начало читаем в <a href="http://webquant.ru/posts/pelican/">предыдущей статье</a>.</p>
+                <p>Начало читаем в предыдущей статье <a href="http://webquant.ru/posts/pelican/">как установить Pelican</a>.</p>
 <p>Чтобы было полегче с настройками, необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)</p>
 <p>Все изменения вносятся в основной файл настроек <strong><em>pelicanconf.py</em></strong></p>
 <h3>Структуризация файлов.</h3>
-<p>Для обеспечения порятка в файлах, складываем все посты в отдельную папку.</p>
+<p>Для обеспечения порядка в файлах, складываем все посты в отдельную папку. Так же уберем .html для отображения более красивых ссылок.</p>
 <div class="highlight"><pre><span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">output</span><span class="o">/</span><span class="n">articles</span><span class="o">/</span><span class="err">&#39;</span>
 <span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">articles</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="err">&#39;</span>
 <span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">articles</span><span class="o">/</span><span class="p">{</span><span class="n">slug</span><span class="p">}</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="err">&#39;</span>
 </pre></div>
 
 
-<h2>Установка доп плагинов</h2>
+<h2>Установка дополнительных плагинов</h2>
 <h4>Disqus - Добавляем коментарии к постам</h4>
 <div class="highlight"><pre><span class="cp">#нужно установить плагин и настроить</span>
 <span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">Your</span> <span class="n">website</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">shortname</span><span class="err">&#39;</span>
@@ -115,10 +115,39 @@ WebQuant            </a>
 
 
 <h4>Related Posts</h4>
-<div class="highlight"><pre><span class="c">#В моей теме уже он настроен автоматически, необходимо только скачать сам плагин (по аналогии с sitemap ниже)</span>
+<p>В моей теме уже он настроен автоматически, необходимо только скачать сам плагин (по аналогии с sitemap ниже)</p>
+<h4>Sitemap</h4>
+<p>XML карта сайта. Для улучшения индексации сайта в поисковиках. </p>
+<p>1) скачиваем плагин 
+<a href="https://github.com/getpelican/pelican-plugins/" rel="nofollow">sitemap</a></p>
+<p>2) устанавливаем в любую папку блога, например plugins</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">submodule</span> <span class="n">add</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/getpelican/pelican-plugins</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span>
 </pre></div>
 
 
+<p>3) прописываем настройки:</p>
+<div class="highlight"><pre><span class="cp"># Plugins</span>
+<span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s">&quot;plugins&quot;</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;sitemap&quot;</span><span class="p">,</span> <span class="p">]</span>
+<span class="cp"># Sitemap</span>
+<span class="n">SITEMAP</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="err">&#39;</span><span class="n">format</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">xml</span><span class="err">&#39;</span><span class="p">,</span>
+    <span class="err">&#39;</span><span class="n">priorities</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="err">&#39;</span><span class="n">articles</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="err">&#39;</span><span class="n">indexes</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="err">&#39;</span><span class="n">pages</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.5</span>
+    <span class="p">},</span>
+    <span class="err">&#39;</span><span class="n">changefreqs</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="err">&#39;</span><span class="n">articles</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">monthly</span><span class="err">&#39;</span><span class="p">,</span>
+        <span class="err">&#39;</span><span class="n">indexes</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">daily</span><span class="err">&#39;</span><span class="p">,</span>
+        <span class="err">&#39;</span><span class="n">pages</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">monthly</span><span class="err">&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>4) читаем <a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions" rel="nofollow">мануал по настройкам</a>, если необходима произвольная настройка.</p>
 <h2>Немного о SEO</h2>
 <h4>BREADCRUMBS</h4>
 <p>Или хлебные крошки - для улучшения навигации по сайту.</p>
@@ -135,7 +164,7 @@ WebQuant            </a>
 
 <h4>Robots.txt</h4>
 <p>Для лучшей индексации сайта роботами, так же можно запретить индекс различный файлов.
-Необходимо создать robots.txt в корне папки output и прописать необходимые настройки:</p>
+Необходимо создать robots.txt в корне папки output и прописать необходимые настройки для блога:</p>
 <div class="highlight"><pre><span class="n">User</span><span class="o">-</span><span class="n">agent</span><span class="o">:</span> <span class="n">Yandex</span>
 <span class="nl">Disallow:</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span>
 
@@ -166,46 +195,24 @@ WebQuant            </a>
 </pre></div>
 
 
-<h4>Sitemap</h4>
-<p>XML карта сайта. Для улучшения индексации сайта в поисковиках. </p>
-<p>1) скачиваем плагин 
-<a href="https://github.com/getpelican/pelican-plugins/" rel="nofollow">sitemap</a></p>
-<p>2) устанавливаем в любую папку, например plugins</p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">submodule</span> <span class="n">add</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/getpelican/pelican-plugins</span>
-<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span>
-</pre></div>
+<h4>Static paths</h4>
+<p>Некоторые файлы не нужно генерировать, а необходимо просто перенести в наш блог, для этого настроим статичную папку.
+Создаем папку <code>/content/extra</code> и кладем туда файлы, которые необходимо скопировать.
+А так же добавить в <code>pelicanconf.py</code> строки:</p>
+<div class="highlight"><pre><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">extra</span><span class="o">/</span><span class="n">robots</span><span class="p">.</span><span class="n">txt</span><span class="sc">&#39;,&#39;</span><span class="n">images</span><span class="sc">&#39;,&#39;</span><span class="n">extra</span><span class="o">/</span><span class="n">favicon</span><span class="p">.</span><span class="n">ico</span><span class="sc">&#39;,&#39;</span><span class="n">extra</span><span class="o">/</span><span class="n">CNAME</span><span class="err">&#39;</span><span class="p">]</span>
 
-
-<p>3) прописываем настройки:</p>
-<div class="highlight"><pre><span class="cp"># Plugins</span>
-<span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s">&quot;plugins&quot;</span>
-<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;sitemap&quot;</span><span class="p">,</span> <span class="p">]</span>
-<span class="cp"># Sitemap</span>
-<span class="n">SITEMAP</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="err">&#39;</span><span class="n">format</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">xml</span><span class="err">&#39;</span><span class="p">,</span>
-    <span class="err">&#39;</span><span class="n">priorities</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="err">&#39;</span><span class="n">articles</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="n">indexes</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="n">pages</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.5</span>
-    <span class="p">},</span>
-    <span class="err">&#39;</span><span class="n">changefreqs</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="err">&#39;</span><span class="n">articles</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">monthly</span><span class="err">&#39;</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="n">indexes</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">daily</span><span class="err">&#39;</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="n">pages</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">monthly</span><span class="err">&#39;</span>
-    <span class="p">}</span>
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="err">&#39;</span><span class="n">extra</span><span class="o">/</span><span class="n">robots</span><span class="p">.</span><span class="n">txt</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">path</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">robots</span><span class="p">.</span><span class="n">txt</span><span class="err">&#39;</span><span class="p">},</span>
+    <span class="err">&#39;</span><span class="n">extra</span><span class="o">/</span><span class="n">favicon</span><span class="p">.</span><span class="n">ico</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">path</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">favicon</span><span class="p">.</span><span class="n">ico</span><span class="err">&#39;</span><span class="p">},</span>
+    <span class="err">&#39;</span><span class="n">extra</span><span class="o">/</span><span class="n">CNAME</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">path</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">CNAME</span><span class="err">&#39;</span><span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p>4) читаем <a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions" rel="nofollow">мануал по настройкам</a>, если необходима произвольная настройка.</p>
-<h4>Метатеги</h4>
 <h4>404 error</h4>
-<p>нужно сгенерировать страницу с названием 404.html и положить в корневую папку </p>
+<p>нужно сгенерировать страницу с названием 404.html и положить в корневую папку сайта</p>
 <h4>Google+</h4>
 <p>Синхронизируем свой сайт с гугл+:</p>
-<ol>
-<li></li>
-</ol>
 <h4>Социальные закладки</h4>
 <div class="highlight"><pre><span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="err">&#39;</span><span class="n">github</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//github.com/achicha&#39;),</span>
         <span class="p">(</span><span class="err">&#39;</span><span class="n">myblog</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//webquant.ru&#39;),)</span>
@@ -213,6 +220,7 @@ WebQuant            </a>
 
 
 <h2>Аналитика</h2>
+<p>Для анализа нашего блога, настроим сбор аналитики на сайте.</p>
 <h4>Google Analytics</h4>
 <p>1) Устанавливаем код аналитики в шаблон и добавляем запись</p>
 <div class="highlight"><pre><span class="n">GOOGLE_ANALYTICS</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">UA</span><span class="o">-******</span><span class="n">your_code</span><span class="err">&#39;</span>
@@ -271,7 +279,9 @@ WebQuant            </a>
         /
 	<a href="http://webquant.ru/tag/sait-pelican.html">сайт pelican</a>
         /
-	<a href="http://webquant.ru/tag/ustanovka-pelican.html">установка pelican</a>
+	<a href="http://webquant.ru/tag/pelican-nastroiki-bloga.html">pelican настройки блога</a>
+        /
+	<a href="http://webquant.ru/tag/sait-na-getpelican.html">сайт на getpelican</a>
     
 </footer><!-- /.post-info -->                  
                     </div>
@@ -282,11 +292,11 @@ WebQuant            </a>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="http://webquant.ru/posts/pelican">Pelican. Установка и настройка блога.</a></li>
-        <li><a href="http://webquant.ru/posts/trading-data">Где скачать исторические данные для акций?</a></li>
-        <li><a href="http://webquant.ru/posts/quicksort">Быстрая сортировка в Python (Quicksort, сортировка Хоара).</a></li>
+        <li><a href="http://webquant.ru/posts/pelican">Pelican. Установка блога.</a></li>
         <li><a href="http://webquant.ru/posts/git">Используем Git для контроля версий.</a></li>
-        <li><a href="http://webquant.ru/posts/markdown">Основы синтаксиса Маркдаун (Markdown).</a></li>
+        <li><a href="http://webquant.ru/posts/trading-data">Где скачать исторические данные для акций?</a></li>
+        <li><a href="http://webquant.ru/posts/go-parser">Парсер поисковых запросов, используя grab и firebug.</a></li>
+        <li><a href="http://webquant.ru/posts/data-structures">Базовые типы и структуры данных в Python.</a></li>
     </ul>
 </section>
     <hr/>
