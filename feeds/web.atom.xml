@@ -67,7 +67,7 @@
 &lt;li&gt;Получаем ссылки из поисковой выдачи&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Firebug&lt;/h3&gt;
-&lt;p&gt;Устанавливаем &lt;a href="https://chrome.google.com/webstore/detail/firebug-lite-for-google-c/bmagokdooijbeehmkpknfglimnifench"&gt;расширение для Chrome&lt;/a&gt; или аналогичное для Firefox, если у Вас еще не установлено.&lt;/p&gt;
+&lt;p&gt;Устанавливаем &lt;a href="https://chrome.google.com/webstore/detail/firebug-lite-for-google-c/bmagokdooijbeehmkpknfglimnifench" rel="nofollow"&gt;расширение для Chrome&lt;/a&gt; или аналогичное для Firefox, если у Вас еще не установлено.&lt;/p&gt;
 &lt;p&gt;Далее нужно определить объекты, к которым будем обращаться из &lt;em&gt;Python&lt;/em&gt;. &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Для этого нужно нажать правой кнопкой мыши на объекте, над которым будем производить действие и нажать inspect with Firebug&lt;/li&gt;
@@ -132,8 +132,8 @@
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://webquant.ru/posts/ya-parser/"&gt;Парсим Яндекс&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://grab.readthedocs.org/ru/latest/"&gt;grab docs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.w3schools.com/xpath/"&gt;xpath tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://grab.readthedocs.org/ru/latest/" rel="nofollow"&gt;grab docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/xpath/" rel="nofollow"&gt;xpath tutorial&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="python"></category><category term="parser"></category><category term="парсер google python"></category></entry><entry><title>Используем Git для контроля версий.</title><link href="http://webquant.ru/posts/git" rel="alternate"></link><updated>2014-11-30T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/git</id><summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;Git&lt;/em&gt;&lt;/strong&gt; - &lt;em&gt;это распределенная система контроля версий, которая может использовать несколько репозиториев, связанных между собой.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Разработчики, работая совместно над одним проектом, делают это каждый отдельно, в своем локальном (на своем компьютере) репозитории, после чего синхронизируют все изменения на сервере. И в случае необходимости, можно использовать другие ветки для продолжения работы над проетом. &lt;/p&gt;
 &lt;p&gt;В данной статье я хотел бы рассказать об основах работы с Git: установка в Ubuntu, базовые команды, термины, ветки в Гит (branch).&lt;/p&gt;
@@ -267,9 +267,9 @@
 
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://habrahabr.ru/post/60347/"&gt;на хабре&lt;/a&gt; очень подробно о каждой команде&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://blog.regolit.com/2014/02/17/a-bit-of-git"&gt;тут&lt;/a&gt; неплохо описано, но много воды&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.codeschool.com/courses/try-git"&gt;онлайн курс&lt;/a&gt; для быстрого изучения (минут 10-15) основных команд&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://habrahabr.ru/post/60347/" rel="nofollow"&gt;на хабре&lt;/a&gt; очень подробно о каждой команде&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.regolit.com/2014/02/17/a-bit-of-git" rel="nofollow"&gt;тут&lt;/a&gt; неплохо описано, но много воды&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.codeschool.com/courses/try-git" rel="nofollow"&gt;онлайн курс&lt;/a&gt; для быстрого изучения (минут 10-15) основных команд&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="python"></category><category term="git"></category><category term="git команды"></category><category term="git настройка"></category><category term="работа с git"></category><category term="git репозиторий"></category><category term="установка git"></category></entry><entry><title>Pelican. Расширенные настройки.</title><link href="http://webquant.ru/posts/pelican-extra" rel="alternate"></link><updated>2014-11-10T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/pelican-extra</id><summary type="html">&lt;p&gt;Начало читаем в &lt;a href="http://webquant.ru/posts/pelican/"&gt;предыдущей статье&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Чтобы было полегче с настройками, необходимо выбрать хорошую тему, в которой предустановлено большинство нужных вещей, а потом уже допиливать её по необходимости :)&lt;/p&gt;
 &lt;p&gt;Все изменения вносятся в основной файл настроек &lt;strong&gt;&lt;em&gt;pelicanconf.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -350,7 +350,7 @@
 &lt;h4&gt;Sitemap&lt;/h4&gt;
 &lt;p&gt;XML карта сайта. Для улучшения индексации сайта в поисковиках. &lt;/p&gt;
 &lt;p&gt;1) скачиваем плагин 
-&lt;a href="https://github.com/getpelican/pelican-plugins/"&gt;sitemap&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://github.com/getpelican/pelican-plugins/" rel="nofollow"&gt;sitemap&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2) устанавливаем в любую папку, например plugins&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;submodule&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/getpelican/pelican-plugins&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;submodule&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;init&lt;/span&gt;
@@ -378,7 +378,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;4) читаем &lt;a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions"&gt;мануал по настройкам&lt;/a&gt;, если необходима произвольная настройка.&lt;/p&gt;
+&lt;p&gt;4) читаем &lt;a href="http://www.sitemaps.org/protocol.html#xmlTagDefinitions" rel="nofollow"&gt;мануал по настройкам&lt;/a&gt;, если необходима произвольная настройка.&lt;/p&gt;
 &lt;h4&gt;Метатеги&lt;/h4&gt;
 &lt;h4&gt;404 error&lt;/h4&gt;
 &lt;p&gt;нужно сгенерировать страницу с названием 404.html и положить в корневую папку &lt;/p&gt;
@@ -401,11 +401,11 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;2) Добавляем сайт в google &lt;a href="http://www.google.com/analytics/"&gt;analytics&lt;/a&gt; и &lt;a href="http://www.google.com/webmasters/"&gt;webmaster&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2) Добавляем сайт в google &lt;a href="http://www.google.com/analytics/" rel="nofollow"&gt;analytics&lt;/a&gt; и &lt;a href="http://www.google.com/webmasters/" rel="nofollow"&gt;webmaster&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;3) добавляем в вебмастере sitemap&lt;/p&gt;
 &lt;p&gt;4) проверяем robots.txt на наличие ошибок&lt;/p&gt;
 &lt;h4&gt;Яндекс Метрика&lt;/h4&gt;
-&lt;p&gt;1) Добавляем счетчик &lt;a href="http://metrika.yandex.ru/add/"&gt;метрики&lt;/a&gt; во вкладке &lt;em&gt;общие&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;1) Добавляем счетчик &lt;a href="http://metrika.yandex.ru/add/" rel="nofollow"&gt;метрики&lt;/a&gt; во вкладке &lt;em&gt;общие&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;2) Дальше во вкладке &lt;em&gt;Код счетчика&lt;/em&gt; нажимаем галку &lt;em&gt;Вебвизор&lt;/em&gt; и копируем код ниже.&lt;/p&gt;
 &lt;p&gt;3) Устанавливаем код аналитики в шаблон:&lt;/p&gt;
 &lt;p&gt;Самый простой (но не самый правильный) способ установить метрику, редактировать файл с счетчиком Google Analytics &lt;code&gt;pelican-bootstrap3/templates/ga.html&lt;/code&gt;&lt;/p&gt;
@@ -417,19 +417,19 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;4) сообщаем о новом сайте в &lt;a href="https://webmaster.yandex.ru/addurl.xml"&gt;Яндекс Вебмастере&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;4) сообщаем о новом сайте в &lt;a href="https://webmaster.yandex.ru/addurl.xml" rel="nofollow"&gt;Яндекс Вебмастере&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;5) &lt;a href="https://webmaster.yandex.ru/site/?wizard=add.site"&gt;добавляем сайт&lt;/a&gt; в Вебмастер, я делал через проверку txt файлом.&lt;/p&gt;
 &lt;p&gt;6) нужно добавить на сайте sitemap, главное зеркало.&lt;/p&gt;
 &lt;p&gt;И через пару недель Ваш сайт будет корректно отображаться в Я.Вебмастере :)  по сравнению с гуглом, где добавляется в течении нескольких дней, нужно запастись терпением.&lt;/p&gt;
 &lt;h3&gt;Дочерний шаблон&lt;/h3&gt;
-&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/themes.html#inheritance"&gt;мануал тут&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/themes.html#inheritance" rel="nofollow"&gt;мануал тут&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Но я пока ограничился редактированием template файлов (html) для вставки нужных элементов кода, пример вставки Яндекс метрики можно посмотреть выше. 
 Только нужно помнить, что при таком подходе, после обновления основной темы, все Ваши надстройки пропадут.&lt;/p&gt;
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.unix-lab.org/posts/pelican/"&gt;Тут&lt;/a&gt; неплохо описана настройка блога&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.1.1/settings.html"&gt;все настройки Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/DandyDev/pelican-bootstrap3" rel="nofollow"&gt;my blog theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.unix-lab.org/posts/pelican/" rel="nofollow"&gt;Тут&lt;/a&gt; неплохо описана настройка блога&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.1.1/settings.html" rel="nofollow"&gt;все настройки Pelican&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category><category term="настройка блога"></category><category term="сайт pelican"></category><category term="установка pelican"></category></entry><entry><title>Основы синтаксиса Маркдаун (Markdown).</title><link href="http://webquant.ru/posts/markdown" rel="alternate"></link><updated>2014-11-08T12:00:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/markdown</id><summary type="html">&lt;h2&gt;Основной синтаксис&lt;/h2&gt;
 &lt;h3&gt;Заголовки&lt;/h3&gt;
 &lt;p&gt;Уровень заголовка зависит от количества хешей(#) перед строкой&lt;/p&gt;

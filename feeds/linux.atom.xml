@@ -156,6 +156,8 @@
 
 &lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;все&lt;/span&gt; &lt;span class="err"&gt;процессы&lt;/span&gt;
 &lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="n"&gt;login_name&lt;/span&gt; &lt;span class="err"&gt;#топ&lt;/span&gt; &lt;span class="err"&gt;процессы&lt;/span&gt; &lt;span class="err"&gt;пользователя&lt;/span&gt;
+
+&lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="n"&gt;axu&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;vpnc&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;поиск&lt;/span&gt; &lt;span class="err"&gt;процесса&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;названию&lt;/span&gt; &lt;span class="err"&gt;программы&lt;/span&gt;
 &lt;span class="cp"&gt;#убить процесс/программу когда зависла&lt;/span&gt;
 &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="n"&gt;process_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PID&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -168,5 +170,5 @@
 
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://forum.ubuntu.ru/index.php?topic=14535.15"&gt;Команды Linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://forum.ubuntu.ru/index.php?topic=14535.15" rel="nofollow"&gt;Команды Linux&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="основные команды linux"></category><category term="grep"></category><category term="работа в терминале"></category><category term="bash"></category><category term="основы linux"></category></entry></feed>

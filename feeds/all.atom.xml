@@ -47,7 +47,7 @@
 
 
 &lt;h3&gt;Google Finance и Yahoo Finance&lt;/h3&gt;
-&lt;p&gt;Исторические данные из этих источников, можно легко достать через встроенную в &lt;a href="http://pandas.pydata.org/pandas-docs/stable/remote_data.html#remote-data-ff"&gt;pandas&lt;/a&gt; функцию.&lt;/p&gt;
+&lt;p&gt;Исторические данные из этих источников, можно легко достать через встроенную в &lt;a href="http://pandas.pydata.org/pandas-docs/stable/remote_data.html#remote-data-ff" rel="nofollow"&gt;pandas&lt;/a&gt; функцию.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt;
 &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;
 
@@ -63,7 +63,7 @@
 
 
 &lt;h3&gt;Quandl&lt;/h3&gt;
-&lt;p&gt;скачиваем с гитхаба &lt;a href="https://github.com/quandl/Python"&gt;библиотеку квандла&lt;/a&gt; для работы&lt;/p&gt;
+&lt;p&gt;скачиваем с гитхаба &lt;a href="https://github.com/quandl/Python" rel="nofollow"&gt;библиотеку квандла&lt;/a&gt; для работы&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Quandl&lt;/span&gt;
 &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ExcelWriter&lt;/span&gt;
 &lt;span class="cp"&gt;#search for dataset&lt;/span&gt;
@@ -154,7 +154,7 @@
 &lt;li&gt;Получаем ссылки из поисковой выдачи&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Firebug&lt;/h3&gt;
-&lt;p&gt;Устанавливаем &lt;a href="https://chrome.google.com/webstore/detail/firebug-lite-for-google-c/bmagokdooijbeehmkpknfglimnifench"&gt;расширение для Chrome&lt;/a&gt; или аналогичное для Firefox, если у Вас еще не установлено.&lt;/p&gt;
+&lt;p&gt;Устанавливаем &lt;a href="https://chrome.google.com/webstore/detail/firebug-lite-for-google-c/bmagokdooijbeehmkpknfglimnifench" rel="nofollow"&gt;расширение для Chrome&lt;/a&gt; или аналогичное для Firefox, если у Вас еще не установлено.&lt;/p&gt;
 &lt;p&gt;Далее нужно определить объекты, к которым будем обращаться из &lt;em&gt;Python&lt;/em&gt;. &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Для этого нужно нажать правой кнопкой мыши на объекте, над которым будем производить действие и нажать inspect with Firebug&lt;/li&gt;
@@ -219,8 +219,8 @@
 &lt;h3&gt;Полезные ссылки&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://webquant.ru/posts/ya-parser/"&gt;Парсим Яндекс&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://grab.readthedocs.org/ru/latest/"&gt;grab docs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.w3schools.com/xpath/"&gt;xpath tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://grab.readthedocs.org/ru/latest/" rel="nofollow"&gt;grab docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/xpath/" rel="nofollow"&gt;xpath tutorial&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="python"></category><category term="parser"></category><category term="парсер google python"></category></entry><entry><title>Быстрая сортировка в Python (Quicksort, сортировка Хоара).</title><link href="http://webquant.ru/posts/quicksort" rel="alternate"></link><updated>2014-12-09T22:18:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-12-08:posts/quicksort</id><summary type="html">&lt;h4&gt;Алгоритм&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;Выбираем в массиве данных &lt;strong&gt;опорный элемент&lt;/strong&gt; приближенный к медиане&lt;/li&gt;
@@ -260,9 +260,9 @@
 
 &lt;h4&gt;Полезные ссылки&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0"&gt;Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://bigocheatsheet.com/#sorting"&gt;Big O - sorting&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://py-algorithm.blogspot.ru/2011/11/quicksort.html"&gt;еще статья&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0" rel="nofollow"&gt;Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bigocheatsheet.com/#sorting" rel="nofollow"&gt;Big O - sorting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://py-algorithm.blogspot.ru/2011/11/quicksort.html" rel="nofollow"&gt;еще статья&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="python"></category><category term="algorithms"></category><category term="python алгоритмы"></category><category term="quicksort"></category><category term="алгоритм сортировки"></category><category term="быстрая сортировка python"></category></entry><entry><title>Нахождение НОД и НОК.</title><link href="http://webquant.ru/posts/nod-nok" rel="alternate"></link><updated>2014-11-26T22:50:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-26:posts/nod-nok</id><summary type="html">&lt;h2&gt;Нахождение НОД&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Наибольший общий делитель&lt;/em&gt; - самое большое число, на которое можно без остатка разделить два числа, для которых ищется НОД.&lt;/p&gt;
 &lt;h4&gt;Алгоритм:&lt;/h4&gt;

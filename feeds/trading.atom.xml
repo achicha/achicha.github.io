@@ -47,7 +47,7 @@
 
 
 &lt;h3&gt;Google Finance и Yahoo Finance&lt;/h3&gt;
-&lt;p&gt;Исторические данные из этих источников, можно легко достать через встроенную в &lt;a href="http://pandas.pydata.org/pandas-docs/stable/remote_data.html#remote-data-ff"&gt;pandas&lt;/a&gt; функцию.&lt;/p&gt;
+&lt;p&gt;Исторические данные из этих источников, можно легко достать через встроенную в &lt;a href="http://pandas.pydata.org/pandas-docs/stable/remote_data.html#remote-data-ff" rel="nofollow"&gt;pandas&lt;/a&gt; функцию.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt;
 &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;
 
@@ -63,7 +63,7 @@
 
 
 &lt;h3&gt;Quandl&lt;/h3&gt;
-&lt;p&gt;скачиваем с гитхаба &lt;a href="https://github.com/quandl/Python"&gt;библиотеку квандла&lt;/a&gt; для работы&lt;/p&gt;
+&lt;p&gt;скачиваем с гитхаба &lt;a href="https://github.com/quandl/Python" rel="nofollow"&gt;библиотеку квандла&lt;/a&gt; для работы&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Quandl&lt;/span&gt;
 &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ExcelWriter&lt;/span&gt;
 &lt;span class="cp"&gt;#search for dataset&lt;/span&gt;
