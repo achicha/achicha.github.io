@@ -89,15 +89,7 @@ WebQuant            </a>
             </header>
             <div class="entry-content">
                
-                <h3>Google Drive</h3>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">thefanclub</span><span class="o">/</span><span class="n">grive</span><span class="o">-</span><span class="n">tools</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">grive</span><span class="o">-</span><span class="n">tools</span>
-<span class="cp">#в поиске набираем Grive setup и следуем инструкциям</span>
-</pre></div>
-
-
-<h3>Обновление</h3>
+                <h3>Обновление</h3>
 <div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>
 <span class="cp"># обновить только 1 программу</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">--</span><span class="n">only</span><span class="o">-</span><span class="n">upgade</span> <span class="n">program</span>
@@ -133,15 +125,62 @@ WebQuant            </a>
 </pre></div>
 
 
+<h3>Google Drive</h3>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">thefanclub</span><span class="o">/</span><span class="n">grive</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">grive</span><span class="o">-</span><span class="n">tools</span>
+<span class="cp">#в поиске набираем Grive setup и следуем инструкциям</span>
+</pre></div>
+
+
 <h3>VLC</h3>
 <div class="highlight"><pre><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">djcj</span><span class="o">/</span><span class="n">vlc</span><span class="o">-</span><span class="n">stable</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">vlc</span>
 </pre></div>
 
 
-<h3>Добавляем ключ от репозитория (как пример)</h3>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="p">.</span><span class="n">ubuntu</span><span class="p">.</span><span class="n">com</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="n">FC91AE7E</span> 
+<h3>Добавляем репозиторий и ключ от него (на примере установки virtualbox)</h3>
+<div class="highlight"><pre><span class="cp">#virtualbox </span>
+<span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="s">&quot;deb http://download.virtualbox.org/virtualbox/debian trusty contrib&quot;</span> 
+<span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="n">https</span><span class="o">:</span><span class="c1">//www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - </span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">virtualbox</span><span class="o">-</span><span class="mf">4.3</span>
+<span class="cp">#незабыть установить дополнительные драйвера</span>
+<span class="p">[</span><span class="n">virtualbox</span><span class="o">-</span><span class="n">guest</span><span class="o">-</span><span class="n">additions</span><span class="p">](</span><span class="n">http</span><span class="o">:</span><span class="c1">//apt.ubuntu.com/p/virtualbox-guest-additions-iso)</span>
+<span class="cp">#и примантировать их из /usr/share/virtualbox/VBoxGuestAdditions.iso в virtualbox manager как диск</span>
+<span class="cp">#расширить виртуальный диск *.vdi, перейдя в директорию файла</span>
+<span class="n">sudo</span> <span class="n">vboxmanage</span> <span class="n">modifyhd</span> <span class="err">&#39;</span><span class="n">windows</span> <span class="mf">7.</span><span class="n">vdi</span><span class="err">&#39;</span> <span class="o">--</span><span class="n">resize</span> <span class="mi">51000</span>
+
+<span class="cp">#альтернативный пример добавления ключа</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="p">.</span><span class="n">ubuntu</span><span class="p">.</span><span class="n">com</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="n">FC91AE7E</span> 
 <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">list</span>
+</pre></div>
+
+
+<h3>Skype</h3>
+<div class="highlight"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">skype</span>
+<span class="cp"># отключить уведомления в групповом чате</span>
+<span class="err">нужно</span> <span class="err">зайти</span> <span class="err">в</span> <span class="err">чат</span> <span class="err">и</span> <span class="err">нажать</span> <span class="err">`</span><span class="o">/</span><span class="n">alertsoff</span><span class="err">`</span>
+</pre></div>
+
+
+<h3>Hex chat</h3>
+<div class="highlight"><pre><span class="nl">https:</span><span class="c1">//launchpad.net/~gwendal-lebihan-dev/+archive/ubuntu/hexchat-stable</span>
+</pre></div>
+
+
+<h3>Libreoffice</h3>
+<div class="highlight"><pre><span class="err">устанавливаем</span> <span class="err">последнюю</span> <span class="err">версию</span> <span class="mf">4.3</span> <span class="err">из</span> <span class="err">репозитория</span>
+<span class="err">расширение</span> <span class="err">для</span> <span class="err">проверки</span> <span class="err">грамматики</span>
+<span class="nl">http:</span><span class="c1">//extensions.libreoffice.org/extension-center/languagetool</span>
+</pre></div>
+
+
+<h3>Индикаторы</h3>
+<p>Погода</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">atareao</span><span class="o">/</span><span class="n">atareao</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">my</span><span class="o">-</span><span class="n">weather</span><span class="o">-</span><span class="n">indicator</span>
 </pre></div>
 
 
@@ -159,10 +198,23 @@ WebQuant            </a>
 </pre></div>
 
 
-<h3>Skype</h3>
-<div class="highlight"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">skype</span>
-<span class="cp"># отключить уведомления в групповом чате</span>
-<span class="err">нужно</span> <span class="err">зайти</span> <span class="err">в</span> <span class="err">чат</span> <span class="err">и</span> <span class="err">нажать</span> <span class="err">`</span><span class="o">/</span><span class="n">alertsoff</span><span class="err">`</span>
+<h3>Настраиваем VPN между ubuntu и windows 7 и заходим через xfreerdp</h3>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">add</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">remmina</span><span class="o">-</span><span class="n">ppa</span><span class="o">-</span><span class="n">team</span><span class="o">/</span><span class="n">remmina</span><span class="o">-</span><span class="n">next</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">vpnc</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">xfreerdp</span>
+
+<span class="cp"># вставляем свои сертификаты в /etc/vpnc/</span>
+<span class="cp"># запуск vpnc</span>
+<span class="n">sudo</span> <span class="n">vpnc</span> <span class="n">my</span><span class="p">.</span><span class="n">conf</span>
+<span class="cp">#создаем скрипт с нужными правами rdp.sh с параметрами</span>
+<span class="cp"># для 1.03</span>
+<span class="n">xfreerdp</span> <span class="o">--</span><span class="n">plugin</span> <span class="n">cliprdr</span> <span class="o">-</span><span class="n">x</span> <span class="mh">0x80</span> <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">wallpaper</span> <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">full</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="n">drag</span> <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">menu</span><span class="o">-</span><span class="n">animations</span> <span class="o">-</span><span class="n">g</span> <span class="mi">1856</span><span class="n">x1027</span> <span class="o">-</span><span class="n">u</span> <span class="n">my</span><span class="p">.</span><span class="n">login</span> <span class="o">-</span><span class="n">p</span> <span class="n">my</span><span class="p">.</span><span class="n">password</span> <span class="o">-</span><span class="n">z</span> <span class="o">--</span><span class="n">ignore</span><span class="o">-</span><span class="n">certificate</span> <span class="n">my</span><span class="p">.</span><span class="n">machine</span><span class="p">.</span><span class="n">in</span><span class="p">.</span><span class="n">domain</span>
+<span class="cp"># для 1.2</span>
+<span class="n">xfreerdp</span> <span class="o">+</span><span class="n">clipboard</span> <span class="o">/</span><span class="n">cert</span><span class="o">-</span><span class="n">ignore</span> <span class="o">/</span><span class="n">u</span><span class="o">:</span><span class="n">login</span> <span class="o">/</span><span class="n">p</span><span class="o">:</span><span class="n">password</span> <span class="o">/</span><span class="n">v</span><span class="o">:</span><span class="n">my</span><span class="p">.</span><span class="n">machine</span><span class="p">.</span><span class="n">in</span><span class="p">.</span><span class="n">domain</span> <span class="o">/</span><span class="n">size</span><span class="o">:</span><span class="mi">1856</span><span class="n">x1027</span> <span class="o">-</span><span class="n">themes</span> <span class="o">-</span><span class="n">wallpaper</span> <span class="o">+</span><span class="n">fonts</span>
+<span class="cp">#бывает отваливается и нужно перезагрузить</span>
+<span class="n">ps</span> <span class="n">axu</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">vpnc</span>
+<span class="n">sudo</span> <span class="n">kill</span> <span class="err">номер</span> <span class="err">процесса</span>
 </pre></div>
 		 <div class="panel">
                     <div class="panel-body">   

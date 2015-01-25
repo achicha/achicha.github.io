@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/linux.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-26T12:51:00+03:00</updated><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-15T12:01:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Google Drive&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;thefanclub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
-&lt;span class="cp"&gt;#в поиске набираем Grive setup и следуем инструкциям&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Обновление&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WebQuant</title><link href="http://webquant.ru/" rel="alternate"></link><link href="webquant.ru/feeds/linux.atom.xml" rel="self"></link><id>http://webquant.ru/</id><updated>2014-11-26T12:51:00+03:00</updated><entry><title>Настраиваем Ubuntu после запуска.</title><link href="http://webquant.ru/posts/ubuntu" rel="alternate"></link><updated>2014-11-15T12:01:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-08:posts/ubuntu</id><summary type="html">&lt;h3&gt;Обновление&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;upgrade&lt;/span&gt;
 &lt;span class="cp"&gt;# обновить только 1 программу&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;only&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;upgade&lt;/span&gt; &lt;span class="n"&gt;program&lt;/span&gt;
@@ -43,15 +35,62 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Google Drive&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;thefanclub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;grive&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;
+&lt;span class="cp"&gt;#в поиске набираем Grive setup и следуем инструкциям&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;VLC&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;djcj&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vlc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stable&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;vlc&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Добавляем ключ от репозитория (как пример)&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;adv&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;keyserver&lt;/span&gt; &lt;span class="n"&gt;keyserver&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;recv&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;FC91AE7E&lt;/span&gt; 
+&lt;h3&gt;Добавляем репозиторий и ключ от него (на примере установки virtualbox)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#virtualbox &lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;deb http://download.virtualbox.org/virtualbox/debian trusty contrib&amp;quot;&lt;/span&gt; 
+&lt;span class="n"&gt;wget&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - &lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;virtualbox&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;4.3&lt;/span&gt;
+&lt;span class="cp"&gt;#незабыть установить дополнительные драйвера&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;virtualbox&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;guest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;additions&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//apt.ubuntu.com/p/virtualbox-guest-additions-iso)&lt;/span&gt;
+&lt;span class="cp"&gt;#и примантировать их из /usr/share/virtualbox/VBoxGuestAdditions.iso в virtualbox manager как диск&lt;/span&gt;
+&lt;span class="cp"&gt;#расширить виртуальный диск *.vdi, перейдя в директорию файла&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;vboxmanage&lt;/span&gt; &lt;span class="n"&gt;modifyhd&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;windows&lt;/span&gt; &lt;span class="mf"&gt;7.&lt;/span&gt;&lt;span class="n"&gt;vdi&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;resize&lt;/span&gt; &lt;span class="mi"&gt;51000&lt;/span&gt;
+
+&lt;span class="cp"&gt;#альтернативный пример добавления ключа&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;adv&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;keyserver&lt;/span&gt; &lt;span class="n"&gt;keyserver&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;recv&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;FC91AE7E&lt;/span&gt; 
 &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Skype&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;skype&lt;/span&gt;
+&lt;span class="cp"&gt;# отключить уведомления в групповом чате&lt;/span&gt;
+&lt;span class="err"&gt;нужно&lt;/span&gt; &lt;span class="err"&gt;зайти&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;чат&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;нажать&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;alertsoff&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Hex chat&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;https:&lt;/span&gt;&lt;span class="c1"&gt;//launchpad.net/~gwendal-lebihan-dev/+archive/ubuntu/hexchat-stable&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Libreoffice&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;устанавливаем&lt;/span&gt; &lt;span class="err"&gt;последнюю&lt;/span&gt; &lt;span class="err"&gt;версию&lt;/span&gt; &lt;span class="mf"&gt;4.3&lt;/span&gt; &lt;span class="err"&gt;из&lt;/span&gt; &lt;span class="err"&gt;репозитория&lt;/span&gt;
+&lt;span class="err"&gt;расширение&lt;/span&gt; &lt;span class="err"&gt;для&lt;/span&gt; &lt;span class="err"&gt;проверки&lt;/span&gt; &lt;span class="err"&gt;грамматики&lt;/span&gt;
+&lt;span class="nl"&gt;http:&lt;/span&gt;&lt;span class="c1"&gt;//extensions.libreoffice.org/extension-center/languagetool&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Индикаторы&lt;/h3&gt;
+&lt;p&gt;Погода&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;atareao&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;atareao&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;weather&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;indicator&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -69,10 +108,23 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Skype&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;skype&lt;/span&gt;
-&lt;span class="cp"&gt;# отключить уведомления в групповом чате&lt;/span&gt;
-&lt;span class="err"&gt;нужно&lt;/span&gt; &lt;span class="err"&gt;зайти&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="err"&gt;чат&lt;/span&gt; &lt;span class="err"&gt;и&lt;/span&gt; &lt;span class="err"&gt;нажать&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;alertsoff&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;
+&lt;h3&gt;Настраиваем VPN между ubuntu и windows 7 и заходим через xfreerdp&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;remmina&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;team&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;remmina&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;vpnc&lt;/span&gt;
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;xfreerdp&lt;/span&gt;
+
+&lt;span class="cp"&gt;# вставляем свои сертификаты в /etc/vpnc/&lt;/span&gt;
+&lt;span class="cp"&gt;# запуск vpnc&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;vpnc&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+&lt;span class="cp"&gt;#создаем скрипт с нужными правами rdp.sh с параметрами&lt;/span&gt;
+&lt;span class="cp"&gt;# для 1.03&lt;/span&gt;
+&lt;span class="n"&gt;xfreerdp&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt; &lt;span class="n"&gt;cliprdr&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="mh"&gt;0x80&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;disable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wallpaper&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;disable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;full&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;drag&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;disable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;menu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;animations&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;1856&lt;/span&gt;&lt;span class="n"&gt;x1027&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;login&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;ignore&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;certificate&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;machine&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;domain&lt;/span&gt;
+&lt;span class="cp"&gt;# для 1.2&lt;/span&gt;
+&lt;span class="n"&gt;xfreerdp&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;clipboard&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cert&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ignore&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;login&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;machine&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;domain&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1856&lt;/span&gt;&lt;span class="n"&gt;x1027&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wallpaper&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;
+&lt;span class="cp"&gt;#бывает отваливается и нужно перезагрузить&lt;/span&gt;
+&lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="n"&gt;axu&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;vpnc&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="err"&gt;номер&lt;/span&gt; &lt;span class="err"&gt;процесса&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category><category term="настройка ubuntu"></category></entry><entry><title>Базовые команды Linux.</title><link href="http://webquant.ru/posts/linux-base" rel="alternate"></link><updated>2014-11-26T12:51:00+03:00</updated><author><name>admin</name></author><id>tag:webquant.ru,2014-11-01:posts/linux-base</id><summary type="html">&lt;h3&gt;Основные команды&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pwd&lt;/span&gt;  &lt;span class="err"&gt;#текущая&lt;/span&gt; &lt;span class="err"&gt;директория&lt;/span&gt;
 &lt;span class="n"&gt;ls&lt;/span&gt;  &lt;span class="err"&gt;#список&lt;/span&gt; &lt;span class="err"&gt;файлов&lt;/span&gt;
@@ -160,7 +212,7 @@
 &lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="n"&gt;axu&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;vpnc&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;поиск&lt;/span&gt; &lt;span class="err"&gt;процесса&lt;/span&gt; &lt;span class="err"&gt;по&lt;/span&gt; &lt;span class="err"&gt;названию&lt;/span&gt; &lt;span class="err"&gt;программы&lt;/span&gt;
 &lt;span class="cp"&gt;#убить процесс/программу когда зависла&lt;/span&gt;
 &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="n"&gt;process_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PID&lt;/span&gt; &lt;span class="err"&gt;в&lt;/span&gt; &lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="n"&gt;number&lt;/span&gt;
 &lt;span class="cp"&gt;#info &lt;/span&gt;
 &lt;span class="n"&gt;free&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="err"&gt;#об&lt;/span&gt; &lt;span class="err"&gt;опреративной&lt;/span&gt; &lt;span class="err"&gt;памяти&lt;/span&gt;
 &lt;span class="n"&gt;nproc&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;сколько&lt;/span&gt; &lt;span class="err"&gt;ядер&lt;/span&gt;
