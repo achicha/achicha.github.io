@@ -1,7 +1,7 @@
 let web3 = new web3js.myweb3(window.ethereum);
 let addr;
 
-const sttaddr = "0xdd23f59be25ab34d4d7f435fe1a36fa2cab4dde5";
+const sttaddr = "0x182a9eb37002c0dab3ce78e55539f96fe0840f8a";
 let presale_ends_time = "July 30, 2022 15:37:25"
 let token_name = "MTWP"
 

@@ -53,5 +53,4 @@ contract MyTokenWithPresale is ERC20, Ownable {
         (bool os, ) = payable(owner()).call{value: address(this).balance}("");
         require(os);
     }
-
 }
