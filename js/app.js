@@ -2,6 +2,9 @@ let web3 = new web3js.myweb3(window.ethereum);
 let addr;
 
 const sttaddr = "0xdd23f59be25ab34d4d7f435fe1a36fa2cab4dde5";
+let presale_ends_time = "July 30, 2022 15:37:25"
+let token_name = "MTWP"
+
 const sttabi = [
   {
     "inputs": [],
@@ -75,7 +78,7 @@ const buystt = async () => {
   else {
     Swal.fire(
       'Buy Alert',
-      'Buy as low as 0.01 <script type="text/javascript">document.write(currency);</script>.',
+      'Buy as low as 0.01 ' + token_name + '.',
       'error'
     )
   }
@@ -115,8 +118,8 @@ function addToWallet() {
       params: {
         'type': 'ERC20',
         'options': {
-          'address': '0xdd23f59be25ab34d4d7f435fe1a36fa2cab4dde5',
-          'symbol': 'MTWP',
+          'address': sttaddr,
+          'symbol': token_name,
           'decimals': '18'
         },
       },
@@ -141,7 +144,7 @@ function addToWallet() {
 //***************** some beauty jewelry  *****************/
 
 // Set the date we're counting down to
-var countDownDate = new Date("July 30, 2022 15:37:25").getTime();
+var countDownDate = new Date(presale_ends_time).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
